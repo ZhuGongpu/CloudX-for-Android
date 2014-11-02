@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CloudX</string>
+
+    <!--<string name="GameMode">游戏模式</string>-->
+    <string name="exit">退出</string>
+    <string name="RemoteDesktop">远程控制</string>
+    <string name="ShareFile">文件管理</string>
+    <string name="SendMessage">发送消息</string>
+    <string name="PleaseInputMessage">请输入信息</string>
+    <string name="Send">发送</string>
+    <string name="Cancel">取消</string>
+    <string name="ContentCannotBeNull">内容不能为空</string>
+    <string name="InDeveloping">正在开发中</string>
+    <string name="Confirm">确定</string>
+    <string name="GetAMessage">收到消息</string>
+    <string name="FileTransmissionDone">文件已保存至内存卡中</string>
+    <string name="FindMyDevice">查找我的设备</string>
+    <string name="FindMyDevice_GotIt">找到啦</string>
+
+    <string name="FileMode">文件</string>
+    <string name="MovieMode">电影</string>
+    <string name="MusicMode">音乐</string>
+
+    <string name="ConnectionFailed">连接失败,请检查网络连接</string>
+
+    <string name="WinddowSelected">已选择窗口</string>
+    <string name="WindowUnselected">已取消</string>
+</resources>

@@ -1,0 +1,112 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="#ffe4f3fa"
+        >
+
+    <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <RelativeLayout
+                android:id="@+id/top"
+                android:layout_alignParentTop="true"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/listTittle"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="25dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <ImageButton
+                    android:id="@+id/addFileButton"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/add"
+                    android:background="@android:color/transparent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+                android:id="@+id/bottom"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            <ImageButton
+                    android:id="@+id/fileListButton"
+                    android:layout_weight="1"
+                    android:src="@drawable/file_mode_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <ImageButton
+                    android:id="@+id/movieListButton"
+                    android:layout_weight="1"
+                    android:src="@drawable/movie_mode_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <ImageButton
+                    android:id="@+id/musicListButton"
+                    android:layout_weight="1"
+                    android:src="@drawable/music_mode_normal"
+                    android:background="@android:color/transparent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <cloudx.view.listview.ListViewCompat
+                android:id="@+id/fileNameList"
+                android:layout_below="@id/top"
+                android:layout_above="@id/bottom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff4f7f9"
+                android:cacheColorHint="#00000000"
+                android:divider="#dddbdb"
+                android:dividerHeight="1.0px"
+                android:drawSelectorOnTop="false"
+                android:listSelector="@android:color/transparent"
+                android:scrollbars="none"/>
+
+
+    </RelativeLayout>
+
+    <ProgressBar
+            android:id="@+id/progress_bar_in_display_file_list"
+            android:layout_gravity="center"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+    <cloudx.view.CircleProgressBar.CircleProgressBar
+            android:id="@+id/file_progress_indicator"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:visibility="invisible"
+            />
+</FrameLayout>
