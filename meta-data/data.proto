@@ -1,0 +1,138 @@
+package common.message;
+
+message DataPacket {
+    enum DataPacketType {
+        Info = 1;
+        Video = 2;
+        Audio = 3;
+        Command = 4;
+        Request = 5;
+        RequestFeedback = 6;
+        SharedMessage = 7;
+        SharedFile = 8;
+        FindMyPhone = 9;
+        KeyboardEvent = 10;
+    }
+
+    required DataPacketType dataPacketType = 1;
+    optional Info info = 2;
+    optional Video video = 3;
+    optional Audio audio = 4;
+    optional Command command = 5;
+    optional Request request = 6;
+    optional RequestFeedback requestFeedback = 7;
+    optional SharedMessage sharedMessage = 8;
+    optional SharedFile sharedFile = 9;
+    optional KeyboardEvent keyboardEvent = 10;
+    optional bytes timeStamp = 11;
+}
+
+message Command {
+    enum CommandType {
+        Minimize = 1;
+        ShowDesktop = 2;
+        ShutDownApp = 3;
+        LeftClick = 4;
+        RightClick = 5;
+        Scroll = 6;
+        SelectWindow = 7;
+        StopAudioTransmission = 8;
+        StopVideoTransmission = 9;
+        StopAudioAndVideoTransmission = 10;
+        StartAudioTransmission = 11;
+        StartVideoTransmission = 12;
+        StartAudioAndVideoTransmission = 13;
+    }
+
+    required CommandType commandType = 1;
+    optional float x = 2;
+    optional float y = 3;
+}
+
+message Video {
+
+    //filled with image data (optional)
+    message Rectangle {
+        required int32 x = 1;
+        required int32 y = 2;
+        required int32 width = 3;
+        required int32 height = 4;
+        optional bytes image = 5;
+    }
+
+    message Point {
+        required int32 x = 1;
+        required int32 y = 2;
+    }
+
+    message MoveRectangle {
+        required Rectangle destinationRectangle = 1;
+        required Point sourcePoint = 2;
+    }
+
+    repeated Rectangle dirtyRects = 1;
+    repeated MoveRectangle moveRects = 2;
+    optional bytes frame = 3;
+}
+
+message Audio {
+    optional bytes sound = 1;
+}
+
+message Info {
+    enum InfoType {
+        Login = 1;
+        Logout = 2;
+        NormalInfo = 3;
+    }
+    required InfoType infoType = 1;
+    optional bytes deviceName = 2;
+    optional int32 width = 3;
+    optional int32 height = 4;
+    optional int32 portAvailable = 5;
+}
+
+message Resolution {
+    optional int32 width = 1;
+    optional int32 height = 2;
+}
+
+message Request {
+    enum RequestType {
+        //request to open the movie remotely
+        Movie = 1;
+        Music = 2;
+        File = 3;
+        //request to remove the movie
+        RemoveMovie = 4;
+        RemoveMusic = 5;
+        RemoveFile = 6;
+        //request to save file into sdcard
+        SaveFile = 7;
+        SaveMusic = 8;
+        SaveMovie = 9;
+
+        //request to send files to the peer without types
+        SendFile = 10;
+    }
+    required RequestType requestType = 1;
+    required bytes filePath = 2; // * means all files
+}
+
+message RequestFeedback {
+    required bytes filePath = 1;
+}
+
+message SharedFile {
+    optional bytes fileName = 1;
+    required int64 fileLength = 2;
+    required bytes content = 3;
+}
+
+message SharedMessage {
+    required bytes content = 1;
+}
+
+message KeyboardEvent {
+    required int32 keyCode = 1;
+}

@@ -35,15 +35,14 @@ import data.information.GlobalSettingsAndInformation;
 import model.listener.CommandSender;
 import model.listener.GestureListener;
 import model.listener.OnLongClickGestureListener;
-import model.network.ActiveInputThread;
 import model.network.AudioInputThread;
-import model.network.MainPassiveInputThread;
+import model.network.ListeningThread;
+import model.network.MainInputThread;
 import utils.KeyCodeConverter;
 import utils.OpenFileUtils;
 
 import java.io.IOException;
 import java.net.Socket;
-import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -52,7 +51,6 @@ public class RemoteDesktopActivity extends Activity {
     private static final int MovieMode = 1;
     private static final int MAX_QUEUE_SIZE = 5;
     private static String TAG = "RemoteDesktopActivity";
-    //private static float scaleRate = 1;
     private Socket socket = null;
     private OnLongClickGestureListener selectWindowListener = new OnLongClickGestureListener() {
         public boolean isWindowSelected = false;
@@ -91,7 +89,7 @@ public class RemoteDesktopActivity extends Activity {
             }
         }
     };
-    private MainPassiveInputThread videoThread = null;
+    private MainInputThread videoThread = null;
     private AudioInputThread audioThread = null;
     private boolean stopAudioAndVideoStream = true;//用于标记从movie mode 的 remote desktop 切换到 remote desktop时是否需要关闭
     private boolean isScreenLocked = false;
@@ -116,9 +114,10 @@ public class RemoteDesktopActivity extends Activity {
                 case GlobalSettingsAndInformation.MessageType_Bitmap:
                     if (networkDataHandlerEnabled)
                         if (msg.obj instanceof Bitmap) {
-                            if (mainView != null) {
-                                long startTime = Calendar.getInstance().getTimeInMillis();
 
+                            Log.e(TAG, "UI get bitmap");
+
+                            if (mainView != null) {
                                 bitmapQueue.offer((Bitmap) msg.obj);
 
                                 while (bitmapQueue.size() >= MAX_QUEUE_SIZE) {
@@ -126,29 +125,13 @@ public class RemoteDesktopActivity extends Activity {
                                     if (!previousBitmap.isRecycled())
                                         previousBitmap.recycle();
                                 }
-
                                 previousBitmap = bitmapQueue.poll();
-                                long endTime = Calendar.getInstance().getTimeInMillis();
 
-//                                Log.e(TAG, "Queue : " + (endTime - startTime) + " ms");
 
-                                startTime = endTime;
+//TODO 如果子线程中不能使用canvas，则需要在此修改bitmap
 
                                 if (previousBitmap != null)
                                     mainView.setImageBitmap(previousBitmap);
-
-                                endTime = Calendar.getInstance().getTimeInMillis();
-
-//                                Log.e(TAG, "SetBitmap : " + (endTime - startTime) + " ms");
-
-//                    if (previousBitmap != null && !previousBitmap.isRecycled()) {
-//                        previousBitmap.recycle();
-//                        Log.e(TAG, "RECYCLED");
-//                    }
-//                    previousBitmap = (Bitmap) msg.obj;
-//                    mainView.setImageBitmap(previousBitmap);
-//                    mainView.setImageBitmap(Bitmap.createScaledBitmap(previousBitmap, (int) (previousBitmap.getWidth() * scaleRate),
-//                            (int) (previousBitmap.getHeight() * scaleRate), true));
                             }
                         }
                     break;
@@ -256,18 +239,16 @@ public class RemoteDesktopActivity extends Activity {
         return super.onKeyDown(keyCode, event);
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.remote_desktop);
 
+        Log.e(TAG, "RemoteDesktopActivity onCreate");
+
         progressBar = (CircleProgressBar) findViewById(R.id.file_transmission_progress_indicator);
 
         networkDataHandlerEnabled = true;
-        //set handler
-        ActiveInputThread.getInstance().setHandler(networkDataHandler);
-
 
         new AsyncTask<Void, Void, Boolean>() {
 
@@ -275,10 +256,16 @@ public class RemoteDesktopActivity extends Activity {
             protected Boolean doInBackground(Void... voids) {
 
                 try {
+                    Log.e(TAG, "doInBackground RemoteDesktopActivity");
+                    Log.e(TAG, "Connecting to " + GlobalSettingsAndInformation.ServerIP + " at " + GlobalSettingsAndInformation.ServerPort);
+
                     socket = new Socket(GlobalSettingsAndInformation.ServerIP,
                             GlobalSettingsAndInformation.ServerPort);
 
-                    sendInfo(GlobalSettingsAndInformation.deviceName,
+                    socket.setTcpNoDelay(true);
+                    socket.setSoTimeout(10000);
+
+                    sendInfo(GlobalSettingsAndInformation.deviceName, Data.Info.InfoType.Login,
                             RemoteDesktopActivity.this.getResources().getDisplayMetrics().widthPixels,
                             RemoteDesktopActivity.this.getResources().getDisplayMetrics().heightPixels);
 
@@ -300,32 +287,34 @@ public class RemoteDesktopActivity extends Activity {
                     Log.d(TAG, "connected");
 
                     Toast.makeText(RemoteDesktopActivity.this, "已连接", Toast.LENGTH_SHORT).show();
-
                     initViews();
 
-
-                    videoThread = new MainPassiveInputThread(socket, networkDataHandler
+                    videoThread = new MainInputThread(socket, networkDataHandler
 //                            , scaleRate
                     );
                     videoThread.start();
 
                     audioThread = new AudioInputThread();
                     audioThread.start();
-
                 } else {
                     Log.e(TAG, "connection failed");
-                    Toast.makeText(RemoteDesktopActivity.this, "请检查网络设置", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RemoteDesktopActivity.this, "连接失败,请检查网络设置", Toast.LENGTH_LONG).show();
                     cleanUpAndFinish();
                 }
             }
         }.execute();
+
+
+        //set handler
+        ListeningThread.getInstance().setHandler(networkDataHandler);
     }
 
-    private void sendInfo(String deviceName, int width, int height) throws IOException {
+    private void sendInfo(String deviceName, Data.Info.InfoType type, int width, int height) throws IOException {
         if (socket != null)
             Data.DataPacket.newBuilder().setDataPacketType(Data.DataPacket.DataPacketType.Info)
                     .setInfo(
                             Data.Info.newBuilder()
+                                    .setInfoType(type)
                                     .setDeviceName(ByteString.copyFromUtf8(deviceName))
                                     .setHeight(height)
                                     .setWidth(width)
@@ -546,7 +535,7 @@ public class RemoteDesktopActivity extends Activity {
     private void exit() {
         cleanUpAndFinish();
         GlobalSettingsAndInformation.ServerIP = null;//todo
-        ActiveInputThread.getInstance().interrupt();
+        ListeningThread.getInstance().interrupt();
     }
 
     private void cleanUpAndFinish() {
@@ -573,7 +562,7 @@ public class RemoteDesktopActivity extends Activity {
                 e.printStackTrace();
             }
 
-        ActiveInputThread.getInstance().setHandler(null);
+        ListeningThread.getInstance().setHandler(null);
 
         finish();
     }

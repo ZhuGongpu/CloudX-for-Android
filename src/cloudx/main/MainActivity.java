@@ -23,7 +23,7 @@ import cloudx.view.messagebox.MessageSender;
 import com.google.protobuf.ByteString;
 import common.message.Data;
 import data.information.GlobalSettingsAndInformation;
-import model.network.ActiveInputThread;
+import model.network.ListeningThread;
 
 import java.io.IOException;
 import java.lang.Process;
@@ -55,9 +55,9 @@ public class MainActivity extends Activity {
 
         @Override
         public void handleMessage(Message msg) {
-
+//TODO marked at 2014/11/6
             if (msg.arg1 == GlobalSettingsAndInformation.MessageType_FindMyDevice) {
-//todo find my device
+//find my device
                 new FindMyDeviceAlertDialog(MainActivity.this);
             } else if (msg.arg1 == GlobalSettingsAndInformation.MessageType_FileInfo) {
 
@@ -88,19 +88,19 @@ public class MainActivity extends Activity {
         setContentView(R.layout.main_view);
         initViews();
 
-        //  Log.e(TAG, Build.BRAND + " " + Build.MODEL + " " + Build.ID + " " + getStringIP());
+//        Log.e(TAG, Build.BRAND + " " + Build.MODEL + " " + Build.ID + " " + getStringIP());
 
-        // Log.e(TAG, Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RINGTONES).getAbsolutePath());
+//        Log.e(TAG, Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RINGTONES).getAbsolutePath());
 
 
         GlobalSettingsAndInformation.deviceName = Build.BRAND + " " + Build.MODEL;
         GlobalSettingsAndInformation.localIP = getStringIP();
 
-        //start the file input thread
-        if (ActiveInputThread.getInstance().getState() != Thread.State.RUNNABLE)
-            ActiveInputThread.getInstance().start();
+        //start the listening thread
+        if (ListeningThread.getInstance().getState() != Thread.State.RUNNABLE)
+            ListeningThread.getInstance().start();
 
-        ActiveInputThread.getInstance().setHandler(handler);
+        ListeningThread.getInstance().setHandler(handler);
     }
 
     /**
@@ -311,11 +311,6 @@ public class MainActivity extends Activity {
 
                         jumpToSelectedMode();
 
-//                        if (selectedMode.equals("movie") || selectedMode.equals("music"))
-//                            jumpToSelectedMode(FileManagerActivity.class, selectedMode);
-//                        else if (selectedMode.equals("remoteControll"))
-//                            jumpToSelectedMode(RemoteDesktopActivity.class, null);
-
                     } else
                         Toast.makeText(MainActivity.this, "IP地址不合法", Toast.LENGTH_LONG).show();
                     return true;
@@ -340,12 +335,6 @@ public class MainActivity extends Activity {
                     popupWindow.dismiss();
 
                     jumpToSelectedMode();
-
-
-//                    if (selectedMode.equals("movie") || selectedMode.equals("music"))
-//                        jumpToSelectedMode(FileManagerActivity.class, selectedMode);
-//                    else if (selectedMode.equals("remoteControll"))
-//                        jumpToSelectedMode(RemoteDesktopActivity.class, null);
 
                 } else
                     Toast.makeText(MainActivity.this, "IP地址不合法", Toast.LENGTH_LONG).show();
@@ -373,11 +362,6 @@ public class MainActivity extends Activity {
 
                 jumpToSelectedMode();
 
-
-//                if (selectedMode.equals("movie") || selectedMode.equals("music"))
-//                    jumpToSelectedMode(FileManagerActivity.class, selectedMode);
-//                else if (selectedMode.equals("remoteControll"))
-//                    jumpToSelectedMode(RemoteDesktopActivity.class, null);
             }
         });
     }
@@ -432,7 +416,7 @@ public class MainActivity extends Activity {
                                 if (!socket.isClosed())
                                     try {
 
-                                        sendInfo(GlobalSettingsAndInformation.deviceName,
+                                        sendInfo(GlobalSettingsAndInformation.deviceName, Data.Info.InfoType.NormalInfo,
                                                 MainActivity.this.getResources().getDisplayMetrics().widthPixels,
                                                 MainActivity.this.getResources().getDisplayMetrics().heightPixels);
 
@@ -483,7 +467,7 @@ public class MainActivity extends Activity {
     private void exit() {
 
         //close the file input thread
-        ActiveInputThread.getInstance().interrupt();
+        ListeningThread.getInstance().interrupt();
         isFirstLoad = true;
         GlobalSettingsAndInformation.ServerIP = null;
 
@@ -506,7 +490,7 @@ public class MainActivity extends Activity {
             e.printStackTrace();
         }
 
-        ActiveInputThread.getInstance().setHandler(null);
+        ListeningThread.getInstance().setHandler(null);
 
         finish();
     }
@@ -554,11 +538,12 @@ public class MainActivity extends Activity {
         return super.onKeyDown(keyCode, event);
     }
 
-    private void sendInfo(String deviceName, int width, int height) throws IOException {
+    private void sendInfo(String deviceName, Data.Info.InfoType type, int width, int height) throws IOException {
         if (socket != null)
             Data.DataPacket.newBuilder().setDataPacketType(Data.DataPacket.DataPacketType.Info)
                     .setInfo(
                             Data.Info.newBuilder()
+                                    .setInfoType(type)
                                     .setDeviceName(ByteString.copyFromUtf8(deviceName))
                                     .setHeight(height)
                                     .setWidth(width)

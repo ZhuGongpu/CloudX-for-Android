@@ -10,7 +10,7 @@ import cloudx.main.R;
 import cloudx.view.CircleProgressBar.CircleProgressBar;
 import data.information.FileInfo;
 import data.information.GlobalSettingsAndInformation;
-import model.network.ActiveInputThread;
+import model.network.ListeningThread;
 
 /**
  * Created by Gongpu on 2014/4/22.
@@ -52,7 +52,7 @@ public class ReceivingFileActivity extends Activity {
         progressBar = (CircleProgressBar) findViewById(R.id.progressBar);
         progressBar.setMaxProgress(MaxProgress);
 
-        ActiveInputThread.getInstance().setHandler(handler);
+        ListeningThread.getInstance().setHandler(handler);
 
         Log.e(TAG, "handler set");
     }

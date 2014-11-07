@@ -29,7 +29,7 @@ import com.google.protobuf.ByteString;
 import common.message.Data;
 import data.information.FileInfo;
 import data.information.GlobalSettingsAndInformation;
-import model.network.ActiveInputThread;
+import model.network.ListeningThread;
 import model.network.AudioInputThread;
 import utils.OpenFileUtils;
 
@@ -209,7 +209,7 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
 
         circleProgressBar = (CircleProgressBar) findViewById(R.id.file_progress_indicator);
 
-        ActiveInputThread.getInstance().setHandler(handler);
+        ListeningThread.getInstance().setHandler(handler);
 
         initView();
         setCurrentMode(FileMode);
@@ -223,7 +223,7 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
 //
 //                    inputThread.start();
 //
-//                    Log.e(TAG, "MainPassiveInputThread start");
+//                    Log.e(TAG, "MainInputThread start");
 //
 //                    sendInfo(GlobalSettingsAndInformation.deviceName,
 //                            FileManagerActivity.this.getResources().getDisplayMetrics().widthPixels,
@@ -560,7 +560,7 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
         }
 
         inputThread.interrupt();
-        ActiveInputThread.getInstance().setHandler(null);
+        ListeningThread.getInstance().setHandler(null);
 
         if (audioInputThread != null)
             audioInputThread.interrupt();
@@ -642,7 +642,7 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
                 if (inputThread.getState() != Thread.State.RUNNABLE)
                     inputThread.start();
 
-                Log.e(TAG, "MainPassiveInputThread start");
+                Log.e(TAG, "MainInputThread start");
 
                 sendInfo(GlobalSettingsAndInformation.deviceName,
                         FileManagerActivity.this.getResources().getDisplayMetrics().widthPixels,

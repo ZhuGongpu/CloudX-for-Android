@@ -13,6 +13,7 @@ import java.net.Socket;
 import java.util.zip.GZIPInputStream;
 
 /**
+ * 只用于处理PC发送的音频数据
  * Created by Gongpu on 14-3-16.
  */
 public class AudioInputThread extends Thread {
