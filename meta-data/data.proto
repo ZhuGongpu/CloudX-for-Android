@@ -1,30 +1,37 @@
+//Version : 2014/11/12/22:29
 package common.message;
 
 message DataPacket {
-    enum DataPacketType {
-        Info = 1;
+
+    enum DataPacketType{
+        DeviceInfo = 1;
         Video = 2;
         Audio = 3;
         Command = 4;
-        Request = 5;
-        RequestFeedback = 6;
-        SharedMessage = 7;
-        SharedFile = 8;
-        FindMyPhone = 9;
-        KeyboardEvent = 10;
+        FileRequest = 5;
+        FileInfo = 6;
+        FileBlock = 7;
+        SharedMessage = 8;
+        KeyboardEvent = 9;
+        CloudStorageTokenRequest = 10;
+        CloudStorageToken = 11;
+        Unspecified = 12;
     }
-    optional bytes unixTimeStamp = 1;
+
+    required uint64 unixTimeStamp = 1;
     required DataPacketType dataPacketType = 2;
-    optional Info info = 3;
+
+    optional DeviceInfo deviceInfo = 3;
     optional Video video = 4;
     optional Audio audio = 5;
     optional Command command = 6;
-    optional Request request = 7;
-    optional RequestFeedback requestFeedback = 8;
-    optional SharedMessage sharedMessage = 9;
-    optional SharedFile sharedFile = 10;
+    optional FileRequest fileRequest = 7;
+    optional FileInfo fileInfo = 8;
+    optional FileBlock fileBlock = 9;
+    optional SharedMessage sharedMessage = 10;
     optional KeyboardEvent keyboardEvent = 11;
-
+    optional CloudStorageTokenRequest cloudStorageTokenRequest = 12;
+    optional CloudStorageToken cloudStorageToken = 13;
 }
 
 message Command {
@@ -51,7 +58,6 @@ message Command {
 
 message Video {
 
-    //filled with image data (optional)
     message Rectangle {
         required int32 x = 1;
         required int32 y = 2;
@@ -79,17 +85,10 @@ message Audio {
     optional bytes sound = 1;
 }
 
-message Info {
-    enum InfoType {
-        Login = 1;
-        Logout = 2;
-        NormalInfo = 3;
-    }
-    required InfoType infoType = 1;
-    optional bytes deviceName = 2;
-    optional int32 width = 3;
-    optional int32 height = 4;
-    optional int32 portAvailable = 5;
+message DeviceInfo {
+    optional bytes deviceName = 1;
+    optional Resolution resolution = 2;
+    optional int32 portAvailable = 3;
 }
 
 message Resolution {
@@ -97,36 +96,34 @@ message Resolution {
     optional int32 height = 2;
 }
 
-message Request {
-    enum RequestType {
-        //request to open the movie remotely
-        Movie = 1;
-        Music = 2;
-        File = 3;
-        //request to remove file
-        RemoveFile = 6;
-        //request to save file into sdcard
-        SaveFile = 7;
-        SaveMusic = 8;
-        SaveMovie = 9;
-
-        //request to send files to the peer without types
-        SendFile = 10;
+message FileRequest {
+    enum FileRequestType {
+        OpenFileRemotely = 1;
+        DeleteFile = 2;
+        SaveFile = 3;
+        SendFile = 4;
     }
-    required RequestType requestType = 1;
-    required bytes filePath = 2; // * means all files
+    required FileRequestType fileRequestType = 1;
+    required bytes filePath = 2;
 }
 
-message RequestFeedback {
+message FileInfo
+{
     required bytes filePath = 1;
     required uint64 fileSize = 2;
     optional bytes fileIcon = 3;
 }
 
-message SharedFile {
-    optional bytes fileName = 1;
-    required int64 fileLength = 2;
-    required bytes content = 3;
+message FileBlock {
+    required bytes content = 1;
+}
+
+message CloudStorageTokenRequest{
+    optional int32 expires = 1[default = 3600];
+}
+
+message CloudStorageToken{
+    required bytes token = 1;
 }
 
 message SharedMessage {

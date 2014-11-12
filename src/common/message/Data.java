@@ -8,161 +8,178 @@ public final class Data {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
-  public interface DataPacketOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface DataPacketOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.message.DataPacket)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .common.message.DataPacket.DataPacketType dataPacketType = 1;
     /**
-     * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 1;</code>
+     * <code>required uint64 unixTimeStamp = 1;</code>
+     */
+    boolean hasUnixTimeStamp();
+    /**
+     * <code>required uint64 unixTimeStamp = 1;</code>
+     */
+    long getUnixTimeStamp();
+
+    /**
+     * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 2;</code>
      */
     boolean hasDataPacketType();
     /**
-     * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 1;</code>
+     * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 2;</code>
      */
     common.message.Data.DataPacket.DataPacketType getDataPacketType();
 
-    // optional .common.message.Info info = 2;
     /**
-     * <code>optional .common.message.Info info = 2;</code>
+     * <code>optional .common.message.DeviceInfo deviceInfo = 3;</code>
      */
-    boolean hasInfo();
+    boolean hasDeviceInfo();
     /**
-     * <code>optional .common.message.Info info = 2;</code>
+     * <code>optional .common.message.DeviceInfo deviceInfo = 3;</code>
      */
-    common.message.Data.Info getInfo();
+    common.message.Data.DeviceInfo getDeviceInfo();
     /**
-     * <code>optional .common.message.Info info = 2;</code>
+     * <code>optional .common.message.DeviceInfo deviceInfo = 3;</code>
      */
-    common.message.Data.InfoOrBuilder getInfoOrBuilder();
+    common.message.Data.DeviceInfoOrBuilder getDeviceInfoOrBuilder();
 
-    // optional .common.message.Video video = 3;
     /**
-     * <code>optional .common.message.Video video = 3;</code>
+     * <code>optional .common.message.Video video = 4;</code>
      */
     boolean hasVideo();
     /**
-     * <code>optional .common.message.Video video = 3;</code>
+     * <code>optional .common.message.Video video = 4;</code>
      */
     common.message.Data.Video getVideo();
     /**
-     * <code>optional .common.message.Video video = 3;</code>
+     * <code>optional .common.message.Video video = 4;</code>
      */
     common.message.Data.VideoOrBuilder getVideoOrBuilder();
 
-    // optional .common.message.Audio audio = 4;
     /**
-     * <code>optional .common.message.Audio audio = 4;</code>
+     * <code>optional .common.message.Audio audio = 5;</code>
      */
     boolean hasAudio();
     /**
-     * <code>optional .common.message.Audio audio = 4;</code>
+     * <code>optional .common.message.Audio audio = 5;</code>
      */
     common.message.Data.Audio getAudio();
     /**
-     * <code>optional .common.message.Audio audio = 4;</code>
+     * <code>optional .common.message.Audio audio = 5;</code>
      */
     common.message.Data.AudioOrBuilder getAudioOrBuilder();
 
-    // optional .common.message.Command command = 5;
     /**
-     * <code>optional .common.message.Command command = 5;</code>
+     * <code>optional .common.message.Command command = 6;</code>
      */
     boolean hasCommand();
     /**
-     * <code>optional .common.message.Command command = 5;</code>
+     * <code>optional .common.message.Command command = 6;</code>
      */
     common.message.Data.Command getCommand();
     /**
-     * <code>optional .common.message.Command command = 5;</code>
+     * <code>optional .common.message.Command command = 6;</code>
      */
     common.message.Data.CommandOrBuilder getCommandOrBuilder();
 
-    // optional .common.message.Request request = 6;
     /**
-     * <code>optional .common.message.Request request = 6;</code>
+     * <code>optional .common.message.FileRequest fileRequest = 7;</code>
      */
-    boolean hasRequest();
+    boolean hasFileRequest();
     /**
-     * <code>optional .common.message.Request request = 6;</code>
+     * <code>optional .common.message.FileRequest fileRequest = 7;</code>
      */
-    common.message.Data.Request getRequest();
+    common.message.Data.FileRequest getFileRequest();
     /**
-     * <code>optional .common.message.Request request = 6;</code>
+     * <code>optional .common.message.FileRequest fileRequest = 7;</code>
      */
-    common.message.Data.RequestOrBuilder getRequestOrBuilder();
+    common.message.Data.FileRequestOrBuilder getFileRequestOrBuilder();
 
-    // optional .common.message.RequestFeedback requestFeedback = 7;
     /**
-     * <code>optional .common.message.RequestFeedback requestFeedback = 7;</code>
+     * <code>optional .common.message.FileInfo fileInfo = 8;</code>
      */
-    boolean hasRequestFeedback();
+    boolean hasFileInfo();
     /**
-     * <code>optional .common.message.RequestFeedback requestFeedback = 7;</code>
+     * <code>optional .common.message.FileInfo fileInfo = 8;</code>
      */
-    common.message.Data.RequestFeedback getRequestFeedback();
+    common.message.Data.FileInfo getFileInfo();
     /**
-     * <code>optional .common.message.RequestFeedback requestFeedback = 7;</code>
+     * <code>optional .common.message.FileInfo fileInfo = 8;</code>
      */
-    common.message.Data.RequestFeedbackOrBuilder getRequestFeedbackOrBuilder();
+    common.message.Data.FileInfoOrBuilder getFileInfoOrBuilder();
 
-    // optional .common.message.SharedMessage sharedMessage = 8;
     /**
-     * <code>optional .common.message.SharedMessage sharedMessage = 8;</code>
+     * <code>optional .common.message.FileBlock fileBlock = 9;</code>
+     */
+    boolean hasFileBlock();
+    /**
+     * <code>optional .common.message.FileBlock fileBlock = 9;</code>
+     */
+    common.message.Data.FileBlock getFileBlock();
+    /**
+     * <code>optional .common.message.FileBlock fileBlock = 9;</code>
+     */
+    common.message.Data.FileBlockOrBuilder getFileBlockOrBuilder();
+
+    /**
+     * <code>optional .common.message.SharedMessage sharedMessage = 10;</code>
      */
     boolean hasSharedMessage();
     /**
-     * <code>optional .common.message.SharedMessage sharedMessage = 8;</code>
+     * <code>optional .common.message.SharedMessage sharedMessage = 10;</code>
      */
     common.message.Data.SharedMessage getSharedMessage();
     /**
-     * <code>optional .common.message.SharedMessage sharedMessage = 8;</code>
+     * <code>optional .common.message.SharedMessage sharedMessage = 10;</code>
      */
     common.message.Data.SharedMessageOrBuilder getSharedMessageOrBuilder();
 
-    // optional .common.message.SharedFile sharedFile = 9;
     /**
-     * <code>optional .common.message.SharedFile sharedFile = 9;</code>
-     */
-    boolean hasSharedFile();
-    /**
-     * <code>optional .common.message.SharedFile sharedFile = 9;</code>
-     */
-    common.message.Data.SharedFile getSharedFile();
-    /**
-     * <code>optional .common.message.SharedFile sharedFile = 9;</code>
-     */
-    common.message.Data.SharedFileOrBuilder getSharedFileOrBuilder();
-
-    // optional .common.message.KeyboardEvent keyboardEvent = 10;
-    /**
-     * <code>optional .common.message.KeyboardEvent keyboardEvent = 10;</code>
+     * <code>optional .common.message.KeyboardEvent keyboardEvent = 11;</code>
      */
     boolean hasKeyboardEvent();
     /**
-     * <code>optional .common.message.KeyboardEvent keyboardEvent = 10;</code>
+     * <code>optional .common.message.KeyboardEvent keyboardEvent = 11;</code>
      */
     common.message.Data.KeyboardEvent getKeyboardEvent();
     /**
-     * <code>optional .common.message.KeyboardEvent keyboardEvent = 10;</code>
+     * <code>optional .common.message.KeyboardEvent keyboardEvent = 11;</code>
      */
     common.message.Data.KeyboardEventOrBuilder getKeyboardEventOrBuilder();
 
-    // optional bytes timeStamp = 11;
     /**
-     * <code>optional bytes timeStamp = 11;</code>
+     * <code>optional .common.message.CloudStorageTokenRequest cloudStorageTokenRequest = 12;</code>
      */
-    boolean hasTimeStamp();
+    boolean hasCloudStorageTokenRequest();
     /**
-     * <code>optional bytes timeStamp = 11;</code>
+     * <code>optional .common.message.CloudStorageTokenRequest cloudStorageTokenRequest = 12;</code>
      */
-    com.google.protobuf.ByteString getTimeStamp();
+    common.message.Data.CloudStorageTokenRequest getCloudStorageTokenRequest();
+    /**
+     * <code>optional .common.message.CloudStorageTokenRequest cloudStorageTokenRequest = 12;</code>
+     */
+    common.message.Data.CloudStorageTokenRequestOrBuilder getCloudStorageTokenRequestOrBuilder();
+
+    /**
+     * <code>optional .common.message.CloudStorageToken cloudStorageToken = 13;</code>
+     */
+    boolean hasCloudStorageToken();
+    /**
+     * <code>optional .common.message.CloudStorageToken cloudStorageToken = 13;</code>
+     */
+    common.message.Data.CloudStorageToken getCloudStorageToken();
+    /**
+     * <code>optional .common.message.CloudStorageToken cloudStorageToken = 13;</code>
+     */
+    common.message.Data.CloudStorageTokenOrBuilder getCloudStorageTokenOrBuilder();
   }
   /**
    * Protobuf type {@code common.message.DataPacket}
    */
   public static final class DataPacket extends
-      com.google.protobuf.GeneratedMessage
-      implements DataPacketOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:common.message.DataPacket)
+      DataPacketOrBuilder {
     // Use DataPacket.newBuilder() to construct.
     private DataPacket(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -209,32 +226,37 @@ public final class Data {
               break;
             }
             case 8: {
+              bitField0_ |= 0x00000001;
+              unixTimeStamp_ = input.readUInt64();
+              break;
+            }
+            case 16: {
               int rawValue = input.readEnum();
               common.message.Data.DataPacket.DataPacketType value = common.message.Data.DataPacket.DataPacketType.valueOf(rawValue);
               if (value == null) {
-                unknownFields.mergeVarintField(1, rawValue);
+                unknownFields.mergeVarintField(2, rawValue);
               } else {
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 dataPacketType_ = value;
               }
               break;
             }
-            case 18: {
-              common.message.Data.Info.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                subBuilder = info_.toBuilder();
+            case 26: {
+              common.message.Data.DeviceInfo.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = deviceInfo_.toBuilder();
               }
-              info_ = input.readMessage(common.message.Data.Info.PARSER, extensionRegistry);
+              deviceInfo_ = input.readMessage(common.message.Data.DeviceInfo.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(info_);
-                info_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(deviceInfo_);
+                deviceInfo_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               break;
             }
-            case 26: {
+            case 34: {
               common.message.Data.Video.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+              if (((bitField0_ & 0x00000008) == 0x00000008)) {
                 subBuilder = video_.toBuilder();
               }
               video_ = input.readMessage(common.message.Data.Video.PARSER, extensionRegistry);
@@ -242,12 +264,12 @@ public final class Data {
                 subBuilder.mergeFrom(video_);
                 video_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               break;
             }
-            case 34: {
+            case 42: {
               common.message.Data.Audio.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000008) == 0x00000008)) {
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
                 subBuilder = audio_.toBuilder();
               }
               audio_ = input.readMessage(common.message.Data.Audio.PARSER, extensionRegistry);
@@ -255,12 +277,12 @@ public final class Data {
                 subBuilder.mergeFrom(audio_);
                 audio_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               break;
             }
-            case 42: {
+            case 50: {
               common.message.Data.Command.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+              if (((bitField0_ & 0x00000020) == 0x00000020)) {
                 subBuilder = command_.toBuilder();
               }
               command_ = input.readMessage(common.message.Data.Command.PARSER, extensionRegistry);
@@ -268,38 +290,51 @@ public final class Data {
                 subBuilder.mergeFrom(command_);
                 command_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000010;
-              break;
-            }
-            case 50: {
-              common.message.Data.Request.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000020) == 0x00000020)) {
-                subBuilder = request_.toBuilder();
-              }
-              request_ = input.readMessage(common.message.Data.Request.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(request_);
-                request_ = subBuilder.buildPartial();
-              }
               bitField0_ |= 0x00000020;
               break;
             }
             case 58: {
-              common.message.Data.RequestFeedback.Builder subBuilder = null;
+              common.message.Data.FileRequest.Builder subBuilder = null;
               if (((bitField0_ & 0x00000040) == 0x00000040)) {
-                subBuilder = requestFeedback_.toBuilder();
+                subBuilder = fileRequest_.toBuilder();
               }
-              requestFeedback_ = input.readMessage(common.message.Data.RequestFeedback.PARSER, extensionRegistry);
+              fileRequest_ = input.readMessage(common.message.Data.FileRequest.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(requestFeedback_);
-                requestFeedback_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(fileRequest_);
+                fileRequest_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000040;
               break;
             }
             case 66: {
-              common.message.Data.SharedMessage.Builder subBuilder = null;
+              common.message.Data.FileInfo.Builder subBuilder = null;
               if (((bitField0_ & 0x00000080) == 0x00000080)) {
+                subBuilder = fileInfo_.toBuilder();
+              }
+              fileInfo_ = input.readMessage(common.message.Data.FileInfo.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fileInfo_);
+                fileInfo_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000080;
+              break;
+            }
+            case 74: {
+              common.message.Data.FileBlock.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000100) == 0x00000100)) {
+                subBuilder = fileBlock_.toBuilder();
+              }
+              fileBlock_ = input.readMessage(common.message.Data.FileBlock.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fileBlock_);
+                fileBlock_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000100;
+              break;
+            }
+            case 82: {
+              common.message.Data.SharedMessage.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000200) == 0x00000200)) {
                 subBuilder = sharedMessage_.toBuilder();
               }
               sharedMessage_ = input.readMessage(common.message.Data.SharedMessage.PARSER, extensionRegistry);
@@ -307,25 +342,12 @@ public final class Data {
                 subBuilder.mergeFrom(sharedMessage_);
                 sharedMessage_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000200;
               break;
             }
-            case 74: {
-              common.message.Data.SharedFile.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000100) == 0x00000100)) {
-                subBuilder = sharedFile_.toBuilder();
-              }
-              sharedFile_ = input.readMessage(common.message.Data.SharedFile.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sharedFile_);
-                sharedFile_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000100;
-              break;
-            }
-            case 82: {
+            case 90: {
               common.message.Data.KeyboardEvent.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000200) == 0x00000200)) {
+              if (((bitField0_ & 0x00000400) == 0x00000400)) {
                 subBuilder = keyboardEvent_.toBuilder();
               }
               keyboardEvent_ = input.readMessage(common.message.Data.KeyboardEvent.PARSER, extensionRegistry);
@@ -333,12 +355,33 @@ public final class Data {
                 subBuilder.mergeFrom(keyboardEvent_);
                 keyboardEvent_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000400;
               break;
             }
-            case 90: {
-              bitField0_ |= 0x00000400;
-              timeStamp_ = input.readBytes();
+            case 98: {
+              common.message.Data.CloudStorageTokenRequest.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000800) == 0x00000800)) {
+                subBuilder = cloudStorageTokenRequest_.toBuilder();
+              }
+              cloudStorageTokenRequest_ = input.readMessage(common.message.Data.CloudStorageTokenRequest.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cloudStorageTokenRequest_);
+                cloudStorageTokenRequest_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000800;
+              break;
+            }
+            case 106: {
+              common.message.Data.CloudStorageToken.Builder subBuilder = null;
+              if (((bitField0_ & 0x00001000) == 0x00001000)) {
+                subBuilder = cloudStorageToken_.toBuilder();
+              }
+              cloudStorageToken_ = input.readMessage(common.message.Data.CloudStorageToken.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cloudStorageToken_);
+                cloudStorageToken_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00001000;
               break;
             }
           }
@@ -386,9 +429,9 @@ public final class Data {
     public enum DataPacketType
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>Info = 1;</code>
+       * <code>DeviceInfo = 1;</code>
        */
-      Info(0, 1),
+      DeviceInfo(0, 1),
       /**
        * <code>Video = 2;</code>
        */
@@ -402,35 +445,43 @@ public final class Data {
        */
       Command(3, 4),
       /**
-       * <code>Request = 5;</code>
+       * <code>FileRequest = 5;</code>
        */
-      Request(4, 5),
+      FileRequest(4, 5),
       /**
-       * <code>RequestFeedback = 6;</code>
+       * <code>FileInfo = 6;</code>
        */
-      RequestFeedback(5, 6),
+      FileInfo(5, 6),
       /**
-       * <code>SharedMessage = 7;</code>
+       * <code>FileBlock = 7;</code>
        */
-      SharedMessage(6, 7),
+      FileBlock(6, 7),
       /**
-       * <code>SharedFile = 8;</code>
+       * <code>SharedMessage = 8;</code>
        */
-      SharedFile(7, 8),
+      SharedMessage(7, 8),
       /**
-       * <code>FindMyPhone = 9;</code>
+       * <code>KeyboardEvent = 9;</code>
        */
-      FindMyPhone(8, 9),
+      KeyboardEvent(8, 9),
       /**
-       * <code>KeyboardEvent = 10;</code>
+       * <code>CloudStorageTokenRequest = 10;</code>
        */
-      KeyboardEvent(9, 10),
+      CloudStorageTokenRequest(9, 10),
+      /**
+       * <code>CloudStorageToken = 11;</code>
+       */
+      CloudStorageToken(10, 11),
+      /**
+       * <code>Unspecified = 12;</code>
+       */
+      Unspecified(11, 12),
       ;
 
       /**
-       * <code>Info = 1;</code>
+       * <code>DeviceInfo = 1;</code>
        */
-      public static final int Info_VALUE = 1;
+      public static final int DeviceInfo_VALUE = 1;
       /**
        * <code>Video = 2;</code>
        */
@@ -444,45 +495,55 @@ public final class Data {
        */
       public static final int Command_VALUE = 4;
       /**
-       * <code>Request = 5;</code>
+       * <code>FileRequest = 5;</code>
        */
-      public static final int Request_VALUE = 5;
+      public static final int FileRequest_VALUE = 5;
       /**
-       * <code>RequestFeedback = 6;</code>
+       * <code>FileInfo = 6;</code>
        */
-      public static final int RequestFeedback_VALUE = 6;
+      public static final int FileInfo_VALUE = 6;
       /**
-       * <code>SharedMessage = 7;</code>
+       * <code>FileBlock = 7;</code>
        */
-      public static final int SharedMessage_VALUE = 7;
+      public static final int FileBlock_VALUE = 7;
       /**
-       * <code>SharedFile = 8;</code>
+       * <code>SharedMessage = 8;</code>
        */
-      public static final int SharedFile_VALUE = 8;
+      public static final int SharedMessage_VALUE = 8;
       /**
-       * <code>FindMyPhone = 9;</code>
+       * <code>KeyboardEvent = 9;</code>
        */
-      public static final int FindMyPhone_VALUE = 9;
+      public static final int KeyboardEvent_VALUE = 9;
       /**
-       * <code>KeyboardEvent = 10;</code>
+       * <code>CloudStorageTokenRequest = 10;</code>
        */
-      public static final int KeyboardEvent_VALUE = 10;
+      public static final int CloudStorageTokenRequest_VALUE = 10;
+      /**
+       * <code>CloudStorageToken = 11;</code>
+       */
+      public static final int CloudStorageToken_VALUE = 11;
+      /**
+       * <code>Unspecified = 12;</code>
+       */
+      public static final int Unspecified_VALUE = 12;
 
 
       public final int getNumber() { return value; }
 
       public static DataPacketType valueOf(int value) {
         switch (value) {
-          case 1: return Info;
+          case 1: return DeviceInfo;
           case 2: return Video;
           case 3: return Audio;
           case 4: return Command;
-          case 5: return Request;
-          case 6: return RequestFeedback;
-          case 7: return SharedMessage;
-          case 8: return SharedFile;
-          case 9: return FindMyPhone;
-          case 10: return KeyboardEvent;
+          case 5: return FileRequest;
+          case 6: return FileInfo;
+          case 7: return FileBlock;
+          case 8: return SharedMessage;
+          case 9: return KeyboardEvent;
+          case 10: return CloudStorageTokenRequest;
+          case 11: return CloudStorageToken;
+          case 12: return Unspecified;
           default: return null;
         }
       }
@@ -535,263 +596,295 @@ public final class Data {
     }
 
     private int bitField0_;
-    // required .common.message.DataPacket.DataPacketType dataPacketType = 1;
-    public static final int DATAPACKETTYPE_FIELD_NUMBER = 1;
-    private common.message.Data.DataPacket.DataPacketType dataPacketType_;
+    public static final int UNIXTIMESTAMP_FIELD_NUMBER = 1;
+    private long unixTimeStamp_;
     /**
-     * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 1;</code>
+     * <code>required uint64 unixTimeStamp = 1;</code>
      */
-    public boolean hasDataPacketType() {
+    public boolean hasUnixTimeStamp() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 1;</code>
+     * <code>required uint64 unixTimeStamp = 1;</code>
+     */
+    public long getUnixTimeStamp() {
+      return unixTimeStamp_;
+    }
+
+    public static final int DATAPACKETTYPE_FIELD_NUMBER = 2;
+    private common.message.Data.DataPacket.DataPacketType dataPacketType_;
+    /**
+     * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 2;</code>
+     */
+    public boolean hasDataPacketType() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 2;</code>
      */
     public common.message.Data.DataPacket.DataPacketType getDataPacketType() {
       return dataPacketType_;
     }
 
-    // optional .common.message.Info info = 2;
-    public static final int INFO_FIELD_NUMBER = 2;
-    private common.message.Data.Info info_;
+    public static final int DEVICEINFO_FIELD_NUMBER = 3;
+    private common.message.Data.DeviceInfo deviceInfo_;
     /**
-     * <code>optional .common.message.Info info = 2;</code>
+     * <code>optional .common.message.DeviceInfo deviceInfo = 3;</code>
      */
-    public boolean hasInfo() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional .common.message.Info info = 2;</code>
-     */
-    public common.message.Data.Info getInfo() {
-      return info_;
-    }
-    /**
-     * <code>optional .common.message.Info info = 2;</code>
-     */
-    public common.message.Data.InfoOrBuilder getInfoOrBuilder() {
-      return info_;
-    }
-
-    // optional .common.message.Video video = 3;
-    public static final int VIDEO_FIELD_NUMBER = 3;
-    private common.message.Data.Video video_;
-    /**
-     * <code>optional .common.message.Video video = 3;</code>
-     */
-    public boolean hasVideo() {
+    public boolean hasDeviceInfo() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional .common.message.Video video = 3;</code>
+     * <code>optional .common.message.DeviceInfo deviceInfo = 3;</code>
+     */
+    public common.message.Data.DeviceInfo getDeviceInfo() {
+      return deviceInfo_;
+    }
+    /**
+     * <code>optional .common.message.DeviceInfo deviceInfo = 3;</code>
+     */
+    public common.message.Data.DeviceInfoOrBuilder getDeviceInfoOrBuilder() {
+      return deviceInfo_;
+    }
+
+    public static final int VIDEO_FIELD_NUMBER = 4;
+    private common.message.Data.Video video_;
+    /**
+     * <code>optional .common.message.Video video = 4;</code>
+     */
+    public boolean hasVideo() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional .common.message.Video video = 4;</code>
      */
     public common.message.Data.Video getVideo() {
       return video_;
     }
     /**
-     * <code>optional .common.message.Video video = 3;</code>
+     * <code>optional .common.message.Video video = 4;</code>
      */
     public common.message.Data.VideoOrBuilder getVideoOrBuilder() {
       return video_;
     }
 
-    // optional .common.message.Audio audio = 4;
-    public static final int AUDIO_FIELD_NUMBER = 4;
+    public static final int AUDIO_FIELD_NUMBER = 5;
     private common.message.Data.Audio audio_;
     /**
-     * <code>optional .common.message.Audio audio = 4;</code>
+     * <code>optional .common.message.Audio audio = 5;</code>
      */
     public boolean hasAudio() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional .common.message.Audio audio = 4;</code>
+     * <code>optional .common.message.Audio audio = 5;</code>
      */
     public common.message.Data.Audio getAudio() {
       return audio_;
     }
     /**
-     * <code>optional .common.message.Audio audio = 4;</code>
+     * <code>optional .common.message.Audio audio = 5;</code>
      */
     public common.message.Data.AudioOrBuilder getAudioOrBuilder() {
       return audio_;
     }
 
-    // optional .common.message.Command command = 5;
-    public static final int COMMAND_FIELD_NUMBER = 5;
+    public static final int COMMAND_FIELD_NUMBER = 6;
     private common.message.Data.Command command_;
     /**
-     * <code>optional .common.message.Command command = 5;</code>
+     * <code>optional .common.message.Command command = 6;</code>
      */
     public boolean hasCommand() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>optional .common.message.Command command = 5;</code>
+     * <code>optional .common.message.Command command = 6;</code>
      */
     public common.message.Data.Command getCommand() {
       return command_;
     }
     /**
-     * <code>optional .common.message.Command command = 5;</code>
+     * <code>optional .common.message.Command command = 6;</code>
      */
     public common.message.Data.CommandOrBuilder getCommandOrBuilder() {
       return command_;
     }
 
-    // optional .common.message.Request request = 6;
-    public static final int REQUEST_FIELD_NUMBER = 6;
-    private common.message.Data.Request request_;
+    public static final int FILEREQUEST_FIELD_NUMBER = 7;
+    private common.message.Data.FileRequest fileRequest_;
     /**
-     * <code>optional .common.message.Request request = 6;</code>
+     * <code>optional .common.message.FileRequest fileRequest = 7;</code>
      */
-    public boolean hasRequest() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>optional .common.message.Request request = 6;</code>
-     */
-    public common.message.Data.Request getRequest() {
-      return request_;
-    }
-    /**
-     * <code>optional .common.message.Request request = 6;</code>
-     */
-    public common.message.Data.RequestOrBuilder getRequestOrBuilder() {
-      return request_;
-    }
-
-    // optional .common.message.RequestFeedback requestFeedback = 7;
-    public static final int REQUESTFEEDBACK_FIELD_NUMBER = 7;
-    private common.message.Data.RequestFeedback requestFeedback_;
-    /**
-     * <code>optional .common.message.RequestFeedback requestFeedback = 7;</code>
-     */
-    public boolean hasRequestFeedback() {
+    public boolean hasFileRequest() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>optional .common.message.RequestFeedback requestFeedback = 7;</code>
+     * <code>optional .common.message.FileRequest fileRequest = 7;</code>
      */
-    public common.message.Data.RequestFeedback getRequestFeedback() {
-      return requestFeedback_;
+    public common.message.Data.FileRequest getFileRequest() {
+      return fileRequest_;
     }
     /**
-     * <code>optional .common.message.RequestFeedback requestFeedback = 7;</code>
+     * <code>optional .common.message.FileRequest fileRequest = 7;</code>
      */
-    public common.message.Data.RequestFeedbackOrBuilder getRequestFeedbackOrBuilder() {
-      return requestFeedback_;
+    public common.message.Data.FileRequestOrBuilder getFileRequestOrBuilder() {
+      return fileRequest_;
     }
 
-    // optional .common.message.SharedMessage sharedMessage = 8;
-    public static final int SHAREDMESSAGE_FIELD_NUMBER = 8;
-    private common.message.Data.SharedMessage sharedMessage_;
+    public static final int FILEINFO_FIELD_NUMBER = 8;
+    private common.message.Data.FileInfo fileInfo_;
     /**
-     * <code>optional .common.message.SharedMessage sharedMessage = 8;</code>
+     * <code>optional .common.message.FileInfo fileInfo = 8;</code>
      */
-    public boolean hasSharedMessage() {
+    public boolean hasFileInfo() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>optional .common.message.SharedMessage sharedMessage = 8;</code>
+     * <code>optional .common.message.FileInfo fileInfo = 8;</code>
+     */
+    public common.message.Data.FileInfo getFileInfo() {
+      return fileInfo_;
+    }
+    /**
+     * <code>optional .common.message.FileInfo fileInfo = 8;</code>
+     */
+    public common.message.Data.FileInfoOrBuilder getFileInfoOrBuilder() {
+      return fileInfo_;
+    }
+
+    public static final int FILEBLOCK_FIELD_NUMBER = 9;
+    private common.message.Data.FileBlock fileBlock_;
+    /**
+     * <code>optional .common.message.FileBlock fileBlock = 9;</code>
+     */
+    public boolean hasFileBlock() {
+      return ((bitField0_ & 0x00000100) == 0x00000100);
+    }
+    /**
+     * <code>optional .common.message.FileBlock fileBlock = 9;</code>
+     */
+    public common.message.Data.FileBlock getFileBlock() {
+      return fileBlock_;
+    }
+    /**
+     * <code>optional .common.message.FileBlock fileBlock = 9;</code>
+     */
+    public common.message.Data.FileBlockOrBuilder getFileBlockOrBuilder() {
+      return fileBlock_;
+    }
+
+    public static final int SHAREDMESSAGE_FIELD_NUMBER = 10;
+    private common.message.Data.SharedMessage sharedMessage_;
+    /**
+     * <code>optional .common.message.SharedMessage sharedMessage = 10;</code>
+     */
+    public boolean hasSharedMessage() {
+      return ((bitField0_ & 0x00000200) == 0x00000200);
+    }
+    /**
+     * <code>optional .common.message.SharedMessage sharedMessage = 10;</code>
      */
     public common.message.Data.SharedMessage getSharedMessage() {
       return sharedMessage_;
     }
     /**
-     * <code>optional .common.message.SharedMessage sharedMessage = 8;</code>
+     * <code>optional .common.message.SharedMessage sharedMessage = 10;</code>
      */
     public common.message.Data.SharedMessageOrBuilder getSharedMessageOrBuilder() {
       return sharedMessage_;
     }
 
-    // optional .common.message.SharedFile sharedFile = 9;
-    public static final int SHAREDFILE_FIELD_NUMBER = 9;
-    private common.message.Data.SharedFile sharedFile_;
-    /**
-     * <code>optional .common.message.SharedFile sharedFile = 9;</code>
-     */
-    public boolean hasSharedFile() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
-    }
-    /**
-     * <code>optional .common.message.SharedFile sharedFile = 9;</code>
-     */
-    public common.message.Data.SharedFile getSharedFile() {
-      return sharedFile_;
-    }
-    /**
-     * <code>optional .common.message.SharedFile sharedFile = 9;</code>
-     */
-    public common.message.Data.SharedFileOrBuilder getSharedFileOrBuilder() {
-      return sharedFile_;
-    }
-
-    // optional .common.message.KeyboardEvent keyboardEvent = 10;
-    public static final int KEYBOARDEVENT_FIELD_NUMBER = 10;
+    public static final int KEYBOARDEVENT_FIELD_NUMBER = 11;
     private common.message.Data.KeyboardEvent keyboardEvent_;
     /**
-     * <code>optional .common.message.KeyboardEvent keyboardEvent = 10;</code>
+     * <code>optional .common.message.KeyboardEvent keyboardEvent = 11;</code>
      */
     public boolean hasKeyboardEvent() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
-     * <code>optional .common.message.KeyboardEvent keyboardEvent = 10;</code>
+     * <code>optional .common.message.KeyboardEvent keyboardEvent = 11;</code>
      */
     public common.message.Data.KeyboardEvent getKeyboardEvent() {
       return keyboardEvent_;
     }
     /**
-     * <code>optional .common.message.KeyboardEvent keyboardEvent = 10;</code>
+     * <code>optional .common.message.KeyboardEvent keyboardEvent = 11;</code>
      */
     public common.message.Data.KeyboardEventOrBuilder getKeyboardEventOrBuilder() {
       return keyboardEvent_;
     }
 
-    // optional bytes timeStamp = 11;
-    public static final int TIMESTAMP_FIELD_NUMBER = 11;
-    private com.google.protobuf.ByteString timeStamp_;
+    public static final int CLOUDSTORAGETOKENREQUEST_FIELD_NUMBER = 12;
+    private common.message.Data.CloudStorageTokenRequest cloudStorageTokenRequest_;
     /**
-     * <code>optional bytes timeStamp = 11;</code>
+     * <code>optional .common.message.CloudStorageTokenRequest cloudStorageTokenRequest = 12;</code>
      */
-    public boolean hasTimeStamp() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+    public boolean hasCloudStorageTokenRequest() {
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
-     * <code>optional bytes timeStamp = 11;</code>
+     * <code>optional .common.message.CloudStorageTokenRequest cloudStorageTokenRequest = 12;</code>
      */
-    public com.google.protobuf.ByteString getTimeStamp() {
-      return timeStamp_;
+    public common.message.Data.CloudStorageTokenRequest getCloudStorageTokenRequest() {
+      return cloudStorageTokenRequest_;
+    }
+    /**
+     * <code>optional .common.message.CloudStorageTokenRequest cloudStorageTokenRequest = 12;</code>
+     */
+    public common.message.Data.CloudStorageTokenRequestOrBuilder getCloudStorageTokenRequestOrBuilder() {
+      return cloudStorageTokenRequest_;
+    }
+
+    public static final int CLOUDSTORAGETOKEN_FIELD_NUMBER = 13;
+    private common.message.Data.CloudStorageToken cloudStorageToken_;
+    /**
+     * <code>optional .common.message.CloudStorageToken cloudStorageToken = 13;</code>
+     */
+    public boolean hasCloudStorageToken() {
+      return ((bitField0_ & 0x00001000) == 0x00001000);
+    }
+    /**
+     * <code>optional .common.message.CloudStorageToken cloudStorageToken = 13;</code>
+     */
+    public common.message.Data.CloudStorageToken getCloudStorageToken() {
+      return cloudStorageToken_;
+    }
+    /**
+     * <code>optional .common.message.CloudStorageToken cloudStorageToken = 13;</code>
+     */
+    public common.message.Data.CloudStorageTokenOrBuilder getCloudStorageTokenOrBuilder() {
+      return cloudStorageToken_;
     }
 
     private void initFields() {
-      dataPacketType_ = common.message.Data.DataPacket.DataPacketType.Info;
-      info_ = common.message.Data.Info.getDefaultInstance();
+      unixTimeStamp_ = 0L;
+      dataPacketType_ = common.message.Data.DataPacket.DataPacketType.DeviceInfo;
+      deviceInfo_ = common.message.Data.DeviceInfo.getDefaultInstance();
       video_ = common.message.Data.Video.getDefaultInstance();
       audio_ = common.message.Data.Audio.getDefaultInstance();
       command_ = common.message.Data.Command.getDefaultInstance();
-      request_ = common.message.Data.Request.getDefaultInstance();
-      requestFeedback_ = common.message.Data.RequestFeedback.getDefaultInstance();
+      fileRequest_ = common.message.Data.FileRequest.getDefaultInstance();
+      fileInfo_ = common.message.Data.FileInfo.getDefaultInstance();
+      fileBlock_ = common.message.Data.FileBlock.getDefaultInstance();
       sharedMessage_ = common.message.Data.SharedMessage.getDefaultInstance();
-      sharedFile_ = common.message.Data.SharedFile.getDefaultInstance();
       keyboardEvent_ = common.message.Data.KeyboardEvent.getDefaultInstance();
-      timeStamp_ = com.google.protobuf.ByteString.EMPTY;
+      cloudStorageTokenRequest_ = common.message.Data.CloudStorageTokenRequest.getDefaultInstance();
+      cloudStorageToken_ = common.message.Data.CloudStorageToken.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
-      if (!hasDataPacketType()) {
+      if (!hasUnixTimeStamp()) {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (hasInfo()) {
-        if (!getInfo().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
+      if (!hasDataPacketType()) {
+        memoizedIsInitialized = 0;
+        return false;
       }
       if (hasVideo()) {
         if (!getVideo().isInitialized()) {
@@ -805,14 +898,20 @@ public final class Data {
           return false;
         }
       }
-      if (hasRequest()) {
-        if (!getRequest().isInitialized()) {
+      if (hasFileRequest()) {
+        if (!getFileRequest().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
       }
-      if (hasRequestFeedback()) {
-        if (!getRequestFeedback().isInitialized()) {
+      if (hasFileInfo()) {
+        if (!getFileInfo().isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasFileBlock()) {
+        if (!getFileBlock().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -823,14 +922,14 @@ public final class Data {
           return false;
         }
       }
-      if (hasSharedFile()) {
-        if (!getSharedFile().isInitialized()) {
+      if (hasKeyboardEvent()) {
+        if (!getKeyboardEvent().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
       }
-      if (hasKeyboardEvent()) {
-        if (!getKeyboardEvent().isInitialized()) {
+      if (hasCloudStorageToken()) {
+        if (!getCloudStorageToken().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -843,37 +942,43 @@ public final class Data {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, dataPacketType_.getNumber());
+        output.writeUInt64(1, unixTimeStamp_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeMessage(2, info_);
+        output.writeEnum(2, dataPacketType_.getNumber());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeMessage(3, video_);
+        output.writeMessage(3, deviceInfo_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeMessage(4, audio_);
+        output.writeMessage(4, video_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeMessage(5, command_);
+        output.writeMessage(5, audio_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeMessage(6, request_);
+        output.writeMessage(6, command_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeMessage(7, requestFeedback_);
+        output.writeMessage(7, fileRequest_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeMessage(8, sharedMessage_);
+        output.writeMessage(8, fileInfo_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        output.writeMessage(9, sharedFile_);
+        output.writeMessage(9, fileBlock_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        output.writeMessage(10, keyboardEvent_);
+        output.writeMessage(10, sharedMessage_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        output.writeBytes(11, timeStamp_);
+        output.writeMessage(11, keyboardEvent_);
+      }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        output.writeMessage(12, cloudStorageTokenRequest_);
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        output.writeMessage(13, cloudStorageToken_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -886,47 +991,55 @@ public final class Data {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, dataPacketType_.getNumber());
+          .computeUInt64Size(1, unixTimeStamp_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, info_);
+          .computeEnumSize(2, dataPacketType_.getNumber());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, video_);
+          .computeMessageSize(3, deviceInfo_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, audio_);
+          .computeMessageSize(4, video_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, command_);
+          .computeMessageSize(5, audio_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, request_);
+          .computeMessageSize(6, command_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, requestFeedback_);
+          .computeMessageSize(7, fileRequest_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, sharedMessage_);
+          .computeMessageSize(8, fileInfo_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, sharedFile_);
+          .computeMessageSize(9, fileBlock_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, keyboardEvent_);
+          .computeMessageSize(10, sharedMessage_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(11, timeStamp_);
+          .computeMessageSize(11, keyboardEvent_);
+      }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, cloudStorageTokenRequest_);
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, cloudStorageToken_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1010,8 +1123,9 @@ public final class Data {
      * Protobuf type {@code common.message.DataPacket}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements common.message.Data.DataPacketOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.message.DataPacket)
+        common.message.Data.DataPacketOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return common.message.Data.internal_static_common_message_DataPacket_descriptor;
@@ -1036,15 +1150,17 @@ public final class Data {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getInfoFieldBuilder();
+          getDeviceInfoFieldBuilder();
           getVideoFieldBuilder();
           getAudioFieldBuilder();
           getCommandFieldBuilder();
-          getRequestFieldBuilder();
-          getRequestFeedbackFieldBuilder();
+          getFileRequestFieldBuilder();
+          getFileInfoFieldBuilder();
+          getFileBlockFieldBuilder();
           getSharedMessageFieldBuilder();
-          getSharedFileFieldBuilder();
           getKeyboardEventFieldBuilder();
+          getCloudStorageTokenRequestFieldBuilder();
+          getCloudStorageTokenFieldBuilder();
         }
       }
       private static Builder create() {
@@ -1053,64 +1169,76 @@ public final class Data {
 
       public Builder clear() {
         super.clear();
-        dataPacketType_ = common.message.Data.DataPacket.DataPacketType.Info;
+        unixTimeStamp_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (infoBuilder_ == null) {
-          info_ = common.message.Data.Info.getDefaultInstance();
-        } else {
-          infoBuilder_.clear();
-        }
+        dataPacketType_ = common.message.Data.DataPacket.DataPacketType.DeviceInfo;
         bitField0_ = (bitField0_ & ~0x00000002);
+        if (deviceInfoBuilder_ == null) {
+          deviceInfo_ = common.message.Data.DeviceInfo.getDefaultInstance();
+        } else {
+          deviceInfoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (videoBuilder_ == null) {
           video_ = common.message.Data.Video.getDefaultInstance();
         } else {
           videoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (audioBuilder_ == null) {
           audio_ = common.message.Data.Audio.getDefaultInstance();
         } else {
           audioBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (commandBuilder_ == null) {
           command_ = common.message.Data.Command.getDefaultInstance();
         } else {
           commandBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
-        if (requestBuilder_ == null) {
-          request_ = common.message.Data.Request.getDefaultInstance();
-        } else {
-          requestBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000020);
-        if (requestFeedbackBuilder_ == null) {
-          requestFeedback_ = common.message.Data.RequestFeedback.getDefaultInstance();
+        if (fileRequestBuilder_ == null) {
+          fileRequest_ = common.message.Data.FileRequest.getDefaultInstance();
         } else {
-          requestFeedbackBuilder_.clear();
+          fileRequestBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000040);
+        if (fileInfoBuilder_ == null) {
+          fileInfo_ = common.message.Data.FileInfo.getDefaultInstance();
+        } else {
+          fileInfoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000080);
+        if (fileBlockBuilder_ == null) {
+          fileBlock_ = common.message.Data.FileBlock.getDefaultInstance();
+        } else {
+          fileBlockBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000100);
         if (sharedMessageBuilder_ == null) {
           sharedMessage_ = common.message.Data.SharedMessage.getDefaultInstance();
         } else {
           sharedMessageBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
-        if (sharedFileBuilder_ == null) {
-          sharedFile_ = common.message.Data.SharedFile.getDefaultInstance();
-        } else {
-          sharedFileBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         if (keyboardEventBuilder_ == null) {
           keyboardEvent_ = common.message.Data.KeyboardEvent.getDefaultInstance();
         } else {
           keyboardEventBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000200);
-        timeStamp_ = com.google.protobuf.ByteString.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000400);
+        if (cloudStorageTokenRequestBuilder_ == null) {
+          cloudStorageTokenRequest_ = common.message.Data.CloudStorageTokenRequest.getDefaultInstance();
+        } else {
+          cloudStorageTokenRequestBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000800);
+        if (cloudStorageTokenBuilder_ == null) {
+          cloudStorageToken_ = common.message.Data.CloudStorageToken.getDefaultInstance();
+        } else {
+          cloudStorageTokenBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00001000);
         return this;
       }
 
@@ -1142,83 +1270,99 @@ public final class Data {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.dataPacketType_ = dataPacketType_;
+        result.unixTimeStamp_ = unixTimeStamp_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        if (infoBuilder_ == null) {
-          result.info_ = info_;
-        } else {
-          result.info_ = infoBuilder_.build();
-        }
+        result.dataPacketType_ = dataPacketType_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
+        }
+        if (deviceInfoBuilder_ == null) {
+          result.deviceInfo_ = deviceInfo_;
+        } else {
+          result.deviceInfo_ = deviceInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
         }
         if (videoBuilder_ == null) {
           result.video_ = video_;
         } else {
           result.video_ = videoBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
         }
         if (audioBuilder_ == null) {
           result.audio_ = audio_;
         } else {
           result.audio_ = audioBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
         }
         if (commandBuilder_ == null) {
           result.command_ = command_;
         } else {
           result.command_ = commandBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        if (requestBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = requestBuilder_.build();
-        }
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        if (requestFeedbackBuilder_ == null) {
-          result.requestFeedback_ = requestFeedback_;
+        if (fileRequestBuilder_ == null) {
+          result.fileRequest_ = fileRequest_;
         } else {
-          result.requestFeedback_ = requestFeedbackBuilder_.build();
+          result.fileRequest_ = fileRequestBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
+        }
+        if (fileInfoBuilder_ == null) {
+          result.fileInfo_ = fileInfo_;
+        } else {
+          result.fileInfo_ = fileInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        if (fileBlockBuilder_ == null) {
+          result.fileBlock_ = fileBlock_;
+        } else {
+          result.fileBlock_ = fileBlockBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000200;
         }
         if (sharedMessageBuilder_ == null) {
           result.sharedMessage_ = sharedMessage_;
         } else {
           result.sharedMessage_ = sharedMessageBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
-          to_bitField0_ |= 0x00000100;
-        }
-        if (sharedFileBuilder_ == null) {
-          result.sharedFile_ = sharedFile_;
-        } else {
-          result.sharedFile_ = sharedFileBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
-          to_bitField0_ |= 0x00000200;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000400;
         }
         if (keyboardEventBuilder_ == null) {
           result.keyboardEvent_ = keyboardEvent_;
         } else {
           result.keyboardEvent_ = keyboardEventBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
-          to_bitField0_ |= 0x00000400;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000800;
         }
-        result.timeStamp_ = timeStamp_;
+        if (cloudStorageTokenRequestBuilder_ == null) {
+          result.cloudStorageTokenRequest_ = cloudStorageTokenRequest_;
+        } else {
+          result.cloudStorageTokenRequest_ = cloudStorageTokenRequestBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        if (cloudStorageTokenBuilder_ == null) {
+          result.cloudStorageToken_ = cloudStorageToken_;
+        } else {
+          result.cloudStorageToken_ = cloudStorageTokenBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1235,11 +1379,14 @@ public final class Data {
 
       public Builder mergeFrom(common.message.Data.DataPacket other) {
         if (other == common.message.Data.DataPacket.getDefaultInstance()) return this;
+        if (other.hasUnixTimeStamp()) {
+          setUnixTimeStamp(other.getUnixTimeStamp());
+        }
         if (other.hasDataPacketType()) {
           setDataPacketType(other.getDataPacketType());
         }
-        if (other.hasInfo()) {
-          mergeInfo(other.getInfo());
+        if (other.hasDeviceInfo()) {
+          mergeDeviceInfo(other.getDeviceInfo());
         }
         if (other.hasVideo()) {
           mergeVideo(other.getVideo());
@@ -1250,38 +1397,39 @@ public final class Data {
         if (other.hasCommand()) {
           mergeCommand(other.getCommand());
         }
-        if (other.hasRequest()) {
-          mergeRequest(other.getRequest());
+        if (other.hasFileRequest()) {
+          mergeFileRequest(other.getFileRequest());
         }
-        if (other.hasRequestFeedback()) {
-          mergeRequestFeedback(other.getRequestFeedback());
+        if (other.hasFileInfo()) {
+          mergeFileInfo(other.getFileInfo());
+        }
+        if (other.hasFileBlock()) {
+          mergeFileBlock(other.getFileBlock());
         }
         if (other.hasSharedMessage()) {
           mergeSharedMessage(other.getSharedMessage());
         }
-        if (other.hasSharedFile()) {
-          mergeSharedFile(other.getSharedFile());
-        }
         if (other.hasKeyboardEvent()) {
           mergeKeyboardEvent(other.getKeyboardEvent());
         }
-        if (other.hasTimeStamp()) {
-          setTimeStamp(other.getTimeStamp());
+        if (other.hasCloudStorageTokenRequest()) {
+          mergeCloudStorageTokenRequest(other.getCloudStorageTokenRequest());
+        }
+        if (other.hasCloudStorageToken()) {
+          mergeCloudStorageToken(other.getCloudStorageToken());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
 
       public final boolean isInitialized() {
-        if (!hasDataPacketType()) {
+        if (!hasUnixTimeStamp()) {
           
           return false;
         }
-        if (hasInfo()) {
-          if (!getInfo().isInitialized()) {
-            
-            return false;
-          }
+        if (!hasDataPacketType()) {
+          
+          return false;
         }
         if (hasVideo()) {
           if (!getVideo().isInitialized()) {
@@ -1295,14 +1443,20 @@ public final class Data {
             return false;
           }
         }
-        if (hasRequest()) {
-          if (!getRequest().isInitialized()) {
+        if (hasFileRequest()) {
+          if (!getFileRequest().isInitialized()) {
             
             return false;
           }
         }
-        if (hasRequestFeedback()) {
-          if (!getRequestFeedback().isInitialized()) {
+        if (hasFileInfo()) {
+          if (!getFileInfo().isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasFileBlock()) {
+          if (!getFileBlock().isInitialized()) {
             
             return false;
           }
@@ -1313,14 +1467,14 @@ public final class Data {
             return false;
           }
         }
-        if (hasSharedFile()) {
-          if (!getSharedFile().isInitialized()) {
+        if (hasKeyboardEvent()) {
+          if (!getKeyboardEvent().isInitialized()) {
             
             return false;
           }
         }
-        if (hasKeyboardEvent()) {
-          if (!getKeyboardEvent().isInitialized()) {
+        if (hasCloudStorageToken()) {
+          if (!getCloudStorageToken().isInitialized()) {
             
             return false;
           }
@@ -1347,171 +1501,200 @@ public final class Data {
       }
       private int bitField0_;
 
-      // required .common.message.DataPacket.DataPacketType dataPacketType = 1;
-      private common.message.Data.DataPacket.DataPacketType dataPacketType_ = common.message.Data.DataPacket.DataPacketType.Info;
+      private long unixTimeStamp_ ;
       /**
-       * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 1;</code>
+       * <code>required uint64 unixTimeStamp = 1;</code>
        */
-      public boolean hasDataPacketType() {
+      public boolean hasUnixTimeStamp() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 1;</code>
+       * <code>required uint64 unixTimeStamp = 1;</code>
+       */
+      public long getUnixTimeStamp() {
+        return unixTimeStamp_;
+      }
+      /**
+       * <code>required uint64 unixTimeStamp = 1;</code>
+       */
+      public Builder setUnixTimeStamp(long value) {
+        bitField0_ |= 0x00000001;
+        unixTimeStamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required uint64 unixTimeStamp = 1;</code>
+       */
+      public Builder clearUnixTimeStamp() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        unixTimeStamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private common.message.Data.DataPacket.DataPacketType dataPacketType_ = common.message.Data.DataPacket.DataPacketType.DeviceInfo;
+      /**
+       * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 2;</code>
+       */
+      public boolean hasDataPacketType() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 2;</code>
        */
       public common.message.Data.DataPacket.DataPacketType getDataPacketType() {
         return dataPacketType_;
       }
       /**
-       * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 1;</code>
+       * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 2;</code>
        */
       public Builder setDataPacketType(common.message.Data.DataPacket.DataPacketType value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         dataPacketType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 1;</code>
+       * <code>required .common.message.DataPacket.DataPacketType dataPacketType = 2;</code>
        */
       public Builder clearDataPacketType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        dataPacketType_ = common.message.Data.DataPacket.DataPacketType.Info;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        dataPacketType_ = common.message.Data.DataPacket.DataPacketType.DeviceInfo;
         onChanged();
         return this;
       }
 
-      // optional .common.message.Info info = 2;
-      private common.message.Data.Info info_ = common.message.Data.Info.getDefaultInstance();
+      private common.message.Data.DeviceInfo deviceInfo_ = common.message.Data.DeviceInfo.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          common.message.Data.Info, common.message.Data.Info.Builder, common.message.Data.InfoOrBuilder> infoBuilder_;
+          common.message.Data.DeviceInfo, common.message.Data.DeviceInfo.Builder, common.message.Data.DeviceInfoOrBuilder> deviceInfoBuilder_;
       /**
-       * <code>optional .common.message.Info info = 2;</code>
+       * <code>optional .common.message.DeviceInfo deviceInfo = 3;</code>
        */
-      public boolean hasInfo() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+      public boolean hasDeviceInfo() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional .common.message.Info info = 2;</code>
+       * <code>optional .common.message.DeviceInfo deviceInfo = 3;</code>
        */
-      public common.message.Data.Info getInfo() {
-        if (infoBuilder_ == null) {
-          return info_;
+      public common.message.Data.DeviceInfo getDeviceInfo() {
+        if (deviceInfoBuilder_ == null) {
+          return deviceInfo_;
         } else {
-          return infoBuilder_.getMessage();
+          return deviceInfoBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .common.message.Info info = 2;</code>
+       * <code>optional .common.message.DeviceInfo deviceInfo = 3;</code>
        */
-      public Builder setInfo(common.message.Data.Info value) {
-        if (infoBuilder_ == null) {
+      public Builder setDeviceInfo(common.message.Data.DeviceInfo value) {
+        if (deviceInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          info_ = value;
+          deviceInfo_ = value;
           onChanged();
         } else {
-          infoBuilder_.setMessage(value);
+          deviceInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
-       * <code>optional .common.message.Info info = 2;</code>
+       * <code>optional .common.message.DeviceInfo deviceInfo = 3;</code>
        */
-      public Builder setInfo(
-          common.message.Data.Info.Builder builderForValue) {
-        if (infoBuilder_ == null) {
-          info_ = builderForValue.build();
+      public Builder setDeviceInfo(
+          common.message.Data.DeviceInfo.Builder builderForValue) {
+        if (deviceInfoBuilder_ == null) {
+          deviceInfo_ = builderForValue.build();
           onChanged();
         } else {
-          infoBuilder_.setMessage(builderForValue.build());
+          deviceInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
-       * <code>optional .common.message.Info info = 2;</code>
+       * <code>optional .common.message.DeviceInfo deviceInfo = 3;</code>
        */
-      public Builder mergeInfo(common.message.Data.Info value) {
-        if (infoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002) &&
-              info_ != common.message.Data.Info.getDefaultInstance()) {
-            info_ =
-              common.message.Data.Info.newBuilder(info_).mergeFrom(value).buildPartial();
+      public Builder mergeDeviceInfo(common.message.Data.DeviceInfo value) {
+        if (deviceInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              deviceInfo_ != common.message.Data.DeviceInfo.getDefaultInstance()) {
+            deviceInfo_ =
+              common.message.Data.DeviceInfo.newBuilder(deviceInfo_).mergeFrom(value).buildPartial();
           } else {
-            info_ = value;
+            deviceInfo_ = value;
           }
           onChanged();
         } else {
-          infoBuilder_.mergeFrom(value);
+          deviceInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
-       * <code>optional .common.message.Info info = 2;</code>
+       * <code>optional .common.message.DeviceInfo deviceInfo = 3;</code>
        */
-      public Builder clearInfo() {
-        if (infoBuilder_ == null) {
-          info_ = common.message.Data.Info.getDefaultInstance();
+      public Builder clearDeviceInfo() {
+        if (deviceInfoBuilder_ == null) {
+          deviceInfo_ = common.message.Data.DeviceInfo.getDefaultInstance();
           onChanged();
         } else {
-          infoBuilder_.clear();
+          deviceInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
       /**
-       * <code>optional .common.message.Info info = 2;</code>
+       * <code>optional .common.message.DeviceInfo deviceInfo = 3;</code>
        */
-      public common.message.Data.Info.Builder getInfoBuilder() {
-        bitField0_ |= 0x00000002;
+      public common.message.Data.DeviceInfo.Builder getDeviceInfoBuilder() {
+        bitField0_ |= 0x00000004;
         onChanged();
-        return getInfoFieldBuilder().getBuilder();
+        return getDeviceInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .common.message.Info info = 2;</code>
+       * <code>optional .common.message.DeviceInfo deviceInfo = 3;</code>
        */
-      public common.message.Data.InfoOrBuilder getInfoOrBuilder() {
-        if (infoBuilder_ != null) {
-          return infoBuilder_.getMessageOrBuilder();
+      public common.message.Data.DeviceInfoOrBuilder getDeviceInfoOrBuilder() {
+        if (deviceInfoBuilder_ != null) {
+          return deviceInfoBuilder_.getMessageOrBuilder();
         } else {
-          return info_;
+          return deviceInfo_;
         }
       }
       /**
-       * <code>optional .common.message.Info info = 2;</code>
+       * <code>optional .common.message.DeviceInfo deviceInfo = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          common.message.Data.Info, common.message.Data.Info.Builder, common.message.Data.InfoOrBuilder> 
-          getInfoFieldBuilder() {
-        if (infoBuilder_ == null) {
-          infoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              common.message.Data.Info, common.message.Data.Info.Builder, common.message.Data.InfoOrBuilder>(
-                  info_,
+          common.message.Data.DeviceInfo, common.message.Data.DeviceInfo.Builder, common.message.Data.DeviceInfoOrBuilder> 
+          getDeviceInfoFieldBuilder() {
+        if (deviceInfoBuilder_ == null) {
+          deviceInfoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              common.message.Data.DeviceInfo, common.message.Data.DeviceInfo.Builder, common.message.Data.DeviceInfoOrBuilder>(
+                  getDeviceInfo(),
                   getParentForChildren(),
                   isClean());
-          info_ = null;
+          deviceInfo_ = null;
         }
-        return infoBuilder_;
+        return deviceInfoBuilder_;
       }
 
-      // optional .common.message.Video video = 3;
       private common.message.Data.Video video_ = common.message.Data.Video.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           common.message.Data.Video, common.message.Data.Video.Builder, common.message.Data.VideoOrBuilder> videoBuilder_;
       /**
-       * <code>optional .common.message.Video video = 3;</code>
+       * <code>optional .common.message.Video video = 4;</code>
        */
       public boolean hasVideo() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional .common.message.Video video = 3;</code>
+       * <code>optional .common.message.Video video = 4;</code>
        */
       public common.message.Data.Video getVideo() {
         if (videoBuilder_ == null) {
@@ -1521,7 +1704,7 @@ public final class Data {
         }
       }
       /**
-       * <code>optional .common.message.Video video = 3;</code>
+       * <code>optional .common.message.Video video = 4;</code>
        */
       public Builder setVideo(common.message.Data.Video value) {
         if (videoBuilder_ == null) {
@@ -1533,11 +1716,11 @@ public final class Data {
         } else {
           videoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
-       * <code>optional .common.message.Video video = 3;</code>
+       * <code>optional .common.message.Video video = 4;</code>
        */
       public Builder setVideo(
           common.message.Data.Video.Builder builderForValue) {
@@ -1547,15 +1730,15 @@ public final class Data {
         } else {
           videoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
-       * <code>optional .common.message.Video video = 3;</code>
+       * <code>optional .common.message.Video video = 4;</code>
        */
       public Builder mergeVideo(common.message.Data.Video value) {
         if (videoBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+          if (((bitField0_ & 0x00000008) == 0x00000008) &&
               video_ != common.message.Data.Video.getDefaultInstance()) {
             video_ =
               common.message.Data.Video.newBuilder(video_).mergeFrom(value).buildPartial();
@@ -1566,11 +1749,11 @@ public final class Data {
         } else {
           videoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
-       * <code>optional .common.message.Video video = 3;</code>
+       * <code>optional .common.message.Video video = 4;</code>
        */
       public Builder clearVideo() {
         if (videoBuilder_ == null) {
@@ -1579,19 +1762,19 @@ public final class Data {
         } else {
           videoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
       /**
-       * <code>optional .common.message.Video video = 3;</code>
+       * <code>optional .common.message.Video video = 4;</code>
        */
       public common.message.Data.Video.Builder getVideoBuilder() {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return getVideoFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .common.message.Video video = 3;</code>
+       * <code>optional .common.message.Video video = 4;</code>
        */
       public common.message.Data.VideoOrBuilder getVideoOrBuilder() {
         if (videoBuilder_ != null) {
@@ -1601,7 +1784,7 @@ public final class Data {
         }
       }
       /**
-       * <code>optional .common.message.Video video = 3;</code>
+       * <code>optional .common.message.Video video = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           common.message.Data.Video, common.message.Data.Video.Builder, common.message.Data.VideoOrBuilder> 
@@ -1609,7 +1792,7 @@ public final class Data {
         if (videoBuilder_ == null) {
           videoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               common.message.Data.Video, common.message.Data.Video.Builder, common.message.Data.VideoOrBuilder>(
-                  video_,
+                  getVideo(),
                   getParentForChildren(),
                   isClean());
           video_ = null;
@@ -1617,18 +1800,17 @@ public final class Data {
         return videoBuilder_;
       }
 
-      // optional .common.message.Audio audio = 4;
       private common.message.Data.Audio audio_ = common.message.Data.Audio.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           common.message.Data.Audio, common.message.Data.Audio.Builder, common.message.Data.AudioOrBuilder> audioBuilder_;
       /**
-       * <code>optional .common.message.Audio audio = 4;</code>
+       * <code>optional .common.message.Audio audio = 5;</code>
        */
       public boolean hasAudio() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional .common.message.Audio audio = 4;</code>
+       * <code>optional .common.message.Audio audio = 5;</code>
        */
       public common.message.Data.Audio getAudio() {
         if (audioBuilder_ == null) {
@@ -1638,7 +1820,7 @@ public final class Data {
         }
       }
       /**
-       * <code>optional .common.message.Audio audio = 4;</code>
+       * <code>optional .common.message.Audio audio = 5;</code>
        */
       public Builder setAudio(common.message.Data.Audio value) {
         if (audioBuilder_ == null) {
@@ -1650,11 +1832,11 @@ public final class Data {
         } else {
           audioBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
-       * <code>optional .common.message.Audio audio = 4;</code>
+       * <code>optional .common.message.Audio audio = 5;</code>
        */
       public Builder setAudio(
           common.message.Data.Audio.Builder builderForValue) {
@@ -1664,15 +1846,15 @@ public final class Data {
         } else {
           audioBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
-       * <code>optional .common.message.Audio audio = 4;</code>
+       * <code>optional .common.message.Audio audio = 5;</code>
        */
       public Builder mergeAudio(common.message.Data.Audio value) {
         if (audioBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008) &&
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
               audio_ != common.message.Data.Audio.getDefaultInstance()) {
             audio_ =
               common.message.Data.Audio.newBuilder(audio_).mergeFrom(value).buildPartial();
@@ -1683,11 +1865,11 @@ public final class Data {
         } else {
           audioBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
-       * <code>optional .common.message.Audio audio = 4;</code>
+       * <code>optional .common.message.Audio audio = 5;</code>
        */
       public Builder clearAudio() {
         if (audioBuilder_ == null) {
@@ -1696,19 +1878,19 @@ public final class Data {
         } else {
           audioBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
       /**
-       * <code>optional .common.message.Audio audio = 4;</code>
+       * <code>optional .common.message.Audio audio = 5;</code>
        */
       public common.message.Data.Audio.Builder getAudioBuilder() {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return getAudioFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .common.message.Audio audio = 4;</code>
+       * <code>optional .common.message.Audio audio = 5;</code>
        */
       public common.message.Data.AudioOrBuilder getAudioOrBuilder() {
         if (audioBuilder_ != null) {
@@ -1718,7 +1900,7 @@ public final class Data {
         }
       }
       /**
-       * <code>optional .common.message.Audio audio = 4;</code>
+       * <code>optional .common.message.Audio audio = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           common.message.Data.Audio, common.message.Data.Audio.Builder, common.message.Data.AudioOrBuilder> 
@@ -1726,7 +1908,7 @@ public final class Data {
         if (audioBuilder_ == null) {
           audioBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               common.message.Data.Audio, common.message.Data.Audio.Builder, common.message.Data.AudioOrBuilder>(
-                  audio_,
+                  getAudio(),
                   getParentForChildren(),
                   isClean());
           audio_ = null;
@@ -1734,18 +1916,17 @@ public final class Data {
         return audioBuilder_;
       }
 
-      // optional .common.message.Command command = 5;
       private common.message.Data.Command command_ = common.message.Data.Command.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           common.message.Data.Command, common.message.Data.Command.Builder, common.message.Data.CommandOrBuilder> commandBuilder_;
       /**
-       * <code>optional .common.message.Command command = 5;</code>
+       * <code>optional .common.message.Command command = 6;</code>
        */
       public boolean hasCommand() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>optional .common.message.Command command = 5;</code>
+       * <code>optional .common.message.Command command = 6;</code>
        */
       public common.message.Data.Command getCommand() {
         if (commandBuilder_ == null) {
@@ -1755,7 +1936,7 @@ public final class Data {
         }
       }
       /**
-       * <code>optional .common.message.Command command = 5;</code>
+       * <code>optional .common.message.Command command = 6;</code>
        */
       public Builder setCommand(common.message.Data.Command value) {
         if (commandBuilder_ == null) {
@@ -1767,11 +1948,11 @@ public final class Data {
         } else {
           commandBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         return this;
       }
       /**
-       * <code>optional .common.message.Command command = 5;</code>
+       * <code>optional .common.message.Command command = 6;</code>
        */
       public Builder setCommand(
           common.message.Data.Command.Builder builderForValue) {
@@ -1781,15 +1962,15 @@ public final class Data {
         } else {
           commandBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         return this;
       }
       /**
-       * <code>optional .common.message.Command command = 5;</code>
+       * <code>optional .common.message.Command command = 6;</code>
        */
       public Builder mergeCommand(common.message.Data.Command value) {
         if (commandBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+          if (((bitField0_ & 0x00000020) == 0x00000020) &&
               command_ != common.message.Data.Command.getDefaultInstance()) {
             command_ =
               common.message.Data.Command.newBuilder(command_).mergeFrom(value).buildPartial();
@@ -1800,11 +1981,11 @@ public final class Data {
         } else {
           commandBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         return this;
       }
       /**
-       * <code>optional .common.message.Command command = 5;</code>
+       * <code>optional .common.message.Command command = 6;</code>
        */
       public Builder clearCommand() {
         if (commandBuilder_ == null) {
@@ -1813,19 +1994,19 @@ public final class Data {
         } else {
           commandBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
       /**
-       * <code>optional .common.message.Command command = 5;</code>
+       * <code>optional .common.message.Command command = 6;</code>
        */
       public common.message.Data.Command.Builder getCommandBuilder() {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return getCommandFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .common.message.Command command = 5;</code>
+       * <code>optional .common.message.Command command = 6;</code>
        */
       public common.message.Data.CommandOrBuilder getCommandOrBuilder() {
         if (commandBuilder_ != null) {
@@ -1835,7 +2016,7 @@ public final class Data {
         }
       }
       /**
-       * <code>optional .common.message.Command command = 5;</code>
+       * <code>optional .common.message.Command command = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           common.message.Data.Command, common.message.Data.Command.Builder, common.message.Data.CommandOrBuilder> 
@@ -1843,7 +2024,7 @@ public final class Data {
         if (commandBuilder_ == null) {
           commandBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               common.message.Data.Command, common.message.Data.Command.Builder, common.message.Data.CommandOrBuilder>(
-                  command_,
+                  getCommand(),
                   getParentForChildren(),
                   isClean());
           command_ = null;
@@ -1851,252 +2032,365 @@ public final class Data {
         return commandBuilder_;
       }
 
-      // optional .common.message.Request request = 6;
-      private common.message.Data.Request request_ = common.message.Data.Request.getDefaultInstance();
+      private common.message.Data.FileRequest fileRequest_ = common.message.Data.FileRequest.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          common.message.Data.Request, common.message.Data.Request.Builder, common.message.Data.RequestOrBuilder> requestBuilder_;
+          common.message.Data.FileRequest, common.message.Data.FileRequest.Builder, common.message.Data.FileRequestOrBuilder> fileRequestBuilder_;
       /**
-       * <code>optional .common.message.Request request = 6;</code>
+       * <code>optional .common.message.FileRequest fileRequest = 7;</code>
        */
-      public boolean hasRequest() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      /**
-       * <code>optional .common.message.Request request = 6;</code>
-       */
-      public common.message.Data.Request getRequest() {
-        if (requestBuilder_ == null) {
-          return request_;
-        } else {
-          return requestBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .common.message.Request request = 6;</code>
-       */
-      public Builder setRequest(common.message.Data.Request value) {
-        if (requestBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          request_ = value;
-          onChanged();
-        } else {
-          requestBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000020;
-        return this;
-      }
-      /**
-       * <code>optional .common.message.Request request = 6;</code>
-       */
-      public Builder setRequest(
-          common.message.Data.Request.Builder builderForValue) {
-        if (requestBuilder_ == null) {
-          request_ = builderForValue.build();
-          onChanged();
-        } else {
-          requestBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000020;
-        return this;
-      }
-      /**
-       * <code>optional .common.message.Request request = 6;</code>
-       */
-      public Builder mergeRequest(common.message.Data.Request value) {
-        if (requestBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020) &&
-              request_ != common.message.Data.Request.getDefaultInstance()) {
-            request_ =
-              common.message.Data.Request.newBuilder(request_).mergeFrom(value).buildPartial();
-          } else {
-            request_ = value;
-          }
-          onChanged();
-        } else {
-          requestBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000020;
-        return this;
-      }
-      /**
-       * <code>optional .common.message.Request request = 6;</code>
-       */
-      public Builder clearRequest() {
-        if (requestBuilder_ == null) {
-          request_ = common.message.Data.Request.getDefaultInstance();
-          onChanged();
-        } else {
-          requestBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000020);
-        return this;
-      }
-      /**
-       * <code>optional .common.message.Request request = 6;</code>
-       */
-      public common.message.Data.Request.Builder getRequestBuilder() {
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return getRequestFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .common.message.Request request = 6;</code>
-       */
-      public common.message.Data.RequestOrBuilder getRequestOrBuilder() {
-        if (requestBuilder_ != null) {
-          return requestBuilder_.getMessageOrBuilder();
-        } else {
-          return request_;
-        }
-      }
-      /**
-       * <code>optional .common.message.Request request = 6;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          common.message.Data.Request, common.message.Data.Request.Builder, common.message.Data.RequestOrBuilder> 
-          getRequestFieldBuilder() {
-        if (requestBuilder_ == null) {
-          requestBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              common.message.Data.Request, common.message.Data.Request.Builder, common.message.Data.RequestOrBuilder>(
-                  request_,
-                  getParentForChildren(),
-                  isClean());
-          request_ = null;
-        }
-        return requestBuilder_;
-      }
-
-      // optional .common.message.RequestFeedback requestFeedback = 7;
-      private common.message.Data.RequestFeedback requestFeedback_ = common.message.Data.RequestFeedback.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          common.message.Data.RequestFeedback, common.message.Data.RequestFeedback.Builder, common.message.Data.RequestFeedbackOrBuilder> requestFeedbackBuilder_;
-      /**
-       * <code>optional .common.message.RequestFeedback requestFeedback = 7;</code>
-       */
-      public boolean hasRequestFeedback() {
+      public boolean hasFileRequest() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>optional .common.message.RequestFeedback requestFeedback = 7;</code>
+       * <code>optional .common.message.FileRequest fileRequest = 7;</code>
        */
-      public common.message.Data.RequestFeedback getRequestFeedback() {
-        if (requestFeedbackBuilder_ == null) {
-          return requestFeedback_;
+      public common.message.Data.FileRequest getFileRequest() {
+        if (fileRequestBuilder_ == null) {
+          return fileRequest_;
         } else {
-          return requestFeedbackBuilder_.getMessage();
+          return fileRequestBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .common.message.RequestFeedback requestFeedback = 7;</code>
+       * <code>optional .common.message.FileRequest fileRequest = 7;</code>
        */
-      public Builder setRequestFeedback(common.message.Data.RequestFeedback value) {
-        if (requestFeedbackBuilder_ == null) {
+      public Builder setFileRequest(common.message.Data.FileRequest value) {
+        if (fileRequestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          requestFeedback_ = value;
+          fileRequest_ = value;
           onChanged();
         } else {
-          requestFeedbackBuilder_.setMessage(value);
+          fileRequestBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000040;
         return this;
       }
       /**
-       * <code>optional .common.message.RequestFeedback requestFeedback = 7;</code>
+       * <code>optional .common.message.FileRequest fileRequest = 7;</code>
        */
-      public Builder setRequestFeedback(
-          common.message.Data.RequestFeedback.Builder builderForValue) {
-        if (requestFeedbackBuilder_ == null) {
-          requestFeedback_ = builderForValue.build();
+      public Builder setFileRequest(
+          common.message.Data.FileRequest.Builder builderForValue) {
+        if (fileRequestBuilder_ == null) {
+          fileRequest_ = builderForValue.build();
           onChanged();
         } else {
-          requestFeedbackBuilder_.setMessage(builderForValue.build());
+          fileRequestBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000040;
         return this;
       }
       /**
-       * <code>optional .common.message.RequestFeedback requestFeedback = 7;</code>
+       * <code>optional .common.message.FileRequest fileRequest = 7;</code>
        */
-      public Builder mergeRequestFeedback(common.message.Data.RequestFeedback value) {
-        if (requestFeedbackBuilder_ == null) {
+      public Builder mergeFileRequest(common.message.Data.FileRequest value) {
+        if (fileRequestBuilder_ == null) {
           if (((bitField0_ & 0x00000040) == 0x00000040) &&
-              requestFeedback_ != common.message.Data.RequestFeedback.getDefaultInstance()) {
-            requestFeedback_ =
-              common.message.Data.RequestFeedback.newBuilder(requestFeedback_).mergeFrom(value).buildPartial();
+              fileRequest_ != common.message.Data.FileRequest.getDefaultInstance()) {
+            fileRequest_ =
+              common.message.Data.FileRequest.newBuilder(fileRequest_).mergeFrom(value).buildPartial();
           } else {
-            requestFeedback_ = value;
+            fileRequest_ = value;
           }
           onChanged();
         } else {
-          requestFeedbackBuilder_.mergeFrom(value);
+          fileRequestBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000040;
         return this;
       }
       /**
-       * <code>optional .common.message.RequestFeedback requestFeedback = 7;</code>
+       * <code>optional .common.message.FileRequest fileRequest = 7;</code>
        */
-      public Builder clearRequestFeedback() {
-        if (requestFeedbackBuilder_ == null) {
-          requestFeedback_ = common.message.Data.RequestFeedback.getDefaultInstance();
+      public Builder clearFileRequest() {
+        if (fileRequestBuilder_ == null) {
+          fileRequest_ = common.message.Data.FileRequest.getDefaultInstance();
           onChanged();
         } else {
-          requestFeedbackBuilder_.clear();
+          fileRequestBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
       /**
-       * <code>optional .common.message.RequestFeedback requestFeedback = 7;</code>
+       * <code>optional .common.message.FileRequest fileRequest = 7;</code>
        */
-      public common.message.Data.RequestFeedback.Builder getRequestFeedbackBuilder() {
+      public common.message.Data.FileRequest.Builder getFileRequestBuilder() {
         bitField0_ |= 0x00000040;
         onChanged();
-        return getRequestFeedbackFieldBuilder().getBuilder();
+        return getFileRequestFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .common.message.RequestFeedback requestFeedback = 7;</code>
+       * <code>optional .common.message.FileRequest fileRequest = 7;</code>
        */
-      public common.message.Data.RequestFeedbackOrBuilder getRequestFeedbackOrBuilder() {
-        if (requestFeedbackBuilder_ != null) {
-          return requestFeedbackBuilder_.getMessageOrBuilder();
+      public common.message.Data.FileRequestOrBuilder getFileRequestOrBuilder() {
+        if (fileRequestBuilder_ != null) {
+          return fileRequestBuilder_.getMessageOrBuilder();
         } else {
-          return requestFeedback_;
+          return fileRequest_;
         }
       }
       /**
-       * <code>optional .common.message.RequestFeedback requestFeedback = 7;</code>
+       * <code>optional .common.message.FileRequest fileRequest = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          common.message.Data.RequestFeedback, common.message.Data.RequestFeedback.Builder, common.message.Data.RequestFeedbackOrBuilder> 
-          getRequestFeedbackFieldBuilder() {
-        if (requestFeedbackBuilder_ == null) {
-          requestFeedbackBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              common.message.Data.RequestFeedback, common.message.Data.RequestFeedback.Builder, common.message.Data.RequestFeedbackOrBuilder>(
-                  requestFeedback_,
+          common.message.Data.FileRequest, common.message.Data.FileRequest.Builder, common.message.Data.FileRequestOrBuilder> 
+          getFileRequestFieldBuilder() {
+        if (fileRequestBuilder_ == null) {
+          fileRequestBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              common.message.Data.FileRequest, common.message.Data.FileRequest.Builder, common.message.Data.FileRequestOrBuilder>(
+                  getFileRequest(),
                   getParentForChildren(),
                   isClean());
-          requestFeedback_ = null;
+          fileRequest_ = null;
         }
-        return requestFeedbackBuilder_;
+        return fileRequestBuilder_;
       }
 
-      // optional .common.message.SharedMessage sharedMessage = 8;
+      private common.message.Data.FileInfo fileInfo_ = common.message.Data.FileInfo.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          common.message.Data.FileInfo, common.message.Data.FileInfo.Builder, common.message.Data.FileInfoOrBuilder> fileInfoBuilder_;
+      /**
+       * <code>optional .common.message.FileInfo fileInfo = 8;</code>
+       */
+      public boolean hasFileInfo() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional .common.message.FileInfo fileInfo = 8;</code>
+       */
+      public common.message.Data.FileInfo getFileInfo() {
+        if (fileInfoBuilder_ == null) {
+          return fileInfo_;
+        } else {
+          return fileInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .common.message.FileInfo fileInfo = 8;</code>
+       */
+      public Builder setFileInfo(common.message.Data.FileInfo value) {
+        if (fileInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          fileInfo_ = value;
+          onChanged();
+        } else {
+          fileInfoBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <code>optional .common.message.FileInfo fileInfo = 8;</code>
+       */
+      public Builder setFileInfo(
+          common.message.Data.FileInfo.Builder builderForValue) {
+        if (fileInfoBuilder_ == null) {
+          fileInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          fileInfoBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <code>optional .common.message.FileInfo fileInfo = 8;</code>
+       */
+      public Builder mergeFileInfo(common.message.Data.FileInfo value) {
+        if (fileInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) == 0x00000080) &&
+              fileInfo_ != common.message.Data.FileInfo.getDefaultInstance()) {
+            fileInfo_ =
+              common.message.Data.FileInfo.newBuilder(fileInfo_).mergeFrom(value).buildPartial();
+          } else {
+            fileInfo_ = value;
+          }
+          onChanged();
+        } else {
+          fileInfoBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      /**
+       * <code>optional .common.message.FileInfo fileInfo = 8;</code>
+       */
+      public Builder clearFileInfo() {
+        if (fileInfoBuilder_ == null) {
+          fileInfo_ = common.message.Data.FileInfo.getDefaultInstance();
+          onChanged();
+        } else {
+          fileInfoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+      /**
+       * <code>optional .common.message.FileInfo fileInfo = 8;</code>
+       */
+      public common.message.Data.FileInfo.Builder getFileInfoBuilder() {
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return getFileInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .common.message.FileInfo fileInfo = 8;</code>
+       */
+      public common.message.Data.FileInfoOrBuilder getFileInfoOrBuilder() {
+        if (fileInfoBuilder_ != null) {
+          return fileInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return fileInfo_;
+        }
+      }
+      /**
+       * <code>optional .common.message.FileInfo fileInfo = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          common.message.Data.FileInfo, common.message.Data.FileInfo.Builder, common.message.Data.FileInfoOrBuilder> 
+          getFileInfoFieldBuilder() {
+        if (fileInfoBuilder_ == null) {
+          fileInfoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              common.message.Data.FileInfo, common.message.Data.FileInfo.Builder, common.message.Data.FileInfoOrBuilder>(
+                  getFileInfo(),
+                  getParentForChildren(),
+                  isClean());
+          fileInfo_ = null;
+        }
+        return fileInfoBuilder_;
+      }
+
+      private common.message.Data.FileBlock fileBlock_ = common.message.Data.FileBlock.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          common.message.Data.FileBlock, common.message.Data.FileBlock.Builder, common.message.Data.FileBlockOrBuilder> fileBlockBuilder_;
+      /**
+       * <code>optional .common.message.FileBlock fileBlock = 9;</code>
+       */
+      public boolean hasFileBlock() {
+        return ((bitField0_ & 0x00000100) == 0x00000100);
+      }
+      /**
+       * <code>optional .common.message.FileBlock fileBlock = 9;</code>
+       */
+      public common.message.Data.FileBlock getFileBlock() {
+        if (fileBlockBuilder_ == null) {
+          return fileBlock_;
+        } else {
+          return fileBlockBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .common.message.FileBlock fileBlock = 9;</code>
+       */
+      public Builder setFileBlock(common.message.Data.FileBlock value) {
+        if (fileBlockBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          fileBlock_ = value;
+          onChanged();
+        } else {
+          fileBlockBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      /**
+       * <code>optional .common.message.FileBlock fileBlock = 9;</code>
+       */
+      public Builder setFileBlock(
+          common.message.Data.FileBlock.Builder builderForValue) {
+        if (fileBlockBuilder_ == null) {
+          fileBlock_ = builderForValue.build();
+          onChanged();
+        } else {
+          fileBlockBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      /**
+       * <code>optional .common.message.FileBlock fileBlock = 9;</code>
+       */
+      public Builder mergeFileBlock(common.message.Data.FileBlock value) {
+        if (fileBlockBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) == 0x00000100) &&
+              fileBlock_ != common.message.Data.FileBlock.getDefaultInstance()) {
+            fileBlock_ =
+              common.message.Data.FileBlock.newBuilder(fileBlock_).mergeFrom(value).buildPartial();
+          } else {
+            fileBlock_ = value;
+          }
+          onChanged();
+        } else {
+          fileBlockBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      /**
+       * <code>optional .common.message.FileBlock fileBlock = 9;</code>
+       */
+      public Builder clearFileBlock() {
+        if (fileBlockBuilder_ == null) {
+          fileBlock_ = common.message.Data.FileBlock.getDefaultInstance();
+          onChanged();
+        } else {
+          fileBlockBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000100);
+        return this;
+      }
+      /**
+       * <code>optional .common.message.FileBlock fileBlock = 9;</code>
+       */
+      public common.message.Data.FileBlock.Builder getFileBlockBuilder() {
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return getFileBlockFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .common.message.FileBlock fileBlock = 9;</code>
+       */
+      public common.message.Data.FileBlockOrBuilder getFileBlockOrBuilder() {
+        if (fileBlockBuilder_ != null) {
+          return fileBlockBuilder_.getMessageOrBuilder();
+        } else {
+          return fileBlock_;
+        }
+      }
+      /**
+       * <code>optional .common.message.FileBlock fileBlock = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          common.message.Data.FileBlock, common.message.Data.FileBlock.Builder, common.message.Data.FileBlockOrBuilder> 
+          getFileBlockFieldBuilder() {
+        if (fileBlockBuilder_ == null) {
+          fileBlockBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              common.message.Data.FileBlock, common.message.Data.FileBlock.Builder, common.message.Data.FileBlockOrBuilder>(
+                  getFileBlock(),
+                  getParentForChildren(),
+                  isClean());
+          fileBlock_ = null;
+        }
+        return fileBlockBuilder_;
+      }
+
       private common.message.Data.SharedMessage sharedMessage_ = common.message.Data.SharedMessage.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           common.message.Data.SharedMessage, common.message.Data.SharedMessage.Builder, common.message.Data.SharedMessageOrBuilder> sharedMessageBuilder_;
       /**
-       * <code>optional .common.message.SharedMessage sharedMessage = 8;</code>
+       * <code>optional .common.message.SharedMessage sharedMessage = 10;</code>
        */
       public boolean hasSharedMessage() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
-       * <code>optional .common.message.SharedMessage sharedMessage = 8;</code>
+       * <code>optional .common.message.SharedMessage sharedMessage = 10;</code>
        */
       public common.message.Data.SharedMessage getSharedMessage() {
         if (sharedMessageBuilder_ == null) {
@@ -2106,7 +2400,7 @@ public final class Data {
         }
       }
       /**
-       * <code>optional .common.message.SharedMessage sharedMessage = 8;</code>
+       * <code>optional .common.message.SharedMessage sharedMessage = 10;</code>
        */
       public Builder setSharedMessage(common.message.Data.SharedMessage value) {
         if (sharedMessageBuilder_ == null) {
@@ -2118,11 +2412,11 @@ public final class Data {
         } else {
           sharedMessageBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         return this;
       }
       /**
-       * <code>optional .common.message.SharedMessage sharedMessage = 8;</code>
+       * <code>optional .common.message.SharedMessage sharedMessage = 10;</code>
        */
       public Builder setSharedMessage(
           common.message.Data.SharedMessage.Builder builderForValue) {
@@ -2132,15 +2426,15 @@ public final class Data {
         } else {
           sharedMessageBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         return this;
       }
       /**
-       * <code>optional .common.message.SharedMessage sharedMessage = 8;</code>
+       * <code>optional .common.message.SharedMessage sharedMessage = 10;</code>
        */
       public Builder mergeSharedMessage(common.message.Data.SharedMessage value) {
         if (sharedMessageBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) == 0x00000080) &&
+          if (((bitField0_ & 0x00000200) == 0x00000200) &&
               sharedMessage_ != common.message.Data.SharedMessage.getDefaultInstance()) {
             sharedMessage_ =
               common.message.Data.SharedMessage.newBuilder(sharedMessage_).mergeFrom(value).buildPartial();
@@ -2151,11 +2445,11 @@ public final class Data {
         } else {
           sharedMessageBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         return this;
       }
       /**
-       * <code>optional .common.message.SharedMessage sharedMessage = 8;</code>
+       * <code>optional .common.message.SharedMessage sharedMessage = 10;</code>
        */
       public Builder clearSharedMessage() {
         if (sharedMessageBuilder_ == null) {
@@ -2164,19 +2458,19 @@ public final class Data {
         } else {
           sharedMessageBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
       /**
-       * <code>optional .common.message.SharedMessage sharedMessage = 8;</code>
+       * <code>optional .common.message.SharedMessage sharedMessage = 10;</code>
        */
       public common.message.Data.SharedMessage.Builder getSharedMessageBuilder() {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
         return getSharedMessageFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .common.message.SharedMessage sharedMessage = 8;</code>
+       * <code>optional .common.message.SharedMessage sharedMessage = 10;</code>
        */
       public common.message.Data.SharedMessageOrBuilder getSharedMessageOrBuilder() {
         if (sharedMessageBuilder_ != null) {
@@ -2186,7 +2480,7 @@ public final class Data {
         }
       }
       /**
-       * <code>optional .common.message.SharedMessage sharedMessage = 8;</code>
+       * <code>optional .common.message.SharedMessage sharedMessage = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           common.message.Data.SharedMessage, common.message.Data.SharedMessage.Builder, common.message.Data.SharedMessageOrBuilder> 
@@ -2194,7 +2488,7 @@ public final class Data {
         if (sharedMessageBuilder_ == null) {
           sharedMessageBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               common.message.Data.SharedMessage, common.message.Data.SharedMessage.Builder, common.message.Data.SharedMessageOrBuilder>(
-                  sharedMessage_,
+                  getSharedMessage(),
                   getParentForChildren(),
                   isClean());
           sharedMessage_ = null;
@@ -2202,135 +2496,17 @@ public final class Data {
         return sharedMessageBuilder_;
       }
 
-      // optional .common.message.SharedFile sharedFile = 9;
-      private common.message.Data.SharedFile sharedFile_ = common.message.Data.SharedFile.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          common.message.Data.SharedFile, common.message.Data.SharedFile.Builder, common.message.Data.SharedFileOrBuilder> sharedFileBuilder_;
-      /**
-       * <code>optional .common.message.SharedFile sharedFile = 9;</code>
-       */
-      public boolean hasSharedFile() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
-      }
-      /**
-       * <code>optional .common.message.SharedFile sharedFile = 9;</code>
-       */
-      public common.message.Data.SharedFile getSharedFile() {
-        if (sharedFileBuilder_ == null) {
-          return sharedFile_;
-        } else {
-          return sharedFileBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .common.message.SharedFile sharedFile = 9;</code>
-       */
-      public Builder setSharedFile(common.message.Data.SharedFile value) {
-        if (sharedFileBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          sharedFile_ = value;
-          onChanged();
-        } else {
-          sharedFileBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000100;
-        return this;
-      }
-      /**
-       * <code>optional .common.message.SharedFile sharedFile = 9;</code>
-       */
-      public Builder setSharedFile(
-          common.message.Data.SharedFile.Builder builderForValue) {
-        if (sharedFileBuilder_ == null) {
-          sharedFile_ = builderForValue.build();
-          onChanged();
-        } else {
-          sharedFileBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000100;
-        return this;
-      }
-      /**
-       * <code>optional .common.message.SharedFile sharedFile = 9;</code>
-       */
-      public Builder mergeSharedFile(common.message.Data.SharedFile value) {
-        if (sharedFileBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) == 0x00000100) &&
-              sharedFile_ != common.message.Data.SharedFile.getDefaultInstance()) {
-            sharedFile_ =
-              common.message.Data.SharedFile.newBuilder(sharedFile_).mergeFrom(value).buildPartial();
-          } else {
-            sharedFile_ = value;
-          }
-          onChanged();
-        } else {
-          sharedFileBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000100;
-        return this;
-      }
-      /**
-       * <code>optional .common.message.SharedFile sharedFile = 9;</code>
-       */
-      public Builder clearSharedFile() {
-        if (sharedFileBuilder_ == null) {
-          sharedFile_ = common.message.Data.SharedFile.getDefaultInstance();
-          onChanged();
-        } else {
-          sharedFileBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000100);
-        return this;
-      }
-      /**
-       * <code>optional .common.message.SharedFile sharedFile = 9;</code>
-       */
-      public common.message.Data.SharedFile.Builder getSharedFileBuilder() {
-        bitField0_ |= 0x00000100;
-        onChanged();
-        return getSharedFileFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .common.message.SharedFile sharedFile = 9;</code>
-       */
-      public common.message.Data.SharedFileOrBuilder getSharedFileOrBuilder() {
-        if (sharedFileBuilder_ != null) {
-          return sharedFileBuilder_.getMessageOrBuilder();
-        } else {
-          return sharedFile_;
-        }
-      }
-      /**
-       * <code>optional .common.message.SharedFile sharedFile = 9;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          common.message.Data.SharedFile, common.message.Data.SharedFile.Builder, common.message.Data.SharedFileOrBuilder> 
-          getSharedFileFieldBuilder() {
-        if (sharedFileBuilder_ == null) {
-          sharedFileBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              common.message.Data.SharedFile, common.message.Data.SharedFile.Builder, common.message.Data.SharedFileOrBuilder>(
-                  sharedFile_,
-                  getParentForChildren(),
-                  isClean());
-          sharedFile_ = null;
-        }
-        return sharedFileBuilder_;
-      }
-
-      // optional .common.message.KeyboardEvent keyboardEvent = 10;
       private common.message.Data.KeyboardEvent keyboardEvent_ = common.message.Data.KeyboardEvent.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           common.message.Data.KeyboardEvent, common.message.Data.KeyboardEvent.Builder, common.message.Data.KeyboardEventOrBuilder> keyboardEventBuilder_;
       /**
-       * <code>optional .common.message.KeyboardEvent keyboardEvent = 10;</code>
+       * <code>optional .common.message.KeyboardEvent keyboardEvent = 11;</code>
        */
       public boolean hasKeyboardEvent() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
-       * <code>optional .common.message.KeyboardEvent keyboardEvent = 10;</code>
+       * <code>optional .common.message.KeyboardEvent keyboardEvent = 11;</code>
        */
       public common.message.Data.KeyboardEvent getKeyboardEvent() {
         if (keyboardEventBuilder_ == null) {
@@ -2340,7 +2516,7 @@ public final class Data {
         }
       }
       /**
-       * <code>optional .common.message.KeyboardEvent keyboardEvent = 10;</code>
+       * <code>optional .common.message.KeyboardEvent keyboardEvent = 11;</code>
        */
       public Builder setKeyboardEvent(common.message.Data.KeyboardEvent value) {
         if (keyboardEventBuilder_ == null) {
@@ -2352,11 +2528,11 @@ public final class Data {
         } else {
           keyboardEventBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         return this;
       }
       /**
-       * <code>optional .common.message.KeyboardEvent keyboardEvent = 10;</code>
+       * <code>optional .common.message.KeyboardEvent keyboardEvent = 11;</code>
        */
       public Builder setKeyboardEvent(
           common.message.Data.KeyboardEvent.Builder builderForValue) {
@@ -2366,15 +2542,15 @@ public final class Data {
         } else {
           keyboardEventBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         return this;
       }
       /**
-       * <code>optional .common.message.KeyboardEvent keyboardEvent = 10;</code>
+       * <code>optional .common.message.KeyboardEvent keyboardEvent = 11;</code>
        */
       public Builder mergeKeyboardEvent(common.message.Data.KeyboardEvent value) {
         if (keyboardEventBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) == 0x00000200) &&
+          if (((bitField0_ & 0x00000400) == 0x00000400) &&
               keyboardEvent_ != common.message.Data.KeyboardEvent.getDefaultInstance()) {
             keyboardEvent_ =
               common.message.Data.KeyboardEvent.newBuilder(keyboardEvent_).mergeFrom(value).buildPartial();
@@ -2385,11 +2561,11 @@ public final class Data {
         } else {
           keyboardEventBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         return this;
       }
       /**
-       * <code>optional .common.message.KeyboardEvent keyboardEvent = 10;</code>
+       * <code>optional .common.message.KeyboardEvent keyboardEvent = 11;</code>
        */
       public Builder clearKeyboardEvent() {
         if (keyboardEventBuilder_ == null) {
@@ -2398,19 +2574,19 @@ public final class Data {
         } else {
           keyboardEventBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         return this;
       }
       /**
-       * <code>optional .common.message.KeyboardEvent keyboardEvent = 10;</code>
+       * <code>optional .common.message.KeyboardEvent keyboardEvent = 11;</code>
        */
       public common.message.Data.KeyboardEvent.Builder getKeyboardEventBuilder() {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
         return getKeyboardEventFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .common.message.KeyboardEvent keyboardEvent = 10;</code>
+       * <code>optional .common.message.KeyboardEvent keyboardEvent = 11;</code>
        */
       public common.message.Data.KeyboardEventOrBuilder getKeyboardEventOrBuilder() {
         if (keyboardEventBuilder_ != null) {
@@ -2420,7 +2596,7 @@ public final class Data {
         }
       }
       /**
-       * <code>optional .common.message.KeyboardEvent keyboardEvent = 10;</code>
+       * <code>optional .common.message.KeyboardEvent keyboardEvent = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           common.message.Data.KeyboardEvent, common.message.Data.KeyboardEvent.Builder, common.message.Data.KeyboardEventOrBuilder> 
@@ -2428,7 +2604,7 @@ public final class Data {
         if (keyboardEventBuilder_ == null) {
           keyboardEventBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               common.message.Data.KeyboardEvent, common.message.Data.KeyboardEvent.Builder, common.message.Data.KeyboardEventOrBuilder>(
-                  keyboardEvent_,
+                  getKeyboardEvent(),
                   getParentForChildren(),
                   isClean());
           keyboardEvent_ = null;
@@ -2436,40 +2612,236 @@ public final class Data {
         return keyboardEventBuilder_;
       }
 
-      // optional bytes timeStamp = 11;
-      private com.google.protobuf.ByteString timeStamp_ = com.google.protobuf.ByteString.EMPTY;
+      private common.message.Data.CloudStorageTokenRequest cloudStorageTokenRequest_ = common.message.Data.CloudStorageTokenRequest.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          common.message.Data.CloudStorageTokenRequest, common.message.Data.CloudStorageTokenRequest.Builder, common.message.Data.CloudStorageTokenRequestOrBuilder> cloudStorageTokenRequestBuilder_;
       /**
-       * <code>optional bytes timeStamp = 11;</code>
+       * <code>optional .common.message.CloudStorageTokenRequest cloudStorageTokenRequest = 12;</code>
        */
-      public boolean hasTimeStamp() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+      public boolean hasCloudStorageTokenRequest() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
-       * <code>optional bytes timeStamp = 11;</code>
+       * <code>optional .common.message.CloudStorageTokenRequest cloudStorageTokenRequest = 12;</code>
        */
-      public com.google.protobuf.ByteString getTimeStamp() {
-        return timeStamp_;
+      public common.message.Data.CloudStorageTokenRequest getCloudStorageTokenRequest() {
+        if (cloudStorageTokenRequestBuilder_ == null) {
+          return cloudStorageTokenRequest_;
+        } else {
+          return cloudStorageTokenRequestBuilder_.getMessage();
+        }
       }
       /**
-       * <code>optional bytes timeStamp = 11;</code>
+       * <code>optional .common.message.CloudStorageTokenRequest cloudStorageTokenRequest = 12;</code>
        */
-      public Builder setTimeStamp(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000400;
-        timeStamp_ = value;
-        onChanged();
+      public Builder setCloudStorageTokenRequest(common.message.Data.CloudStorageTokenRequest value) {
+        if (cloudStorageTokenRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          cloudStorageTokenRequest_ = value;
+          onChanged();
+        } else {
+          cloudStorageTokenRequestBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000800;
         return this;
       }
       /**
-       * <code>optional bytes timeStamp = 11;</code>
+       * <code>optional .common.message.CloudStorageTokenRequest cloudStorageTokenRequest = 12;</code>
        */
-      public Builder clearTimeStamp() {
-        bitField0_ = (bitField0_ & ~0x00000400);
-        timeStamp_ = getDefaultInstance().getTimeStamp();
-        onChanged();
+      public Builder setCloudStorageTokenRequest(
+          common.message.Data.CloudStorageTokenRequest.Builder builderForValue) {
+        if (cloudStorageTokenRequestBuilder_ == null) {
+          cloudStorageTokenRequest_ = builderForValue.build();
+          onChanged();
+        } else {
+          cloudStorageTokenRequestBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000800;
         return this;
+      }
+      /**
+       * <code>optional .common.message.CloudStorageTokenRequest cloudStorageTokenRequest = 12;</code>
+       */
+      public Builder mergeCloudStorageTokenRequest(common.message.Data.CloudStorageTokenRequest value) {
+        if (cloudStorageTokenRequestBuilder_ == null) {
+          if (((bitField0_ & 0x00000800) == 0x00000800) &&
+              cloudStorageTokenRequest_ != common.message.Data.CloudStorageTokenRequest.getDefaultInstance()) {
+            cloudStorageTokenRequest_ =
+              common.message.Data.CloudStorageTokenRequest.newBuilder(cloudStorageTokenRequest_).mergeFrom(value).buildPartial();
+          } else {
+            cloudStorageTokenRequest_ = value;
+          }
+          onChanged();
+        } else {
+          cloudStorageTokenRequestBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000800;
+        return this;
+      }
+      /**
+       * <code>optional .common.message.CloudStorageTokenRequest cloudStorageTokenRequest = 12;</code>
+       */
+      public Builder clearCloudStorageTokenRequest() {
+        if (cloudStorageTokenRequestBuilder_ == null) {
+          cloudStorageTokenRequest_ = common.message.Data.CloudStorageTokenRequest.getDefaultInstance();
+          onChanged();
+        } else {
+          cloudStorageTokenRequestBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000800);
+        return this;
+      }
+      /**
+       * <code>optional .common.message.CloudStorageTokenRequest cloudStorageTokenRequest = 12;</code>
+       */
+      public common.message.Data.CloudStorageTokenRequest.Builder getCloudStorageTokenRequestBuilder() {
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return getCloudStorageTokenRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .common.message.CloudStorageTokenRequest cloudStorageTokenRequest = 12;</code>
+       */
+      public common.message.Data.CloudStorageTokenRequestOrBuilder getCloudStorageTokenRequestOrBuilder() {
+        if (cloudStorageTokenRequestBuilder_ != null) {
+          return cloudStorageTokenRequestBuilder_.getMessageOrBuilder();
+        } else {
+          return cloudStorageTokenRequest_;
+        }
+      }
+      /**
+       * <code>optional .common.message.CloudStorageTokenRequest cloudStorageTokenRequest = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          common.message.Data.CloudStorageTokenRequest, common.message.Data.CloudStorageTokenRequest.Builder, common.message.Data.CloudStorageTokenRequestOrBuilder> 
+          getCloudStorageTokenRequestFieldBuilder() {
+        if (cloudStorageTokenRequestBuilder_ == null) {
+          cloudStorageTokenRequestBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              common.message.Data.CloudStorageTokenRequest, common.message.Data.CloudStorageTokenRequest.Builder, common.message.Data.CloudStorageTokenRequestOrBuilder>(
+                  getCloudStorageTokenRequest(),
+                  getParentForChildren(),
+                  isClean());
+          cloudStorageTokenRequest_ = null;
+        }
+        return cloudStorageTokenRequestBuilder_;
+      }
+
+      private common.message.Data.CloudStorageToken cloudStorageToken_ = common.message.Data.CloudStorageToken.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          common.message.Data.CloudStorageToken, common.message.Data.CloudStorageToken.Builder, common.message.Data.CloudStorageTokenOrBuilder> cloudStorageTokenBuilder_;
+      /**
+       * <code>optional .common.message.CloudStorageToken cloudStorageToken = 13;</code>
+       */
+      public boolean hasCloudStorageToken() {
+        return ((bitField0_ & 0x00001000) == 0x00001000);
+      }
+      /**
+       * <code>optional .common.message.CloudStorageToken cloudStorageToken = 13;</code>
+       */
+      public common.message.Data.CloudStorageToken getCloudStorageToken() {
+        if (cloudStorageTokenBuilder_ == null) {
+          return cloudStorageToken_;
+        } else {
+          return cloudStorageTokenBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .common.message.CloudStorageToken cloudStorageToken = 13;</code>
+       */
+      public Builder setCloudStorageToken(common.message.Data.CloudStorageToken value) {
+        if (cloudStorageTokenBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          cloudStorageToken_ = value;
+          onChanged();
+        } else {
+          cloudStorageTokenBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      /**
+       * <code>optional .common.message.CloudStorageToken cloudStorageToken = 13;</code>
+       */
+      public Builder setCloudStorageToken(
+          common.message.Data.CloudStorageToken.Builder builderForValue) {
+        if (cloudStorageTokenBuilder_ == null) {
+          cloudStorageToken_ = builderForValue.build();
+          onChanged();
+        } else {
+          cloudStorageTokenBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      /**
+       * <code>optional .common.message.CloudStorageToken cloudStorageToken = 13;</code>
+       */
+      public Builder mergeCloudStorageToken(common.message.Data.CloudStorageToken value) {
+        if (cloudStorageTokenBuilder_ == null) {
+          if (((bitField0_ & 0x00001000) == 0x00001000) &&
+              cloudStorageToken_ != common.message.Data.CloudStorageToken.getDefaultInstance()) {
+            cloudStorageToken_ =
+              common.message.Data.CloudStorageToken.newBuilder(cloudStorageToken_).mergeFrom(value).buildPartial();
+          } else {
+            cloudStorageToken_ = value;
+          }
+          onChanged();
+        } else {
+          cloudStorageTokenBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      /**
+       * <code>optional .common.message.CloudStorageToken cloudStorageToken = 13;</code>
+       */
+      public Builder clearCloudStorageToken() {
+        if (cloudStorageTokenBuilder_ == null) {
+          cloudStorageToken_ = common.message.Data.CloudStorageToken.getDefaultInstance();
+          onChanged();
+        } else {
+          cloudStorageTokenBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00001000);
+        return this;
+      }
+      /**
+       * <code>optional .common.message.CloudStorageToken cloudStorageToken = 13;</code>
+       */
+      public common.message.Data.CloudStorageToken.Builder getCloudStorageTokenBuilder() {
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return getCloudStorageTokenFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .common.message.CloudStorageToken cloudStorageToken = 13;</code>
+       */
+      public common.message.Data.CloudStorageTokenOrBuilder getCloudStorageTokenOrBuilder() {
+        if (cloudStorageTokenBuilder_ != null) {
+          return cloudStorageTokenBuilder_.getMessageOrBuilder();
+        } else {
+          return cloudStorageToken_;
+        }
+      }
+      /**
+       * <code>optional .common.message.CloudStorageToken cloudStorageToken = 13;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          common.message.Data.CloudStorageToken, common.message.Data.CloudStorageToken.Builder, common.message.Data.CloudStorageTokenOrBuilder> 
+          getCloudStorageTokenFieldBuilder() {
+        if (cloudStorageTokenBuilder_ == null) {
+          cloudStorageTokenBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              common.message.Data.CloudStorageToken, common.message.Data.CloudStorageToken.Builder, common.message.Data.CloudStorageTokenOrBuilder>(
+                  getCloudStorageToken(),
+                  getParentForChildren(),
+                  isClean());
+          cloudStorageToken_ = null;
+        }
+        return cloudStorageTokenBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:common.message.DataPacket)
@@ -2483,10 +2855,10 @@ public final class Data {
     // @@protoc_insertion_point(class_scope:common.message.DataPacket)
   }
 
-  public interface CommandOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface CommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.message.Command)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .common.message.Command.CommandType commandType = 1;
     /**
      * <code>required .common.message.Command.CommandType commandType = 1;</code>
      */
@@ -2496,7 +2868,6 @@ public final class Data {
      */
     common.message.Data.Command.CommandType getCommandType();
 
-    // optional float x = 2;
     /**
      * <code>optional float x = 2;</code>
      */
@@ -2506,7 +2877,6 @@ public final class Data {
      */
     float getX();
 
-    // optional float y = 3;
     /**
      * <code>optional float y = 3;</code>
      */
@@ -2520,8 +2890,9 @@ public final class Data {
    * Protobuf type {@code common.message.Command}
    */
   public static final class Command extends
-      com.google.protobuf.GeneratedMessage
-      implements CommandOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:common.message.Command)
+      CommandOrBuilder {
     // Use Command.newBuilder() to construct.
     private Command(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -2809,7 +3180,6 @@ public final class Data {
     }
 
     private int bitField0_;
-    // required .common.message.Command.CommandType commandType = 1;
     public static final int COMMANDTYPE_FIELD_NUMBER = 1;
     private common.message.Data.Command.CommandType commandType_;
     /**
@@ -2825,7 +3195,6 @@ public final class Data {
       return commandType_;
     }
 
-    // optional float x = 2;
     public static final int X_FIELD_NUMBER = 2;
     private float x_;
     /**
@@ -2841,7 +3210,6 @@ public final class Data {
       return x_;
     }
 
-    // optional float y = 3;
     public static final int Y_FIELD_NUMBER = 3;
     private float y_;
     /**
@@ -2865,7 +3233,8 @@ public final class Data {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasCommandType()) {
         memoizedIsInitialized = 0;
@@ -2990,8 +3359,9 @@ public final class Data {
      * Protobuf type {@code common.message.Command}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements common.message.Data.CommandOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.message.Command)
+        common.message.Data.CommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return common.message.Data.internal_static_common_message_Command_descriptor;
@@ -3126,7 +3496,6 @@ public final class Data {
       }
       private int bitField0_;
 
-      // required .common.message.Command.CommandType commandType = 1;
       private common.message.Data.Command.CommandType commandType_ = common.message.Data.Command.CommandType.Minimize;
       /**
        * <code>required .common.message.Command.CommandType commandType = 1;</code>
@@ -3162,7 +3531,6 @@ public final class Data {
         return this;
       }
 
-      // optional float x = 2;
       private float x_ ;
       /**
        * <code>optional float x = 2;</code>
@@ -3195,7 +3563,6 @@ public final class Data {
         return this;
       }
 
-      // optional float y = 3;
       private float y_ ;
       /**
        * <code>optional float y = 3;</code>
@@ -3239,10 +3606,10 @@ public final class Data {
     // @@protoc_insertion_point(class_scope:common.message.Command)
   }
 
-  public interface VideoOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface VideoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.message.Video)
+      com.google.protobuf.MessageOrBuilder {
 
-    // repeated .common.message.Video.Rectangle dirtyRects = 1;
     /**
      * <code>repeated .common.message.Video.Rectangle dirtyRects = 1;</code>
      */
@@ -3267,7 +3634,6 @@ public final class Data {
     common.message.Data.Video.RectangleOrBuilder getDirtyRectsOrBuilder(
         int index);
 
-    // repeated .common.message.Video.MoveRectangle moveRects = 2;
     /**
      * <code>repeated .common.message.Video.MoveRectangle moveRects = 2;</code>
      */
@@ -3292,7 +3658,6 @@ public final class Data {
     common.message.Data.Video.MoveRectangleOrBuilder getMoveRectsOrBuilder(
         int index);
 
-    // optional bytes frame = 3;
     /**
      * <code>optional bytes frame = 3;</code>
      */
@@ -3306,8 +3671,9 @@ public final class Data {
    * Protobuf type {@code common.message.Video}
    */
   public static final class Video extends
-      com.google.protobuf.GeneratedMessage
-      implements VideoOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:common.message.Video)
+      VideoOrBuilder {
     // Use Video.newBuilder() to construct.
     private Video(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -3419,10 +3785,10 @@ public final class Data {
       return PARSER;
     }
 
-    public interface RectangleOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
+    public interface RectangleOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:common.message.Video.Rectangle)
+        com.google.protobuf.MessageOrBuilder {
 
-      // required int32 x = 1;
       /**
        * <code>required int32 x = 1;</code>
        */
@@ -3432,7 +3798,6 @@ public final class Data {
        */
       int getX();
 
-      // required int32 y = 2;
       /**
        * <code>required int32 y = 2;</code>
        */
@@ -3442,7 +3807,6 @@ public final class Data {
        */
       int getY();
 
-      // required int32 width = 3;
       /**
        * <code>required int32 width = 3;</code>
        */
@@ -3452,7 +3816,6 @@ public final class Data {
        */
       int getWidth();
 
-      // required int32 height = 4;
       /**
        * <code>required int32 height = 4;</code>
        */
@@ -3462,7 +3825,6 @@ public final class Data {
        */
       int getHeight();
 
-      // optional bytes image = 5;
       /**
        * <code>optional bytes image = 5;</code>
        */
@@ -3474,14 +3836,11 @@ public final class Data {
     }
     /**
      * Protobuf type {@code common.message.Video.Rectangle}
-     *
-     * <pre>
-     *filled with image data (optional)
-     * </pre>
      */
     public static final class Rectangle extends
-        com.google.protobuf.GeneratedMessage
-        implements RectangleOrBuilder {
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:common.message.Video.Rectangle)
+        RectangleOrBuilder {
       // Use Rectangle.newBuilder() to construct.
       private Rectangle(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
@@ -3592,7 +3951,6 @@ public final class Data {
       }
 
       private int bitField0_;
-      // required int32 x = 1;
       public static final int X_FIELD_NUMBER = 1;
       private int x_;
       /**
@@ -3608,7 +3966,6 @@ public final class Data {
         return x_;
       }
 
-      // required int32 y = 2;
       public static final int Y_FIELD_NUMBER = 2;
       private int y_;
       /**
@@ -3624,7 +3981,6 @@ public final class Data {
         return y_;
       }
 
-      // required int32 width = 3;
       public static final int WIDTH_FIELD_NUMBER = 3;
       private int width_;
       /**
@@ -3640,7 +3996,6 @@ public final class Data {
         return width_;
       }
 
-      // required int32 height = 4;
       public static final int HEIGHT_FIELD_NUMBER = 4;
       private int height_;
       /**
@@ -3656,7 +4011,6 @@ public final class Data {
         return height_;
       }
 
-      // optional bytes image = 5;
       public static final int IMAGE_FIELD_NUMBER = 5;
       private com.google.protobuf.ByteString image_;
       /**
@@ -3682,7 +4036,8 @@ public final class Data {
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
 
         if (!hasX()) {
           memoizedIsInitialized = 0;
@@ -3831,14 +4186,11 @@ public final class Data {
       }
       /**
        * Protobuf type {@code common.message.Video.Rectangle}
-       *
-       * <pre>
-       *filled with image data (optional)
-       * </pre>
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements common.message.Data.Video.RectangleOrBuilder {
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:common.message.Video.Rectangle)
+          common.message.Data.Video.RectangleOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return common.message.Data.internal_static_common_message_Video_Rectangle_descriptor;
@@ -4003,7 +4355,6 @@ public final class Data {
         }
         private int bitField0_;
 
-        // required int32 x = 1;
         private int x_ ;
         /**
          * <code>required int32 x = 1;</code>
@@ -4036,7 +4387,6 @@ public final class Data {
           return this;
         }
 
-        // required int32 y = 2;
         private int y_ ;
         /**
          * <code>required int32 y = 2;</code>
@@ -4069,7 +4419,6 @@ public final class Data {
           return this;
         }
 
-        // required int32 width = 3;
         private int width_ ;
         /**
          * <code>required int32 width = 3;</code>
@@ -4102,7 +4451,6 @@ public final class Data {
           return this;
         }
 
-        // required int32 height = 4;
         private int height_ ;
         /**
          * <code>required int32 height = 4;</code>
@@ -4135,7 +4483,6 @@ public final class Data {
           return this;
         }
 
-        // optional bytes image = 5;
         private com.google.protobuf.ByteString image_ = com.google.protobuf.ByteString.EMPTY;
         /**
          * <code>optional bytes image = 5;</code>
@@ -4182,10 +4529,10 @@ public final class Data {
       // @@protoc_insertion_point(class_scope:common.message.Video.Rectangle)
     }
 
-    public interface PointOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
+    public interface PointOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:common.message.Video.Point)
+        com.google.protobuf.MessageOrBuilder {
 
-      // required int32 x = 1;
       /**
        * <code>required int32 x = 1;</code>
        */
@@ -4195,7 +4542,6 @@ public final class Data {
        */
       int getX();
 
-      // required int32 y = 2;
       /**
        * <code>required int32 y = 2;</code>
        */
@@ -4209,8 +4555,9 @@ public final class Data {
      * Protobuf type {@code common.message.Video.Point}
      */
     public static final class Point extends
-        com.google.protobuf.GeneratedMessage
-        implements PointOrBuilder {
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:common.message.Video.Point)
+        PointOrBuilder {
       // Use Point.newBuilder() to construct.
       private Point(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
@@ -4306,7 +4653,6 @@ public final class Data {
       }
 
       private int bitField0_;
-      // required int32 x = 1;
       public static final int X_FIELD_NUMBER = 1;
       private int x_;
       /**
@@ -4322,7 +4668,6 @@ public final class Data {
         return x_;
       }
 
-      // required int32 y = 2;
       public static final int Y_FIELD_NUMBER = 2;
       private int y_;
       /**
@@ -4345,7 +4690,8 @@ public final class Data {
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
 
         if (!hasX()) {
           memoizedIsInitialized = 0;
@@ -4467,8 +4813,9 @@ public final class Data {
        * Protobuf type {@code common.message.Video.Point}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements common.message.Data.Video.PointOrBuilder {
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:common.message.Video.Point)
+          common.message.Data.Video.PointOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return common.message.Data.internal_static_common_message_Video_Point_descriptor;
@@ -4598,7 +4945,6 @@ public final class Data {
         }
         private int bitField0_;
 
-        // required int32 x = 1;
         private int x_ ;
         /**
          * <code>required int32 x = 1;</code>
@@ -4631,7 +4977,6 @@ public final class Data {
           return this;
         }
 
-        // required int32 y = 2;
         private int y_ ;
         /**
          * <code>required int32 y = 2;</code>
@@ -4675,10 +5020,10 @@ public final class Data {
       // @@protoc_insertion_point(class_scope:common.message.Video.Point)
     }
 
-    public interface MoveRectangleOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
+    public interface MoveRectangleOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:common.message.Video.MoveRectangle)
+        com.google.protobuf.MessageOrBuilder {
 
-      // required .common.message.Video.Rectangle destinationRectangle = 1;
       /**
        * <code>required .common.message.Video.Rectangle destinationRectangle = 1;</code>
        */
@@ -4692,7 +5037,6 @@ public final class Data {
        */
       common.message.Data.Video.RectangleOrBuilder getDestinationRectangleOrBuilder();
 
-      // required .common.message.Video.Point sourcePoint = 2;
       /**
        * <code>required .common.message.Video.Point sourcePoint = 2;</code>
        */
@@ -4710,8 +5054,9 @@ public final class Data {
      * Protobuf type {@code common.message.Video.MoveRectangle}
      */
     public static final class MoveRectangle extends
-        com.google.protobuf.GeneratedMessage
-        implements MoveRectangleOrBuilder {
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:common.message.Video.MoveRectangle)
+        MoveRectangleOrBuilder {
       // Use MoveRectangle.newBuilder() to construct.
       private MoveRectangle(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
@@ -4823,7 +5168,6 @@ public final class Data {
       }
 
       private int bitField0_;
-      // required .common.message.Video.Rectangle destinationRectangle = 1;
       public static final int DESTINATIONRECTANGLE_FIELD_NUMBER = 1;
       private common.message.Data.Video.Rectangle destinationRectangle_;
       /**
@@ -4845,7 +5189,6 @@ public final class Data {
         return destinationRectangle_;
       }
 
-      // required .common.message.Video.Point sourcePoint = 2;
       public static final int SOURCEPOINT_FIELD_NUMBER = 2;
       private common.message.Data.Video.Point sourcePoint_;
       /**
@@ -4874,7 +5217,8 @@ public final class Data {
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
 
         if (!hasDestinationRectangle()) {
           memoizedIsInitialized = 0;
@@ -5004,8 +5348,9 @@ public final class Data {
        * Protobuf type {@code common.message.Video.MoveRectangle}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements common.message.Data.Video.MoveRectangleOrBuilder {
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:common.message.Video.MoveRectangle)
+          common.message.Data.Video.MoveRectangleOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return common.message.Data.internal_static_common_message_Video_MoveRectangle_descriptor;
@@ -5161,7 +5506,6 @@ public final class Data {
         }
         private int bitField0_;
 
-        // required .common.message.Video.Rectangle destinationRectangle = 1;
         private common.message.Data.Video.Rectangle destinationRectangle_ = common.message.Data.Video.Rectangle.getDefaultInstance();
         private com.google.protobuf.SingleFieldBuilder<
             common.message.Data.Video.Rectangle, common.message.Data.Video.Rectangle.Builder, common.message.Data.Video.RectangleOrBuilder> destinationRectangleBuilder_;
@@ -5270,7 +5614,7 @@ public final class Data {
           if (destinationRectangleBuilder_ == null) {
             destinationRectangleBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                 common.message.Data.Video.Rectangle, common.message.Data.Video.Rectangle.Builder, common.message.Data.Video.RectangleOrBuilder>(
-                    destinationRectangle_,
+                    getDestinationRectangle(),
                     getParentForChildren(),
                     isClean());
             destinationRectangle_ = null;
@@ -5278,7 +5622,6 @@ public final class Data {
           return destinationRectangleBuilder_;
         }
 
-        // required .common.message.Video.Point sourcePoint = 2;
         private common.message.Data.Video.Point sourcePoint_ = common.message.Data.Video.Point.getDefaultInstance();
         private com.google.protobuf.SingleFieldBuilder<
             common.message.Data.Video.Point, common.message.Data.Video.Point.Builder, common.message.Data.Video.PointOrBuilder> sourcePointBuilder_;
@@ -5387,7 +5730,7 @@ public final class Data {
           if (sourcePointBuilder_ == null) {
             sourcePointBuilder_ = new com.google.protobuf.SingleFieldBuilder<
                 common.message.Data.Video.Point, common.message.Data.Video.Point.Builder, common.message.Data.Video.PointOrBuilder>(
-                    sourcePoint_,
+                    getSourcePoint(),
                     getParentForChildren(),
                     isClean());
             sourcePoint_ = null;
@@ -5407,7 +5750,6 @@ public final class Data {
     }
 
     private int bitField0_;
-    // repeated .common.message.Video.Rectangle dirtyRects = 1;
     public static final int DIRTYRECTS_FIELD_NUMBER = 1;
     private java.util.List<common.message.Data.Video.Rectangle> dirtyRects_;
     /**
@@ -5443,7 +5785,6 @@ public final class Data {
       return dirtyRects_.get(index);
     }
 
-    // repeated .common.message.Video.MoveRectangle moveRects = 2;
     public static final int MOVERECTS_FIELD_NUMBER = 2;
     private java.util.List<common.message.Data.Video.MoveRectangle> moveRects_;
     /**
@@ -5479,7 +5820,6 @@ public final class Data {
       return moveRects_.get(index);
     }
 
-    // optional bytes frame = 3;
     public static final int FRAME_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString frame_;
     /**
@@ -5503,7 +5843,8 @@ public final class Data {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       for (int i = 0; i < getDirtyRectsCount(); i++) {
         if (!getDirtyRects(i).isInitialized()) {
@@ -5636,8 +5977,9 @@ public final class Data {
      * Protobuf type {@code common.message.Video}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements common.message.Data.VideoOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.message.Video)
+        common.message.Data.VideoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return common.message.Data.internal_static_common_message_Video_descriptor;
@@ -5846,7 +6188,6 @@ public final class Data {
       }
       private int bitField0_;
 
-      // repeated .common.message.Video.Rectangle dirtyRects = 1;
       private java.util.List<common.message.Data.Video.Rectangle> dirtyRects_ =
         java.util.Collections.emptyList();
       private void ensureDirtyRectsIsMutable() {
@@ -5988,7 +6329,8 @@ public final class Data {
           java.lang.Iterable<? extends common.message.Data.Video.Rectangle> values) {
         if (dirtyRectsBuilder_ == null) {
           ensureDirtyRectsIsMutable();
-          super.addAll(values, dirtyRects_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, dirtyRects_);
           onChanged();
         } else {
           dirtyRectsBuilder_.addAllMessages(values);
@@ -6086,7 +6428,6 @@ public final class Data {
         return dirtyRectsBuilder_;
       }
 
-      // repeated .common.message.Video.MoveRectangle moveRects = 2;
       private java.util.List<common.message.Data.Video.MoveRectangle> moveRects_ =
         java.util.Collections.emptyList();
       private void ensureMoveRectsIsMutable() {
@@ -6228,7 +6569,8 @@ public final class Data {
           java.lang.Iterable<? extends common.message.Data.Video.MoveRectangle> values) {
         if (moveRectsBuilder_ == null) {
           ensureMoveRectsIsMutable();
-          super.addAll(values, moveRects_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, moveRects_);
           onChanged();
         } else {
           moveRectsBuilder_.addAllMessages(values);
@@ -6326,7 +6668,6 @@ public final class Data {
         return moveRectsBuilder_;
       }
 
-      // optional bytes frame = 3;
       private com.google.protobuf.ByteString frame_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes frame = 3;</code>
@@ -6373,10 +6714,10 @@ public final class Data {
     // @@protoc_insertion_point(class_scope:common.message.Video)
   }
 
-  public interface AudioOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface AudioOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.message.Audio)
+      com.google.protobuf.MessageOrBuilder {
 
-    // optional bytes sound = 1;
     /**
      * <code>optional bytes sound = 1;</code>
      */
@@ -6390,8 +6731,9 @@ public final class Data {
    * Protobuf type {@code common.message.Audio}
    */
   public static final class Audio extends
-      com.google.protobuf.GeneratedMessage
-      implements AudioOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:common.message.Audio)
+      AudioOrBuilder {
     // Use Audio.newBuilder() to construct.
     private Audio(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -6482,7 +6824,6 @@ public final class Data {
     }
 
     private int bitField0_;
-    // optional bytes sound = 1;
     public static final int SOUND_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString sound_;
     /**
@@ -6504,7 +6845,8 @@ public final class Data {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -6611,8 +6953,9 @@ public final class Data {
      * Protobuf type {@code common.message.Audio}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements common.message.Data.AudioOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.message.Audio)
+        common.message.Data.AudioOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return common.message.Data.internal_static_common_message_Audio_descriptor;
@@ -6725,7 +7068,6 @@ public final class Data {
       }
       private int bitField0_;
 
-      // optional bytes sound = 1;
       private com.google.protobuf.ByteString sound_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>optional bytes sound = 1;</code>
@@ -6772,78 +7114,61 @@ public final class Data {
     // @@protoc_insertion_point(class_scope:common.message.Audio)
   }
 
-  public interface InfoOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface DeviceInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.message.DeviceInfo)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .common.message.Info.InfoType infoType = 1;
     /**
-     * <code>required .common.message.Info.InfoType infoType = 1;</code>
-     */
-    boolean hasInfoType();
-    /**
-     * <code>required .common.message.Info.InfoType infoType = 1;</code>
-     */
-    common.message.Data.Info.InfoType getInfoType();
-
-    // optional bytes deviceName = 2;
-    /**
-     * <code>optional bytes deviceName = 2;</code>
+     * <code>optional bytes deviceName = 1;</code>
      */
     boolean hasDeviceName();
     /**
-     * <code>optional bytes deviceName = 2;</code>
+     * <code>optional bytes deviceName = 1;</code>
      */
     com.google.protobuf.ByteString getDeviceName();
 
-    // optional int32 width = 3;
     /**
-     * <code>optional int32 width = 3;</code>
+     * <code>optional .common.message.Resolution resolution = 2;</code>
      */
-    boolean hasWidth();
+    boolean hasResolution();
     /**
-     * <code>optional int32 width = 3;</code>
+     * <code>optional .common.message.Resolution resolution = 2;</code>
      */
-    int getWidth();
+    common.message.Data.Resolution getResolution();
+    /**
+     * <code>optional .common.message.Resolution resolution = 2;</code>
+     */
+    common.message.Data.ResolutionOrBuilder getResolutionOrBuilder();
 
-    // optional int32 height = 4;
     /**
-     * <code>optional int32 height = 4;</code>
-     */
-    boolean hasHeight();
-    /**
-     * <code>optional int32 height = 4;</code>
-     */
-    int getHeight();
-
-    // optional int32 portAvailable = 5;
-    /**
-     * <code>optional int32 portAvailable = 5;</code>
+     * <code>optional int32 portAvailable = 3;</code>
      */
     boolean hasPortAvailable();
     /**
-     * <code>optional int32 portAvailable = 5;</code>
+     * <code>optional int32 portAvailable = 3;</code>
      */
     int getPortAvailable();
   }
   /**
-   * Protobuf type {@code common.message.Info}
+   * Protobuf type {@code common.message.DeviceInfo}
    */
-  public static final class Info extends
-      com.google.protobuf.GeneratedMessage
-      implements InfoOrBuilder {
-    // Use Info.newBuilder() to construct.
-    private Info(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  public static final class DeviceInfo extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:common.message.DeviceInfo)
+      DeviceInfoOrBuilder {
+    // Use DeviceInfo.newBuilder() to construct.
+    private DeviceInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private Info(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private DeviceInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final Info defaultInstance;
-    public static Info getDefaultInstance() {
+    private static final DeviceInfo defaultInstance;
+    public static DeviceInfo getDefaultInstance() {
       return defaultInstance;
     }
 
-    public Info getDefaultInstanceForType() {
+    public DeviceInfo getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -6853,7 +7178,7 @@ public final class Data {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private Info(
+    private DeviceInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6876,34 +7201,26 @@ public final class Data {
               }
               break;
             }
-            case 8: {
-              int rawValue = input.readEnum();
-              common.message.Data.Info.InfoType value = common.message.Data.Info.InfoType.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(1, rawValue);
-              } else {
-                bitField0_ |= 0x00000001;
-                infoType_ = value;
-              }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              deviceName_ = input.readBytes();
               break;
             }
             case 18: {
+              common.message.Data.Resolution.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = resolution_.toBuilder();
+              }
+              resolution_ = input.readMessage(common.message.Data.Resolution.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resolution_);
+                resolution_ = subBuilder.buildPartial();
+              }
               bitField0_ |= 0x00000002;
-              deviceName_ = input.readBytes();
               break;
             }
             case 24: {
               bitField0_ |= 0x00000004;
-              width_ = input.readInt32();
-              break;
-            }
-            case 32: {
-              bitField0_ |= 0x00000008;
-              height_ = input.readInt32();
-              break;
-            }
-            case 40: {
-              bitField0_ |= 0x00000010;
               portAvailable_ = input.readInt32();
               break;
             }
@@ -6921,219 +7238,94 @@ public final class Data {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return common.message.Data.internal_static_common_message_Info_descriptor;
+      return common.message.Data.internal_static_common_message_DeviceInfo_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return common.message.Data.internal_static_common_message_Info_fieldAccessorTable
+      return common.message.Data.internal_static_common_message_DeviceInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              common.message.Data.Info.class, common.message.Data.Info.Builder.class);
+              common.message.Data.DeviceInfo.class, common.message.Data.DeviceInfo.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<Info> PARSER =
-        new com.google.protobuf.AbstractParser<Info>() {
-      public Info parsePartialFrom(
+    public static com.google.protobuf.Parser<DeviceInfo> PARSER =
+        new com.google.protobuf.AbstractParser<DeviceInfo>() {
+      public DeviceInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Info(input, extensionRegistry);
+        return new DeviceInfo(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Info> getParserForType() {
+    public com.google.protobuf.Parser<DeviceInfo> getParserForType() {
       return PARSER;
     }
 
-    /**
-     * Protobuf enum {@code common.message.Info.InfoType}
-     */
-    public enum InfoType
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>Login = 1;</code>
-       */
-      Login(0, 1),
-      /**
-       * <code>Logout = 2;</code>
-       */
-      Logout(1, 2),
-      /**
-       * <code>NormalInfo = 3;</code>
-       */
-      NormalInfo(2, 3),
-      ;
-
-      /**
-       * <code>Login = 1;</code>
-       */
-      public static final int Login_VALUE = 1;
-      /**
-       * <code>Logout = 2;</code>
-       */
-      public static final int Logout_VALUE = 2;
-      /**
-       * <code>NormalInfo = 3;</code>
-       */
-      public static final int NormalInfo_VALUE = 3;
-
-
-      public final int getNumber() { return value; }
-
-      public static InfoType valueOf(int value) {
-        switch (value) {
-          case 1: return Login;
-          case 2: return Logout;
-          case 3: return NormalInfo;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<InfoType>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static com.google.protobuf.Internal.EnumLiteMap<InfoType>
-          internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<InfoType>() {
-              public InfoType findValueByNumber(int number) {
-                return InfoType.valueOf(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(index);
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return common.message.Data.Info.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final InfoType[] VALUES = values();
-
-      public static InfoType valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int index;
-      private final int value;
-
-      private InfoType(int index, int value) {
-        this.index = index;
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:common.message.Info.InfoType)
-    }
-
     private int bitField0_;
-    // required .common.message.Info.InfoType infoType = 1;
-    public static final int INFOTYPE_FIELD_NUMBER = 1;
-    private common.message.Data.Info.InfoType infoType_;
+    public static final int DEVICENAME_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString deviceName_;
     /**
-     * <code>required .common.message.Info.InfoType infoType = 1;</code>
+     * <code>optional bytes deviceName = 1;</code>
      */
-    public boolean hasInfoType() {
+    public boolean hasDeviceName() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required .common.message.Info.InfoType infoType = 1;</code>
-     */
-    public common.message.Data.Info.InfoType getInfoType() {
-      return infoType_;
-    }
-
-    // optional bytes deviceName = 2;
-    public static final int DEVICENAME_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString deviceName_;
-    /**
-     * <code>optional bytes deviceName = 2;</code>
-     */
-    public boolean hasDeviceName() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional bytes deviceName = 2;</code>
+     * <code>optional bytes deviceName = 1;</code>
      */
     public com.google.protobuf.ByteString getDeviceName() {
       return deviceName_;
     }
 
-    // optional int32 width = 3;
-    public static final int WIDTH_FIELD_NUMBER = 3;
-    private int width_;
+    public static final int RESOLUTION_FIELD_NUMBER = 2;
+    private common.message.Data.Resolution resolution_;
     /**
-     * <code>optional int32 width = 3;</code>
+     * <code>optional .common.message.Resolution resolution = 2;</code>
      */
-    public boolean hasWidth() {
+    public boolean hasResolution() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional .common.message.Resolution resolution = 2;</code>
+     */
+    public common.message.Data.Resolution getResolution() {
+      return resolution_;
+    }
+    /**
+     * <code>optional .common.message.Resolution resolution = 2;</code>
+     */
+    public common.message.Data.ResolutionOrBuilder getResolutionOrBuilder() {
+      return resolution_;
+    }
+
+    public static final int PORTAVAILABLE_FIELD_NUMBER = 3;
+    private int portAvailable_;
+    /**
+     * <code>optional int32 portAvailable = 3;</code>
+     */
+    public boolean hasPortAvailable() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional int32 width = 3;</code>
-     */
-    public int getWidth() {
-      return width_;
-    }
-
-    // optional int32 height = 4;
-    public static final int HEIGHT_FIELD_NUMBER = 4;
-    private int height_;
-    /**
-     * <code>optional int32 height = 4;</code>
-     */
-    public boolean hasHeight() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    /**
-     * <code>optional int32 height = 4;</code>
-     */
-    public int getHeight() {
-      return height_;
-    }
-
-    // optional int32 portAvailable = 5;
-    public static final int PORTAVAILABLE_FIELD_NUMBER = 5;
-    private int portAvailable_;
-    /**
-     * <code>optional int32 portAvailable = 5;</code>
-     */
-    public boolean hasPortAvailable() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    /**
-     * <code>optional int32 portAvailable = 5;</code>
+     * <code>optional int32 portAvailable = 3;</code>
      */
     public int getPortAvailable() {
       return portAvailable_;
     }
 
     private void initFields() {
-      infoType_ = common.message.Data.Info.InfoType.Login;
       deviceName_ = com.google.protobuf.ByteString.EMPTY;
-      width_ = 0;
-      height_ = 0;
+      resolution_ = common.message.Data.Resolution.getDefaultInstance();
       portAvailable_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
-      if (!hasInfoType()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -7142,19 +7334,13 @@ public final class Data {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, infoType_.getNumber());
+        output.writeBytes(1, deviceName_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, deviceName_);
+        output.writeMessage(2, resolution_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt32(3, width_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeInt32(4, height_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeInt32(5, portAvailable_);
+        output.writeInt32(3, portAvailable_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -7167,23 +7353,15 @@ public final class Data {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, infoType_.getNumber());
+          .computeBytesSize(1, deviceName_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, deviceName_);
+          .computeMessageSize(2, resolution_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, width_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, height_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, portAvailable_);
+          .computeInt32Size(3, portAvailable_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -7197,53 +7375,53 @@ public final class Data {
       return super.writeReplace();
     }
 
-    public static common.message.Data.Info parseFrom(
+    public static common.message.Data.DeviceInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static common.message.Data.Info parseFrom(
+    public static common.message.Data.DeviceInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static common.message.Data.Info parseFrom(byte[] data)
+    public static common.message.Data.DeviceInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static common.message.Data.Info parseFrom(
+    public static common.message.Data.DeviceInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static common.message.Data.Info parseFrom(java.io.InputStream input)
+    public static common.message.Data.DeviceInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static common.message.Data.Info parseFrom(
+    public static common.message.Data.DeviceInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static common.message.Data.Info parseDelimitedFrom(java.io.InputStream input)
+    public static common.message.Data.DeviceInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static common.message.Data.Info parseDelimitedFrom(
+    public static common.message.Data.DeviceInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static common.message.Data.Info parseFrom(
+    public static common.message.Data.DeviceInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static common.message.Data.Info parseFrom(
+    public static common.message.Data.DeviceInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7252,7 +7430,7 @@ public final class Data {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(common.message.Data.Info prototype) {
+    public static Builder newBuilder(common.message.Data.DeviceInfo prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -7264,24 +7442,25 @@ public final class Data {
       return builder;
     }
     /**
-     * Protobuf type {@code common.message.Info}
+     * Protobuf type {@code common.message.DeviceInfo}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements common.message.Data.InfoOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.message.DeviceInfo)
+        common.message.Data.DeviceInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return common.message.Data.internal_static_common_message_Info_descriptor;
+        return common.message.Data.internal_static_common_message_DeviceInfo_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return common.message.Data.internal_static_common_message_Info_fieldAccessorTable
+        return common.message.Data.internal_static_common_message_DeviceInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                common.message.Data.Info.class, common.message.Data.Info.Builder.class);
+                common.message.Data.DeviceInfo.class, common.message.Data.DeviceInfo.Builder.class);
       }
 
-      // Construct using common.message.Data.Info.newBuilder()
+      // Construct using common.message.Data.DeviceInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -7293,6 +7472,7 @@ public final class Data {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getResolutionFieldBuilder();
         }
       }
       private static Builder create() {
@@ -7301,16 +7481,16 @@ public final class Data {
 
       public Builder clear() {
         super.clear();
-        infoType_ = common.message.Data.Info.InfoType.Login;
-        bitField0_ = (bitField0_ & ~0x00000001);
         deviceName_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (resolutionBuilder_ == null) {
+          resolution_ = common.message.Data.Resolution.getDefaultInstance();
+        } else {
+          resolutionBuilder_.clear();
+        }
         bitField0_ = (bitField0_ & ~0x00000002);
-        width_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        height_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000008);
         portAvailable_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -7320,43 +7500,39 @@ public final class Data {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return common.message.Data.internal_static_common_message_Info_descriptor;
+        return common.message.Data.internal_static_common_message_DeviceInfo_descriptor;
       }
 
-      public common.message.Data.Info getDefaultInstanceForType() {
-        return common.message.Data.Info.getDefaultInstance();
+      public common.message.Data.DeviceInfo getDefaultInstanceForType() {
+        return common.message.Data.DeviceInfo.getDefaultInstance();
       }
 
-      public common.message.Data.Info build() {
-        common.message.Data.Info result = buildPartial();
+      public common.message.Data.DeviceInfo build() {
+        common.message.Data.DeviceInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public common.message.Data.Info buildPartial() {
-        common.message.Data.Info result = new common.message.Data.Info(this);
+      public common.message.Data.DeviceInfo buildPartial() {
+        common.message.Data.DeviceInfo result = new common.message.Data.DeviceInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.infoType_ = infoType_;
+        result.deviceName_ = deviceName_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.deviceName_ = deviceName_;
+        if (resolutionBuilder_ == null) {
+          result.resolution_ = resolution_;
+        } else {
+          result.resolution_ = resolutionBuilder_.build();
+        }
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
-        }
-        result.width_ = width_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.height_ = height_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
         }
         result.portAvailable_ = portAvailable_;
         result.bitField0_ = to_bitField0_;
@@ -7365,27 +7541,21 @@ public final class Data {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof common.message.Data.Info) {
-          return mergeFrom((common.message.Data.Info)other);
+        if (other instanceof common.message.Data.DeviceInfo) {
+          return mergeFrom((common.message.Data.DeviceInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(common.message.Data.Info other) {
-        if (other == common.message.Data.Info.getDefaultInstance()) return this;
-        if (other.hasInfoType()) {
-          setInfoType(other.getInfoType());
-        }
+      public Builder mergeFrom(common.message.Data.DeviceInfo other) {
+        if (other == common.message.Data.DeviceInfo.getDefaultInstance()) return this;
         if (other.hasDeviceName()) {
           setDeviceName(other.getDeviceName());
         }
-        if (other.hasWidth()) {
-          setWidth(other.getWidth());
-        }
-        if (other.hasHeight()) {
-          setHeight(other.getHeight());
+        if (other.hasResolution()) {
+          mergeResolution(other.getResolution());
         }
         if (other.hasPortAvailable()) {
           setPortAvailable(other.getPortAvailable());
@@ -7395,10 +7565,6 @@ public final class Data {
       }
 
       public final boolean isInitialized() {
-        if (!hasInfoType()) {
-          
-          return false;
-        }
         return true;
       }
 
@@ -7406,11 +7572,11 @@ public final class Data {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        common.message.Data.Info parsedMessage = null;
+        common.message.Data.DeviceInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (common.message.Data.Info) e.getUnfinishedMessage();
+          parsedMessage = (common.message.Data.DeviceInfo) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -7421,192 +7587,204 @@ public final class Data {
       }
       private int bitField0_;
 
-      // required .common.message.Info.InfoType infoType = 1;
-      private common.message.Data.Info.InfoType infoType_ = common.message.Data.Info.InfoType.Login;
+      private com.google.protobuf.ByteString deviceName_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>required .common.message.Info.InfoType infoType = 1;</code>
+       * <code>optional bytes deviceName = 1;</code>
        */
-      public boolean hasInfoType() {
+      public boolean hasDeviceName() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required .common.message.Info.InfoType infoType = 1;</code>
-       */
-      public common.message.Data.Info.InfoType getInfoType() {
-        return infoType_;
-      }
-      /**
-       * <code>required .common.message.Info.InfoType infoType = 1;</code>
-       */
-      public Builder setInfoType(common.message.Data.Info.InfoType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000001;
-        infoType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required .common.message.Info.InfoType infoType = 1;</code>
-       */
-      public Builder clearInfoType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        infoType_ = common.message.Data.Info.InfoType.Login;
-        onChanged();
-        return this;
-      }
-
-      // optional bytes deviceName = 2;
-      private com.google.protobuf.ByteString deviceName_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>optional bytes deviceName = 2;</code>
-       */
-      public boolean hasDeviceName() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional bytes deviceName = 2;</code>
+       * <code>optional bytes deviceName = 1;</code>
        */
       public com.google.protobuf.ByteString getDeviceName() {
         return deviceName_;
       }
       /**
-       * <code>optional bytes deviceName = 2;</code>
+       * <code>optional bytes deviceName = 1;</code>
        */
       public Builder setDeviceName(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
+  bitField0_ |= 0x00000001;
         deviceName_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bytes deviceName = 2;</code>
+       * <code>optional bytes deviceName = 1;</code>
        */
       public Builder clearDeviceName() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         deviceName_ = getDefaultInstance().getDeviceName();
         onChanged();
         return this;
       }
 
-      // optional int32 width = 3;
-      private int width_ ;
+      private common.message.Data.Resolution resolution_ = common.message.Data.Resolution.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          common.message.Data.Resolution, common.message.Data.Resolution.Builder, common.message.Data.ResolutionOrBuilder> resolutionBuilder_;
       /**
-       * <code>optional int32 width = 3;</code>
+       * <code>optional .common.message.Resolution resolution = 2;</code>
        */
-      public boolean hasWidth() {
+      public boolean hasResolution() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional .common.message.Resolution resolution = 2;</code>
+       */
+      public common.message.Data.Resolution getResolution() {
+        if (resolutionBuilder_ == null) {
+          return resolution_;
+        } else {
+          return resolutionBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .common.message.Resolution resolution = 2;</code>
+       */
+      public Builder setResolution(common.message.Data.Resolution value) {
+        if (resolutionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resolution_ = value;
+          onChanged();
+        } else {
+          resolutionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .common.message.Resolution resolution = 2;</code>
+       */
+      public Builder setResolution(
+          common.message.Data.Resolution.Builder builderForValue) {
+        if (resolutionBuilder_ == null) {
+          resolution_ = builderForValue.build();
+          onChanged();
+        } else {
+          resolutionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .common.message.Resolution resolution = 2;</code>
+       */
+      public Builder mergeResolution(common.message.Data.Resolution value) {
+        if (resolutionBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              resolution_ != common.message.Data.Resolution.getDefaultInstance()) {
+            resolution_ =
+              common.message.Data.Resolution.newBuilder(resolution_).mergeFrom(value).buildPartial();
+          } else {
+            resolution_ = value;
+          }
+          onChanged();
+        } else {
+          resolutionBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .common.message.Resolution resolution = 2;</code>
+       */
+      public Builder clearResolution() {
+        if (resolutionBuilder_ == null) {
+          resolution_ = common.message.Data.Resolution.getDefaultInstance();
+          onChanged();
+        } else {
+          resolutionBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      /**
+       * <code>optional .common.message.Resolution resolution = 2;</code>
+       */
+      public common.message.Data.Resolution.Builder getResolutionBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getResolutionFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .common.message.Resolution resolution = 2;</code>
+       */
+      public common.message.Data.ResolutionOrBuilder getResolutionOrBuilder() {
+        if (resolutionBuilder_ != null) {
+          return resolutionBuilder_.getMessageOrBuilder();
+        } else {
+          return resolution_;
+        }
+      }
+      /**
+       * <code>optional .common.message.Resolution resolution = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          common.message.Data.Resolution, common.message.Data.Resolution.Builder, common.message.Data.ResolutionOrBuilder> 
+          getResolutionFieldBuilder() {
+        if (resolutionBuilder_ == null) {
+          resolutionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              common.message.Data.Resolution, common.message.Data.Resolution.Builder, common.message.Data.ResolutionOrBuilder>(
+                  getResolution(),
+                  getParentForChildren(),
+                  isClean());
+          resolution_ = null;
+        }
+        return resolutionBuilder_;
+      }
+
+      private int portAvailable_ ;
+      /**
+       * <code>optional int32 portAvailable = 3;</code>
+       */
+      public boolean hasPortAvailable() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional int32 width = 3;</code>
-       */
-      public int getWidth() {
-        return width_;
-      }
-      /**
-       * <code>optional int32 width = 3;</code>
-       */
-      public Builder setWidth(int value) {
-        bitField0_ |= 0x00000004;
-        width_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 width = 3;</code>
-       */
-      public Builder clearWidth() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        width_ = 0;
-        onChanged();
-        return this;
-      }
-
-      // optional int32 height = 4;
-      private int height_ ;
-      /**
-       * <code>optional int32 height = 4;</code>
-       */
-      public boolean hasHeight() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional int32 height = 4;</code>
-       */
-      public int getHeight() {
-        return height_;
-      }
-      /**
-       * <code>optional int32 height = 4;</code>
-       */
-      public Builder setHeight(int value) {
-        bitField0_ |= 0x00000008;
-        height_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 height = 4;</code>
-       */
-      public Builder clearHeight() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        height_ = 0;
-        onChanged();
-        return this;
-      }
-
-      // optional int32 portAvailable = 5;
-      private int portAvailable_ ;
-      /**
-       * <code>optional int32 portAvailable = 5;</code>
-       */
-      public boolean hasPortAvailable() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>optional int32 portAvailable = 5;</code>
+       * <code>optional int32 portAvailable = 3;</code>
        */
       public int getPortAvailable() {
         return portAvailable_;
       }
       /**
-       * <code>optional int32 portAvailable = 5;</code>
+       * <code>optional int32 portAvailable = 3;</code>
        */
       public Builder setPortAvailable(int value) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000004;
         portAvailable_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 portAvailable = 5;</code>
+       * <code>optional int32 portAvailable = 3;</code>
        */
       public Builder clearPortAvailable() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
         portAvailable_ = 0;
         onChanged();
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:common.message.Info)
+      // @@protoc_insertion_point(builder_scope:common.message.DeviceInfo)
     }
 
     static {
-      defaultInstance = new Info(true);
+      defaultInstance = new DeviceInfo(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:common.message.Info)
+    // @@protoc_insertion_point(class_scope:common.message.DeviceInfo)
   }
 
-  public interface ResolutionOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface ResolutionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.message.Resolution)
+      com.google.protobuf.MessageOrBuilder {
 
-    // optional int32 width = 1;
     /**
      * <code>optional int32 width = 1;</code>
      */
@@ -7616,7 +7794,6 @@ public final class Data {
      */
     int getWidth();
 
-    // optional int32 height = 2;
     /**
      * <code>optional int32 height = 2;</code>
      */
@@ -7630,8 +7807,9 @@ public final class Data {
    * Protobuf type {@code common.message.Resolution}
    */
   public static final class Resolution extends
-      com.google.protobuf.GeneratedMessage
-      implements ResolutionOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:common.message.Resolution)
+      ResolutionOrBuilder {
     // Use Resolution.newBuilder() to construct.
     private Resolution(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -7727,7 +7905,6 @@ public final class Data {
     }
 
     private int bitField0_;
-    // optional int32 width = 1;
     public static final int WIDTH_FIELD_NUMBER = 1;
     private int width_;
     /**
@@ -7743,7 +7920,6 @@ public final class Data {
       return width_;
     }
 
-    // optional int32 height = 2;
     public static final int HEIGHT_FIELD_NUMBER = 2;
     private int height_;
     /**
@@ -7766,7 +7942,8 @@ public final class Data {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -7880,8 +8057,9 @@ public final class Data {
      * Protobuf type {@code common.message.Resolution}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements common.message.Data.ResolutionOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.message.Resolution)
+        common.message.Data.ResolutionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return common.message.Data.internal_static_common_message_Resolution_descriptor;
@@ -8003,7 +8181,6 @@ public final class Data {
       }
       private int bitField0_;
 
-      // optional int32 width = 1;
       private int width_ ;
       /**
        * <code>optional int32 width = 1;</code>
@@ -8036,7 +8213,6 @@ public final class Data {
         return this;
       }
 
-      // optional int32 height = 2;
       private int height_ ;
       /**
        * <code>optional int32 height = 2;</code>
@@ -8080,56 +8256,48 @@ public final class Data {
     // @@protoc_insertion_point(class_scope:common.message.Resolution)
   }
 
-  public interface RequestOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface FileRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.message.FileRequest)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .common.message.Request.RequestType requestType = 1;
     /**
-     * <code>required .common.message.Request.RequestType requestType = 1;</code>
+     * <code>required .common.message.FileRequest.FileRequestType fileRequestType = 1;</code>
      */
-    boolean hasRequestType();
+    boolean hasFileRequestType();
     /**
-     * <code>required .common.message.Request.RequestType requestType = 1;</code>
+     * <code>required .common.message.FileRequest.FileRequestType fileRequestType = 1;</code>
      */
-    common.message.Data.Request.RequestType getRequestType();
+    common.message.Data.FileRequest.FileRequestType getFileRequestType();
 
-    // required bytes filePath = 2;
     /**
      * <code>required bytes filePath = 2;</code>
-     *
-     * <pre>
-     * * means all files
-     * </pre>
      */
     boolean hasFilePath();
     /**
      * <code>required bytes filePath = 2;</code>
-     *
-     * <pre>
-     * * means all files
-     * </pre>
      */
     com.google.protobuf.ByteString getFilePath();
   }
   /**
-   * Protobuf type {@code common.message.Request}
+   * Protobuf type {@code common.message.FileRequest}
    */
-  public static final class Request extends
-      com.google.protobuf.GeneratedMessage
-      implements RequestOrBuilder {
-    // Use Request.newBuilder() to construct.
-    private Request(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  public static final class FileRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:common.message.FileRequest)
+      FileRequestOrBuilder {
+    // Use FileRequest.newBuilder() to construct.
+    private FileRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private Request(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private FileRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final Request defaultInstance;
-    public static Request getDefaultInstance() {
+    private static final FileRequest defaultInstance;
+    public static FileRequest getDefaultInstance() {
       return defaultInstance;
     }
 
-    public Request getDefaultInstanceForType() {
+    public FileRequest getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -8139,7 +8307,7 @@ public final class Data {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private Request(
+    private FileRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8164,12 +8332,12 @@ public final class Data {
             }
             case 8: {
               int rawValue = input.readEnum();
-              common.message.Data.Request.RequestType value = common.message.Data.Request.RequestType.valueOf(rawValue);
+              common.message.Data.FileRequest.FileRequestType value = common.message.Data.FileRequest.FileRequestType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(1, rawValue);
               } else {
                 bitField0_ |= 0x00000001;
-                requestType_ = value;
+                fileRequestType_ = value;
               }
               break;
             }
@@ -8192,179 +8360,93 @@ public final class Data {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return common.message.Data.internal_static_common_message_Request_descriptor;
+      return common.message.Data.internal_static_common_message_FileRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return common.message.Data.internal_static_common_message_Request_fieldAccessorTable
+      return common.message.Data.internal_static_common_message_FileRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              common.message.Data.Request.class, common.message.Data.Request.Builder.class);
+              common.message.Data.FileRequest.class, common.message.Data.FileRequest.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<Request> PARSER =
-        new com.google.protobuf.AbstractParser<Request>() {
-      public Request parsePartialFrom(
+    public static com.google.protobuf.Parser<FileRequest> PARSER =
+        new com.google.protobuf.AbstractParser<FileRequest>() {
+      public FileRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Request(input, extensionRegistry);
+        return new FileRequest(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Request> getParserForType() {
+    public com.google.protobuf.Parser<FileRequest> getParserForType() {
       return PARSER;
     }
 
     /**
-     * Protobuf enum {@code common.message.Request.RequestType}
+     * Protobuf enum {@code common.message.FileRequest.FileRequestType}
      */
-    public enum RequestType
+    public enum FileRequestType
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
-       * <code>Movie = 1;</code>
-       *
-       * <pre>
-       *request to open the movie remotely
-       * </pre>
+       * <code>OpenFileRemotely = 1;</code>
        */
-      Movie(0, 1),
+      OpenFileRemotely(0, 1),
       /**
-       * <code>Music = 2;</code>
+       * <code>DeleteFile = 2;</code>
        */
-      Music(1, 2),
+      DeleteFile(1, 2),
       /**
-       * <code>File = 3;</code>
+       * <code>SaveFile = 3;</code>
        */
-      File(2, 3),
+      SaveFile(2, 3),
       /**
-       * <code>RemoveMovie = 4;</code>
-       *
-       * <pre>
-       *request to remove the movie
-       * </pre>
+       * <code>SendFile = 4;</code>
        */
-      RemoveMovie(3, 4),
-      /**
-       * <code>RemoveMusic = 5;</code>
-       */
-      RemoveMusic(4, 5),
-      /**
-       * <code>RemoveFile = 6;</code>
-       */
-      RemoveFile(5, 6),
-      /**
-       * <code>SaveFile = 7;</code>
-       *
-       * <pre>
-       *request to save file into sdcard
-       * </pre>
-       */
-      SaveFile(6, 7),
-      /**
-       * <code>SaveMusic = 8;</code>
-       */
-      SaveMusic(7, 8),
-      /**
-       * <code>SaveMovie = 9;</code>
-       */
-      SaveMovie(8, 9),
-      /**
-       * <code>SendFile = 10;</code>
-       *
-       * <pre>
-       *request to send files to the peer without types
-       * </pre>
-       */
-      SendFile(9, 10),
+      SendFile(3, 4),
       ;
 
       /**
-       * <code>Movie = 1;</code>
-       *
-       * <pre>
-       *request to open the movie remotely
-       * </pre>
+       * <code>OpenFileRemotely = 1;</code>
        */
-      public static final int Movie_VALUE = 1;
+      public static final int OpenFileRemotely_VALUE = 1;
       /**
-       * <code>Music = 2;</code>
+       * <code>DeleteFile = 2;</code>
        */
-      public static final int Music_VALUE = 2;
+      public static final int DeleteFile_VALUE = 2;
       /**
-       * <code>File = 3;</code>
+       * <code>SaveFile = 3;</code>
        */
-      public static final int File_VALUE = 3;
+      public static final int SaveFile_VALUE = 3;
       /**
-       * <code>RemoveMovie = 4;</code>
-       *
-       * <pre>
-       *request to remove the movie
-       * </pre>
+       * <code>SendFile = 4;</code>
        */
-      public static final int RemoveMovie_VALUE = 4;
-      /**
-       * <code>RemoveMusic = 5;</code>
-       */
-      public static final int RemoveMusic_VALUE = 5;
-      /**
-       * <code>RemoveFile = 6;</code>
-       */
-      public static final int RemoveFile_VALUE = 6;
-      /**
-       * <code>SaveFile = 7;</code>
-       *
-       * <pre>
-       *request to save file into sdcard
-       * </pre>
-       */
-      public static final int SaveFile_VALUE = 7;
-      /**
-       * <code>SaveMusic = 8;</code>
-       */
-      public static final int SaveMusic_VALUE = 8;
-      /**
-       * <code>SaveMovie = 9;</code>
-       */
-      public static final int SaveMovie_VALUE = 9;
-      /**
-       * <code>SendFile = 10;</code>
-       *
-       * <pre>
-       *request to send files to the peer without types
-       * </pre>
-       */
-      public static final int SendFile_VALUE = 10;
+      public static final int SendFile_VALUE = 4;
 
 
       public final int getNumber() { return value; }
 
-      public static RequestType valueOf(int value) {
+      public static FileRequestType valueOf(int value) {
         switch (value) {
-          case 1: return Movie;
-          case 2: return Music;
-          case 3: return File;
-          case 4: return RemoveMovie;
-          case 5: return RemoveMusic;
-          case 6: return RemoveFile;
-          case 7: return SaveFile;
-          case 8: return SaveMusic;
-          case 9: return SaveMovie;
-          case 10: return SendFile;
+          case 1: return OpenFileRemotely;
+          case 2: return DeleteFile;
+          case 3: return SaveFile;
+          case 4: return SendFile;
           default: return null;
         }
       }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<RequestType>
+      public static com.google.protobuf.Internal.EnumLiteMap<FileRequestType>
           internalGetValueMap() {
         return internalValueMap;
       }
-      private static com.google.protobuf.Internal.EnumLiteMap<RequestType>
+      private static com.google.protobuf.Internal.EnumLiteMap<FileRequestType>
           internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<RequestType>() {
-              public RequestType findValueByNumber(int number) {
-                return RequestType.valueOf(number);
+            new com.google.protobuf.Internal.EnumLiteMap<FileRequestType>() {
+              public FileRequestType findValueByNumber(int number) {
+                return FileRequestType.valueOf(number);
               }
             };
 
@@ -8378,12 +8460,12 @@ public final class Data {
       }
       public static final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptor() {
-        return common.message.Data.Request.getDescriptor().getEnumTypes().get(0);
+        return common.message.Data.FileRequest.getDescriptor().getEnumTypes().get(0);
       }
 
-      private static final RequestType[] VALUES = values();
+      private static final FileRequestType[] VALUES = values();
 
-      public static RequestType valueOf(
+      public static FileRequestType valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
@@ -8395,65 +8477,56 @@ public final class Data {
       private final int index;
       private final int value;
 
-      private RequestType(int index, int value) {
+      private FileRequestType(int index, int value) {
         this.index = index;
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:common.message.Request.RequestType)
+      // @@protoc_insertion_point(enum_scope:common.message.FileRequest.FileRequestType)
     }
 
     private int bitField0_;
-    // required .common.message.Request.RequestType requestType = 1;
-    public static final int REQUESTTYPE_FIELD_NUMBER = 1;
-    private common.message.Data.Request.RequestType requestType_;
+    public static final int FILEREQUESTTYPE_FIELD_NUMBER = 1;
+    private common.message.Data.FileRequest.FileRequestType fileRequestType_;
     /**
-     * <code>required .common.message.Request.RequestType requestType = 1;</code>
+     * <code>required .common.message.FileRequest.FileRequestType fileRequestType = 1;</code>
      */
-    public boolean hasRequestType() {
+    public boolean hasFileRequestType() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>required .common.message.Request.RequestType requestType = 1;</code>
+     * <code>required .common.message.FileRequest.FileRequestType fileRequestType = 1;</code>
      */
-    public common.message.Data.Request.RequestType getRequestType() {
-      return requestType_;
+    public common.message.Data.FileRequest.FileRequestType getFileRequestType() {
+      return fileRequestType_;
     }
 
-    // required bytes filePath = 2;
     public static final int FILEPATH_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString filePath_;
     /**
      * <code>required bytes filePath = 2;</code>
-     *
-     * <pre>
-     * * means all files
-     * </pre>
      */
     public boolean hasFilePath() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>required bytes filePath = 2;</code>
-     *
-     * <pre>
-     * * means all files
-     * </pre>
      */
     public com.google.protobuf.ByteString getFilePath() {
       return filePath_;
     }
 
     private void initFields() {
-      requestType_ = common.message.Data.Request.RequestType.Movie;
+      fileRequestType_ = common.message.Data.FileRequest.FileRequestType.OpenFileRemotely;
       filePath_ = com.google.protobuf.ByteString.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
-      if (!hasRequestType()) {
+      if (!hasFileRequestType()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -8469,7 +8542,7 @@ public final class Data {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, requestType_.getNumber());
+        output.writeEnum(1, fileRequestType_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, filePath_);
@@ -8485,7 +8558,7 @@ public final class Data {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, requestType_.getNumber());
+          .computeEnumSize(1, fileRequestType_.getNumber());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -8503,53 +8576,53 @@ public final class Data {
       return super.writeReplace();
     }
 
-    public static common.message.Data.Request parseFrom(
+    public static common.message.Data.FileRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static common.message.Data.Request parseFrom(
+    public static common.message.Data.FileRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static common.message.Data.Request parseFrom(byte[] data)
+    public static common.message.Data.FileRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static common.message.Data.Request parseFrom(
+    public static common.message.Data.FileRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static common.message.Data.Request parseFrom(java.io.InputStream input)
+    public static common.message.Data.FileRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static common.message.Data.Request parseFrom(
+    public static common.message.Data.FileRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static common.message.Data.Request parseDelimitedFrom(java.io.InputStream input)
+    public static common.message.Data.FileRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static common.message.Data.Request parseDelimitedFrom(
+    public static common.message.Data.FileRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static common.message.Data.Request parseFrom(
+    public static common.message.Data.FileRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static common.message.Data.Request parseFrom(
+    public static common.message.Data.FileRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8558,7 +8631,7 @@ public final class Data {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(common.message.Data.Request prototype) {
+    public static Builder newBuilder(common.message.Data.FileRequest prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -8570,24 +8643,25 @@ public final class Data {
       return builder;
     }
     /**
-     * Protobuf type {@code common.message.Request}
+     * Protobuf type {@code common.message.FileRequest}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements common.message.Data.RequestOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.message.FileRequest)
+        common.message.Data.FileRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return common.message.Data.internal_static_common_message_Request_descriptor;
+        return common.message.Data.internal_static_common_message_FileRequest_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return common.message.Data.internal_static_common_message_Request_fieldAccessorTable
+        return common.message.Data.internal_static_common_message_FileRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                common.message.Data.Request.class, common.message.Data.Request.Builder.class);
+                common.message.Data.FileRequest.class, common.message.Data.FileRequest.Builder.class);
       }
 
-      // Construct using common.message.Data.Request.newBuilder()
+      // Construct using common.message.Data.FileRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -8607,7 +8681,7 @@ public final class Data {
 
       public Builder clear() {
         super.clear();
-        requestType_ = common.message.Data.Request.RequestType.Movie;
+        fileRequestType_ = common.message.Data.FileRequest.FileRequestType.OpenFileRemotely;
         bitField0_ = (bitField0_ & ~0x00000001);
         filePath_ = com.google.protobuf.ByteString.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -8620,29 +8694,29 @@ public final class Data {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return common.message.Data.internal_static_common_message_Request_descriptor;
+        return common.message.Data.internal_static_common_message_FileRequest_descriptor;
       }
 
-      public common.message.Data.Request getDefaultInstanceForType() {
-        return common.message.Data.Request.getDefaultInstance();
+      public common.message.Data.FileRequest getDefaultInstanceForType() {
+        return common.message.Data.FileRequest.getDefaultInstance();
       }
 
-      public common.message.Data.Request build() {
-        common.message.Data.Request result = buildPartial();
+      public common.message.Data.FileRequest build() {
+        common.message.Data.FileRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public common.message.Data.Request buildPartial() {
-        common.message.Data.Request result = new common.message.Data.Request(this);
+      public common.message.Data.FileRequest buildPartial() {
+        common.message.Data.FileRequest result = new common.message.Data.FileRequest(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.requestType_ = requestType_;
+        result.fileRequestType_ = fileRequestType_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
@@ -8653,18 +8727,18 @@ public final class Data {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof common.message.Data.Request) {
-          return mergeFrom((common.message.Data.Request)other);
+        if (other instanceof common.message.Data.FileRequest) {
+          return mergeFrom((common.message.Data.FileRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(common.message.Data.Request other) {
-        if (other == common.message.Data.Request.getDefaultInstance()) return this;
-        if (other.hasRequestType()) {
-          setRequestType(other.getRequestType());
+      public Builder mergeFrom(common.message.Data.FileRequest other) {
+        if (other == common.message.Data.FileRequest.getDefaultInstance()) return this;
+        if (other.hasFileRequestType()) {
+          setFileRequestType(other.getFileRequestType());
         }
         if (other.hasFilePath()) {
           setFilePath(other.getFilePath());
@@ -8674,7 +8748,7 @@ public final class Data {
       }
 
       public final boolean isInitialized() {
-        if (!hasRequestType()) {
+        if (!hasFileRequestType()) {
           
           return false;
         }
@@ -8689,11 +8763,11 @@ public final class Data {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        common.message.Data.Request parsedMessage = null;
+        common.message.Data.FileRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (common.message.Data.Request) e.getUnfinishedMessage();
+          parsedMessage = (common.message.Data.FileRequest) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -8704,70 +8778,56 @@ public final class Data {
       }
       private int bitField0_;
 
-      // required .common.message.Request.RequestType requestType = 1;
-      private common.message.Data.Request.RequestType requestType_ = common.message.Data.Request.RequestType.Movie;
+      private common.message.Data.FileRequest.FileRequestType fileRequestType_ = common.message.Data.FileRequest.FileRequestType.OpenFileRemotely;
       /**
-       * <code>required .common.message.Request.RequestType requestType = 1;</code>
+       * <code>required .common.message.FileRequest.FileRequestType fileRequestType = 1;</code>
        */
-      public boolean hasRequestType() {
+      public boolean hasFileRequestType() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>required .common.message.Request.RequestType requestType = 1;</code>
+       * <code>required .common.message.FileRequest.FileRequestType fileRequestType = 1;</code>
        */
-      public common.message.Data.Request.RequestType getRequestType() {
-        return requestType_;
+      public common.message.Data.FileRequest.FileRequestType getFileRequestType() {
+        return fileRequestType_;
       }
       /**
-       * <code>required .common.message.Request.RequestType requestType = 1;</code>
+       * <code>required .common.message.FileRequest.FileRequestType fileRequestType = 1;</code>
        */
-      public Builder setRequestType(common.message.Data.Request.RequestType value) {
+      public Builder setFileRequestType(common.message.Data.FileRequest.FileRequestType value) {
         if (value == null) {
           throw new NullPointerException();
         }
         bitField0_ |= 0x00000001;
-        requestType_ = value;
+        fileRequestType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required .common.message.Request.RequestType requestType = 1;</code>
+       * <code>required .common.message.FileRequest.FileRequestType fileRequestType = 1;</code>
        */
-      public Builder clearRequestType() {
+      public Builder clearFileRequestType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        requestType_ = common.message.Data.Request.RequestType.Movie;
+        fileRequestType_ = common.message.Data.FileRequest.FileRequestType.OpenFileRemotely;
         onChanged();
         return this;
       }
 
-      // required bytes filePath = 2;
       private com.google.protobuf.ByteString filePath_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>required bytes filePath = 2;</code>
-       *
-       * <pre>
-       * * means all files
-       * </pre>
        */
       public boolean hasFilePath() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>required bytes filePath = 2;</code>
-       *
-       * <pre>
-       * * means all files
-       * </pre>
        */
       public com.google.protobuf.ByteString getFilePath() {
         return filePath_;
       }
       /**
        * <code>required bytes filePath = 2;</code>
-       *
-       * <pre>
-       * * means all files
-       * </pre>
        */
       public Builder setFilePath(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -8780,10 +8840,6 @@ public final class Data {
       }
       /**
        * <code>required bytes filePath = 2;</code>
-       *
-       * <pre>
-       * * means all files
-       * </pre>
        */
       public Builder clearFilePath() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -8792,21 +8848,21 @@ public final class Data {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:common.message.Request)
+      // @@protoc_insertion_point(builder_scope:common.message.FileRequest)
     }
 
     static {
-      defaultInstance = new Request(true);
+      defaultInstance = new FileRequest(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:common.message.Request)
+    // @@protoc_insertion_point(class_scope:common.message.FileRequest)
   }
 
-  public interface RequestFeedbackOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface FileInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.message.FileInfo)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required bytes filePath = 1;
     /**
      * <code>required bytes filePath = 1;</code>
      */
@@ -8815,26 +8871,45 @@ public final class Data {
      * <code>required bytes filePath = 1;</code>
      */
     com.google.protobuf.ByteString getFilePath();
+
+    /**
+     * <code>required uint64 fileSize = 2;</code>
+     */
+    boolean hasFileSize();
+    /**
+     * <code>required uint64 fileSize = 2;</code>
+     */
+    long getFileSize();
+
+    /**
+     * <code>optional bytes fileIcon = 3;</code>
+     */
+    boolean hasFileIcon();
+    /**
+     * <code>optional bytes fileIcon = 3;</code>
+     */
+    com.google.protobuf.ByteString getFileIcon();
   }
   /**
-   * Protobuf type {@code common.message.RequestFeedback}
+   * Protobuf type {@code common.message.FileInfo}
    */
-  public static final class RequestFeedback extends
-      com.google.protobuf.GeneratedMessage
-      implements RequestFeedbackOrBuilder {
-    // Use RequestFeedback.newBuilder() to construct.
-    private RequestFeedback(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  public static final class FileInfo extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:common.message.FileInfo)
+      FileInfoOrBuilder {
+    // Use FileInfo.newBuilder() to construct.
+    private FileInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private RequestFeedback(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private FileInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final RequestFeedback defaultInstance;
-    public static RequestFeedback getDefaultInstance() {
+    private static final FileInfo defaultInstance;
+    public static FileInfo getDefaultInstance() {
       return defaultInstance;
     }
 
-    public RequestFeedback getDefaultInstanceForType() {
+    public FileInfo getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -8844,7 +8919,7 @@ public final class Data {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private RequestFeedback(
+    private FileInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8872,6 +8947,16 @@ public final class Data {
               filePath_ = input.readBytes();
               break;
             }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              fileSize_ = input.readUInt64();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              fileIcon_ = input.readBytes();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -8886,33 +8971,32 @@ public final class Data {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return common.message.Data.internal_static_common_message_RequestFeedback_descriptor;
+      return common.message.Data.internal_static_common_message_FileInfo_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return common.message.Data.internal_static_common_message_RequestFeedback_fieldAccessorTable
+      return common.message.Data.internal_static_common_message_FileInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              common.message.Data.RequestFeedback.class, common.message.Data.RequestFeedback.Builder.class);
+              common.message.Data.FileInfo.class, common.message.Data.FileInfo.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<RequestFeedback> PARSER =
-        new com.google.protobuf.AbstractParser<RequestFeedback>() {
-      public RequestFeedback parsePartialFrom(
+    public static com.google.protobuf.Parser<FileInfo> PARSER =
+        new com.google.protobuf.AbstractParser<FileInfo>() {
+      public FileInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RequestFeedback(input, extensionRegistry);
+        return new FileInfo(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<RequestFeedback> getParserForType() {
+    public com.google.protobuf.Parser<FileInfo> getParserForType() {
       return PARSER;
     }
 
     private int bitField0_;
-    // required bytes filePath = 1;
     public static final int FILEPATH_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString filePath_;
     /**
@@ -8928,15 +9012,52 @@ public final class Data {
       return filePath_;
     }
 
+    public static final int FILESIZE_FIELD_NUMBER = 2;
+    private long fileSize_;
+    /**
+     * <code>required uint64 fileSize = 2;</code>
+     */
+    public boolean hasFileSize() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required uint64 fileSize = 2;</code>
+     */
+    public long getFileSize() {
+      return fileSize_;
+    }
+
+    public static final int FILEICON_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString fileIcon_;
+    /**
+     * <code>optional bytes fileIcon = 3;</code>
+     */
+    public boolean hasFileIcon() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional bytes fileIcon = 3;</code>
+     */
+    public com.google.protobuf.ByteString getFileIcon() {
+      return fileIcon_;
+    }
+
     private void initFields() {
       filePath_ = com.google.protobuf.ByteString.EMPTY;
+      fileSize_ = 0L;
+      fileIcon_ = com.google.protobuf.ByteString.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasFilePath()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasFileSize()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -8949,6 +9070,12 @@ public final class Data {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeBytes(1, filePath_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt64(2, fileSize_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, fileIcon_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -8963,6 +9090,14 @@ public final class Data {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, filePath_);
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, fileSize_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, fileIcon_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -8975,53 +9110,53 @@ public final class Data {
       return super.writeReplace();
     }
 
-    public static common.message.Data.RequestFeedback parseFrom(
+    public static common.message.Data.FileInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static common.message.Data.RequestFeedback parseFrom(
+    public static common.message.Data.FileInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static common.message.Data.RequestFeedback parseFrom(byte[] data)
+    public static common.message.Data.FileInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static common.message.Data.RequestFeedback parseFrom(
+    public static common.message.Data.FileInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static common.message.Data.RequestFeedback parseFrom(java.io.InputStream input)
+    public static common.message.Data.FileInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static common.message.Data.RequestFeedback parseFrom(
+    public static common.message.Data.FileInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static common.message.Data.RequestFeedback parseDelimitedFrom(java.io.InputStream input)
+    public static common.message.Data.FileInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static common.message.Data.RequestFeedback parseDelimitedFrom(
+    public static common.message.Data.FileInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static common.message.Data.RequestFeedback parseFrom(
+    public static common.message.Data.FileInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static common.message.Data.RequestFeedback parseFrom(
+    public static common.message.Data.FileInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9030,7 +9165,7 @@ public final class Data {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(common.message.Data.RequestFeedback prototype) {
+    public static Builder newBuilder(common.message.Data.FileInfo prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -9042,24 +9177,25 @@ public final class Data {
       return builder;
     }
     /**
-     * Protobuf type {@code common.message.RequestFeedback}
+     * Protobuf type {@code common.message.FileInfo}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements common.message.Data.RequestFeedbackOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.message.FileInfo)
+        common.message.Data.FileInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return common.message.Data.internal_static_common_message_RequestFeedback_descriptor;
+        return common.message.Data.internal_static_common_message_FileInfo_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return common.message.Data.internal_static_common_message_RequestFeedback_fieldAccessorTable
+        return common.message.Data.internal_static_common_message_FileInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                common.message.Data.RequestFeedback.class, common.message.Data.RequestFeedback.Builder.class);
+                common.message.Data.FileInfo.class, common.message.Data.FileInfo.Builder.class);
       }
 
-      // Construct using common.message.Data.RequestFeedback.newBuilder()
+      // Construct using common.message.Data.FileInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -9081,6 +9217,10 @@ public final class Data {
         super.clear();
         filePath_ = com.google.protobuf.ByteString.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
+        fileSize_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        fileIcon_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -9090,47 +9230,61 @@ public final class Data {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return common.message.Data.internal_static_common_message_RequestFeedback_descriptor;
+        return common.message.Data.internal_static_common_message_FileInfo_descriptor;
       }
 
-      public common.message.Data.RequestFeedback getDefaultInstanceForType() {
-        return common.message.Data.RequestFeedback.getDefaultInstance();
+      public common.message.Data.FileInfo getDefaultInstanceForType() {
+        return common.message.Data.FileInfo.getDefaultInstance();
       }
 
-      public common.message.Data.RequestFeedback build() {
-        common.message.Data.RequestFeedback result = buildPartial();
+      public common.message.Data.FileInfo build() {
+        common.message.Data.FileInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public common.message.Data.RequestFeedback buildPartial() {
-        common.message.Data.RequestFeedback result = new common.message.Data.RequestFeedback(this);
+      public common.message.Data.FileInfo buildPartial() {
+        common.message.Data.FileInfo result = new common.message.Data.FileInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
         result.filePath_ = filePath_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.fileSize_ = fileSize_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.fileIcon_ = fileIcon_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof common.message.Data.RequestFeedback) {
-          return mergeFrom((common.message.Data.RequestFeedback)other);
+        if (other instanceof common.message.Data.FileInfo) {
+          return mergeFrom((common.message.Data.FileInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(common.message.Data.RequestFeedback other) {
-        if (other == common.message.Data.RequestFeedback.getDefaultInstance()) return this;
+      public Builder mergeFrom(common.message.Data.FileInfo other) {
+        if (other == common.message.Data.FileInfo.getDefaultInstance()) return this;
         if (other.hasFilePath()) {
           setFilePath(other.getFilePath());
+        }
+        if (other.hasFileSize()) {
+          setFileSize(other.getFileSize());
+        }
+        if (other.hasFileIcon()) {
+          setFileIcon(other.getFileIcon());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -9141,6 +9295,10 @@ public final class Data {
           
           return false;
         }
+        if (!hasFileSize()) {
+          
+          return false;
+        }
         return true;
       }
 
@@ -9148,11 +9306,11 @@ public final class Data {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        common.message.Data.RequestFeedback parsedMessage = null;
+        common.message.Data.FileInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (common.message.Data.RequestFeedback) e.getUnfinishedMessage();
+          parsedMessage = (common.message.Data.FileInfo) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -9163,7 +9321,6 @@ public final class Data {
       }
       private int bitField0_;
 
-      // required bytes filePath = 1;
       private com.google.protobuf.ByteString filePath_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>required bytes filePath = 1;</code>
@@ -9199,69 +9356,117 @@ public final class Data {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:common.message.RequestFeedback)
+      private long fileSize_ ;
+      /**
+       * <code>required uint64 fileSize = 2;</code>
+       */
+      public boolean hasFileSize() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required uint64 fileSize = 2;</code>
+       */
+      public long getFileSize() {
+        return fileSize_;
+      }
+      /**
+       * <code>required uint64 fileSize = 2;</code>
+       */
+      public Builder setFileSize(long value) {
+        bitField0_ |= 0x00000002;
+        fileSize_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required uint64 fileSize = 2;</code>
+       */
+      public Builder clearFileSize() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        fileSize_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString fileIcon_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes fileIcon = 3;</code>
+       */
+      public boolean hasFileIcon() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional bytes fileIcon = 3;</code>
+       */
+      public com.google.protobuf.ByteString getFileIcon() {
+        return fileIcon_;
+      }
+      /**
+       * <code>optional bytes fileIcon = 3;</code>
+       */
+      public Builder setFileIcon(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        fileIcon_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes fileIcon = 3;</code>
+       */
+      public Builder clearFileIcon() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        fileIcon_ = getDefaultInstance().getFileIcon();
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:common.message.FileInfo)
     }
 
     static {
-      defaultInstance = new RequestFeedback(true);
+      defaultInstance = new FileInfo(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:common.message.RequestFeedback)
+    // @@protoc_insertion_point(class_scope:common.message.FileInfo)
   }
 
-  public interface SharedFileOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface FileBlockOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.message.FileBlock)
+      com.google.protobuf.MessageOrBuilder {
 
-    // optional bytes fileName = 1;
     /**
-     * <code>optional bytes fileName = 1;</code>
-     */
-    boolean hasFileName();
-    /**
-     * <code>optional bytes fileName = 1;</code>
-     */
-    com.google.protobuf.ByteString getFileName();
-
-    // required int64 fileLength = 2;
-    /**
-     * <code>required int64 fileLength = 2;</code>
-     */
-    boolean hasFileLength();
-    /**
-     * <code>required int64 fileLength = 2;</code>
-     */
-    long getFileLength();
-
-    // required bytes content = 3;
-    /**
-     * <code>required bytes content = 3;</code>
+     * <code>required bytes content = 1;</code>
      */
     boolean hasContent();
     /**
-     * <code>required bytes content = 3;</code>
+     * <code>required bytes content = 1;</code>
      */
     com.google.protobuf.ByteString getContent();
   }
   /**
-   * Protobuf type {@code common.message.SharedFile}
+   * Protobuf type {@code common.message.FileBlock}
    */
-  public static final class SharedFile extends
-      com.google.protobuf.GeneratedMessage
-      implements SharedFileOrBuilder {
-    // Use SharedFile.newBuilder() to construct.
-    private SharedFile(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  public static final class FileBlock extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:common.message.FileBlock)
+      FileBlockOrBuilder {
+    // Use FileBlock.newBuilder() to construct.
+    private FileBlock(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private SharedFile(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private FileBlock(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final SharedFile defaultInstance;
-    public static SharedFile getDefaultInstance() {
+    private static final FileBlock defaultInstance;
+    public static FileBlock getDefaultInstance() {
       return defaultInstance;
     }
 
-    public SharedFile getDefaultInstanceForType() {
+    public FileBlock getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -9271,7 +9476,7 @@ public final class Data {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private SharedFile(
+    private FileBlock(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9296,16 +9501,6 @@ public final class Data {
             }
             case 10: {
               bitField0_ |= 0x00000001;
-              fileName_ = input.readBytes();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              fileLength_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000004;
               content_ = input.readBytes();
               break;
             }
@@ -9323,94 +9518,56 @@ public final class Data {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return common.message.Data.internal_static_common_message_SharedFile_descriptor;
+      return common.message.Data.internal_static_common_message_FileBlock_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return common.message.Data.internal_static_common_message_SharedFile_fieldAccessorTable
+      return common.message.Data.internal_static_common_message_FileBlock_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              common.message.Data.SharedFile.class, common.message.Data.SharedFile.Builder.class);
+              common.message.Data.FileBlock.class, common.message.Data.FileBlock.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<SharedFile> PARSER =
-        new com.google.protobuf.AbstractParser<SharedFile>() {
-      public SharedFile parsePartialFrom(
+    public static com.google.protobuf.Parser<FileBlock> PARSER =
+        new com.google.protobuf.AbstractParser<FileBlock>() {
+      public FileBlock parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SharedFile(input, extensionRegistry);
+        return new FileBlock(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SharedFile> getParserForType() {
+    public com.google.protobuf.Parser<FileBlock> getParserForType() {
       return PARSER;
     }
 
     private int bitField0_;
-    // optional bytes fileName = 1;
-    public static final int FILENAME_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString fileName_;
+    public static final int CONTENT_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString content_;
     /**
-     * <code>optional bytes fileName = 1;</code>
+     * <code>required bytes content = 1;</code>
      */
-    public boolean hasFileName() {
+    public boolean hasContent() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>optional bytes fileName = 1;</code>
-     */
-    public com.google.protobuf.ByteString getFileName() {
-      return fileName_;
-    }
-
-    // required int64 fileLength = 2;
-    public static final int FILELENGTH_FIELD_NUMBER = 2;
-    private long fileLength_;
-    /**
-     * <code>required int64 fileLength = 2;</code>
-     */
-    public boolean hasFileLength() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>required int64 fileLength = 2;</code>
-     */
-    public long getFileLength() {
-      return fileLength_;
-    }
-
-    // required bytes content = 3;
-    public static final int CONTENT_FIELD_NUMBER = 3;
-    private com.google.protobuf.ByteString content_;
-    /**
-     * <code>required bytes content = 3;</code>
-     */
-    public boolean hasContent() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>required bytes content = 3;</code>
+     * <code>required bytes content = 1;</code>
      */
     public com.google.protobuf.ByteString getContent() {
       return content_;
     }
 
     private void initFields() {
-      fileName_ = com.google.protobuf.ByteString.EMPTY;
-      fileLength_ = 0L;
       content_ = com.google.protobuf.ByteString.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
-      if (!hasFileLength()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasContent()) {
         memoizedIsInitialized = 0;
         return false;
@@ -9423,13 +9580,7 @@ public final class Data {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, fileName_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, fileLength_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, content_);
+        output.writeBytes(1, content_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -9442,15 +9593,7 @@ public final class Data {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, fileName_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, fileLength_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, content_);
+          .computeBytesSize(1, content_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -9464,53 +9607,53 @@ public final class Data {
       return super.writeReplace();
     }
 
-    public static common.message.Data.SharedFile parseFrom(
+    public static common.message.Data.FileBlock parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static common.message.Data.SharedFile parseFrom(
+    public static common.message.Data.FileBlock parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static common.message.Data.SharedFile parseFrom(byte[] data)
+    public static common.message.Data.FileBlock parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static common.message.Data.SharedFile parseFrom(
+    public static common.message.Data.FileBlock parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static common.message.Data.SharedFile parseFrom(java.io.InputStream input)
+    public static common.message.Data.FileBlock parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static common.message.Data.SharedFile parseFrom(
+    public static common.message.Data.FileBlock parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static common.message.Data.SharedFile parseDelimitedFrom(java.io.InputStream input)
+    public static common.message.Data.FileBlock parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static common.message.Data.SharedFile parseDelimitedFrom(
+    public static common.message.Data.FileBlock parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static common.message.Data.SharedFile parseFrom(
+    public static common.message.Data.FileBlock parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static common.message.Data.SharedFile parseFrom(
+    public static common.message.Data.FileBlock parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9519,7 +9662,7 @@ public final class Data {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(common.message.Data.SharedFile prototype) {
+    public static Builder newBuilder(common.message.Data.FileBlock prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -9531,24 +9674,25 @@ public final class Data {
       return builder;
     }
     /**
-     * Protobuf type {@code common.message.SharedFile}
+     * Protobuf type {@code common.message.FileBlock}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements common.message.Data.SharedFileOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.message.FileBlock)
+        common.message.Data.FileBlockOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return common.message.Data.internal_static_common_message_SharedFile_descriptor;
+        return common.message.Data.internal_static_common_message_FileBlock_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return common.message.Data.internal_static_common_message_SharedFile_fieldAccessorTable
+        return common.message.Data.internal_static_common_message_FileBlock_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                common.message.Data.SharedFile.class, common.message.Data.SharedFile.Builder.class);
+                common.message.Data.FileBlock.class, common.message.Data.FileBlock.Builder.class);
       }
 
-      // Construct using common.message.Data.SharedFile.newBuilder()
+      // Construct using common.message.Data.FileBlock.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -9568,12 +9712,8 @@ public final class Data {
 
       public Builder clear() {
         super.clear();
-        fileName_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        fileLength_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
         content_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -9583,35 +9723,27 @@ public final class Data {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return common.message.Data.internal_static_common_message_SharedFile_descriptor;
+        return common.message.Data.internal_static_common_message_FileBlock_descriptor;
       }
 
-      public common.message.Data.SharedFile getDefaultInstanceForType() {
-        return common.message.Data.SharedFile.getDefaultInstance();
+      public common.message.Data.FileBlock getDefaultInstanceForType() {
+        return common.message.Data.FileBlock.getDefaultInstance();
       }
 
-      public common.message.Data.SharedFile build() {
-        common.message.Data.SharedFile result = buildPartial();
+      public common.message.Data.FileBlock build() {
+        common.message.Data.FileBlock result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public common.message.Data.SharedFile buildPartial() {
-        common.message.Data.SharedFile result = new common.message.Data.SharedFile(this);
+      public common.message.Data.FileBlock buildPartial() {
+        common.message.Data.FileBlock result = new common.message.Data.FileBlock(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
-        }
-        result.fileName_ = fileName_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.fileLength_ = fileLength_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
         }
         result.content_ = content_;
         result.bitField0_ = to_bitField0_;
@@ -9620,22 +9752,16 @@ public final class Data {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof common.message.Data.SharedFile) {
-          return mergeFrom((common.message.Data.SharedFile)other);
+        if (other instanceof common.message.Data.FileBlock) {
+          return mergeFrom((common.message.Data.FileBlock)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(common.message.Data.SharedFile other) {
-        if (other == common.message.Data.SharedFile.getDefaultInstance()) return this;
-        if (other.hasFileName()) {
-          setFileName(other.getFileName());
-        }
-        if (other.hasFileLength()) {
-          setFileLength(other.getFileLength());
-        }
+      public Builder mergeFrom(common.message.Data.FileBlock other) {
+        if (other == common.message.Data.FileBlock.getDefaultInstance()) return this;
         if (other.hasContent()) {
           setContent(other.getContent());
         }
@@ -9644,10 +9770,6 @@ public final class Data {
       }
 
       public final boolean isInitialized() {
-        if (!hasFileLength()) {
-          
-          return false;
-        }
         if (!hasContent()) {
           
           return false;
@@ -9659,11 +9781,11 @@ public final class Data {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        common.message.Data.SharedFile parsedMessage = null;
+        common.message.Data.FileBlock parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (common.message.Data.SharedFile) e.getUnfinishedMessage();
+          parsedMessage = (common.message.Data.FileBlock) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -9674,126 +9796,861 @@ public final class Data {
       }
       private int bitField0_;
 
-      // optional bytes fileName = 1;
-      private com.google.protobuf.ByteString fileName_ = com.google.protobuf.ByteString.EMPTY;
+      private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes fileName = 1;</code>
+       * <code>required bytes content = 1;</code>
        */
-      public boolean hasFileName() {
+      public boolean hasContent() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>optional bytes fileName = 1;</code>
-       */
-      public com.google.protobuf.ByteString getFileName() {
-        return fileName_;
-      }
-      /**
-       * <code>optional bytes fileName = 1;</code>
-       */
-      public Builder setFileName(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        fileName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bytes fileName = 1;</code>
-       */
-      public Builder clearFileName() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        fileName_ = getDefaultInstance().getFileName();
-        onChanged();
-        return this;
-      }
-
-      // required int64 fileLength = 2;
-      private long fileLength_ ;
-      /**
-       * <code>required int64 fileLength = 2;</code>
-       */
-      public boolean hasFileLength() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>required int64 fileLength = 2;</code>
-       */
-      public long getFileLength() {
-        return fileLength_;
-      }
-      /**
-       * <code>required int64 fileLength = 2;</code>
-       */
-      public Builder setFileLength(long value) {
-        bitField0_ |= 0x00000002;
-        fileLength_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>required int64 fileLength = 2;</code>
-       */
-      public Builder clearFileLength() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        fileLength_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      // required bytes content = 3;
-      private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>required bytes content = 3;</code>
-       */
-      public boolean hasContent() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>required bytes content = 3;</code>
+       * <code>required bytes content = 1;</code>
        */
       public com.google.protobuf.ByteString getContent() {
         return content_;
       }
       /**
-       * <code>required bytes content = 3;</code>
+       * <code>required bytes content = 1;</code>
        */
       public Builder setContent(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000001;
         content_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required bytes content = 3;</code>
+       * <code>required bytes content = 1;</code>
        */
       public Builder clearContent() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000001);
         content_ = getDefaultInstance().getContent();
         onChanged();
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:common.message.SharedFile)
+      // @@protoc_insertion_point(builder_scope:common.message.FileBlock)
     }
 
     static {
-      defaultInstance = new SharedFile(true);
+      defaultInstance = new FileBlock(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:common.message.SharedFile)
+    // @@protoc_insertion_point(class_scope:common.message.FileBlock)
   }
 
-  public interface SharedMessageOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface CloudStorageTokenRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.message.CloudStorageTokenRequest)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required bytes content = 1;
+    /**
+     * <code>optional int32 expires = 1 [default = 3600];</code>
+     */
+    boolean hasExpires();
+    /**
+     * <code>optional int32 expires = 1 [default = 3600];</code>
+     */
+    int getExpires();
+  }
+  /**
+   * Protobuf type {@code common.message.CloudStorageTokenRequest}
+   */
+  public static final class CloudStorageTokenRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:common.message.CloudStorageTokenRequest)
+      CloudStorageTokenRequestOrBuilder {
+    // Use CloudStorageTokenRequest.newBuilder() to construct.
+    private CloudStorageTokenRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private CloudStorageTokenRequest(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final CloudStorageTokenRequest defaultInstance;
+    public static CloudStorageTokenRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public CloudStorageTokenRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CloudStorageTokenRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              expires_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return common.message.Data.internal_static_common_message_CloudStorageTokenRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return common.message.Data.internal_static_common_message_CloudStorageTokenRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              common.message.Data.CloudStorageTokenRequest.class, common.message.Data.CloudStorageTokenRequest.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<CloudStorageTokenRequest> PARSER =
+        new com.google.protobuf.AbstractParser<CloudStorageTokenRequest>() {
+      public CloudStorageTokenRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CloudStorageTokenRequest(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CloudStorageTokenRequest> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int EXPIRES_FIELD_NUMBER = 1;
+    private int expires_;
+    /**
+     * <code>optional int32 expires = 1 [default = 3600];</code>
+     */
+    public boolean hasExpires() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int32 expires = 1 [default = 3600];</code>
+     */
+    public int getExpires() {
+      return expires_;
+    }
+
+    private void initFields() {
+      expires_ = 3600;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, expires_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, expires_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static common.message.Data.CloudStorageTokenRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.message.Data.CloudStorageTokenRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.message.Data.CloudStorageTokenRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.message.Data.CloudStorageTokenRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.message.Data.CloudStorageTokenRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static common.message.Data.CloudStorageTokenRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static common.message.Data.CloudStorageTokenRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static common.message.Data.CloudStorageTokenRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static common.message.Data.CloudStorageTokenRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static common.message.Data.CloudStorageTokenRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(common.message.Data.CloudStorageTokenRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.message.CloudStorageTokenRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.message.CloudStorageTokenRequest)
+        common.message.Data.CloudStorageTokenRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return common.message.Data.internal_static_common_message_CloudStorageTokenRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return common.message.Data.internal_static_common_message_CloudStorageTokenRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                common.message.Data.CloudStorageTokenRequest.class, common.message.Data.CloudStorageTokenRequest.Builder.class);
+      }
+
+      // Construct using common.message.Data.CloudStorageTokenRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        expires_ = 3600;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return common.message.Data.internal_static_common_message_CloudStorageTokenRequest_descriptor;
+      }
+
+      public common.message.Data.CloudStorageTokenRequest getDefaultInstanceForType() {
+        return common.message.Data.CloudStorageTokenRequest.getDefaultInstance();
+      }
+
+      public common.message.Data.CloudStorageTokenRequest build() {
+        common.message.Data.CloudStorageTokenRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public common.message.Data.CloudStorageTokenRequest buildPartial() {
+        common.message.Data.CloudStorageTokenRequest result = new common.message.Data.CloudStorageTokenRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.expires_ = expires_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof common.message.Data.CloudStorageTokenRequest) {
+          return mergeFrom((common.message.Data.CloudStorageTokenRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(common.message.Data.CloudStorageTokenRequest other) {
+        if (other == common.message.Data.CloudStorageTokenRequest.getDefaultInstance()) return this;
+        if (other.hasExpires()) {
+          setExpires(other.getExpires());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        common.message.Data.CloudStorageTokenRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (common.message.Data.CloudStorageTokenRequest) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int expires_ = 3600;
+      /**
+       * <code>optional int32 expires = 1 [default = 3600];</code>
+       */
+      public boolean hasExpires() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional int32 expires = 1 [default = 3600];</code>
+       */
+      public int getExpires() {
+        return expires_;
+      }
+      /**
+       * <code>optional int32 expires = 1 [default = 3600];</code>
+       */
+      public Builder setExpires(int value) {
+        bitField0_ |= 0x00000001;
+        expires_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 expires = 1 [default = 3600];</code>
+       */
+      public Builder clearExpires() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        expires_ = 3600;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:common.message.CloudStorageTokenRequest)
+    }
+
+    static {
+      defaultInstance = new CloudStorageTokenRequest(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:common.message.CloudStorageTokenRequest)
+  }
+
+  public interface CloudStorageTokenOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.message.CloudStorageToken)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required bytes token = 1;</code>
+     */
+    boolean hasToken();
+    /**
+     * <code>required bytes token = 1;</code>
+     */
+    com.google.protobuf.ByteString getToken();
+  }
+  /**
+   * Protobuf type {@code common.message.CloudStorageToken}
+   */
+  public static final class CloudStorageToken extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:common.message.CloudStorageToken)
+      CloudStorageTokenOrBuilder {
+    // Use CloudStorageToken.newBuilder() to construct.
+    private CloudStorageToken(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private CloudStorageToken(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final CloudStorageToken defaultInstance;
+    public static CloudStorageToken getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public CloudStorageToken getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CloudStorageToken(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              token_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return common.message.Data.internal_static_common_message_CloudStorageToken_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return common.message.Data.internal_static_common_message_CloudStorageToken_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              common.message.Data.CloudStorageToken.class, common.message.Data.CloudStorageToken.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<CloudStorageToken> PARSER =
+        new com.google.protobuf.AbstractParser<CloudStorageToken>() {
+      public CloudStorageToken parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CloudStorageToken(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CloudStorageToken> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int TOKEN_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString token_;
+    /**
+     * <code>required bytes token = 1;</code>
+     */
+    public boolean hasToken() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required bytes token = 1;</code>
+     */
+    public com.google.protobuf.ByteString getToken() {
+      return token_;
+    }
+
+    private void initFields() {
+      token_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasToken()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, token_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, token_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static common.message.Data.CloudStorageToken parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.message.Data.CloudStorageToken parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.message.Data.CloudStorageToken parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.message.Data.CloudStorageToken parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.message.Data.CloudStorageToken parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static common.message.Data.CloudStorageToken parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static common.message.Data.CloudStorageToken parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static common.message.Data.CloudStorageToken parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static common.message.Data.CloudStorageToken parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static common.message.Data.CloudStorageToken parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(common.message.Data.CloudStorageToken prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.message.CloudStorageToken}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.message.CloudStorageToken)
+        common.message.Data.CloudStorageTokenOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return common.message.Data.internal_static_common_message_CloudStorageToken_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return common.message.Data.internal_static_common_message_CloudStorageToken_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                common.message.Data.CloudStorageToken.class, common.message.Data.CloudStorageToken.Builder.class);
+      }
+
+      // Construct using common.message.Data.CloudStorageToken.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        token_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return common.message.Data.internal_static_common_message_CloudStorageToken_descriptor;
+      }
+
+      public common.message.Data.CloudStorageToken getDefaultInstanceForType() {
+        return common.message.Data.CloudStorageToken.getDefaultInstance();
+      }
+
+      public common.message.Data.CloudStorageToken build() {
+        common.message.Data.CloudStorageToken result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public common.message.Data.CloudStorageToken buildPartial() {
+        common.message.Data.CloudStorageToken result = new common.message.Data.CloudStorageToken(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.token_ = token_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof common.message.Data.CloudStorageToken) {
+          return mergeFrom((common.message.Data.CloudStorageToken)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(common.message.Data.CloudStorageToken other) {
+        if (other == common.message.Data.CloudStorageToken.getDefaultInstance()) return this;
+        if (other.hasToken()) {
+          setToken(other.getToken());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasToken()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        common.message.Data.CloudStorageToken parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (common.message.Data.CloudStorageToken) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.ByteString token_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>required bytes token = 1;</code>
+       */
+      public boolean hasToken() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required bytes token = 1;</code>
+       */
+      public com.google.protobuf.ByteString getToken() {
+        return token_;
+      }
+      /**
+       * <code>required bytes token = 1;</code>
+       */
+      public Builder setToken(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bytes token = 1;</code>
+       */
+      public Builder clearToken() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        token_ = getDefaultInstance().getToken();
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:common.message.CloudStorageToken)
+    }
+
+    static {
+      defaultInstance = new CloudStorageToken(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:common.message.CloudStorageToken)
+  }
+
+  public interface SharedMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.message.SharedMessage)
+      com.google.protobuf.MessageOrBuilder {
+
     /**
      * <code>required bytes content = 1;</code>
      */
@@ -9807,8 +10664,9 @@ public final class Data {
    * Protobuf type {@code common.message.SharedMessage}
    */
   public static final class SharedMessage extends
-      com.google.protobuf.GeneratedMessage
-      implements SharedMessageOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:common.message.SharedMessage)
+      SharedMessageOrBuilder {
     // Use SharedMessage.newBuilder() to construct.
     private SharedMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -9899,7 +10757,6 @@ public final class Data {
     }
 
     private int bitField0_;
-    // required bytes content = 1;
     public static final int CONTENT_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString content_;
     /**
@@ -9921,7 +10778,8 @@ public final class Data {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasContent()) {
         memoizedIsInitialized = 0;
@@ -10032,8 +10890,9 @@ public final class Data {
      * Protobuf type {@code common.message.SharedMessage}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements common.message.Data.SharedMessageOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.message.SharedMessage)
+        common.message.Data.SharedMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return common.message.Data.internal_static_common_message_SharedMessage_descriptor;
@@ -10150,7 +11009,6 @@ public final class Data {
       }
       private int bitField0_;
 
-      // required bytes content = 1;
       private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <code>required bytes content = 1;</code>
@@ -10197,10 +11055,10 @@ public final class Data {
     // @@protoc_insertion_point(class_scope:common.message.SharedMessage)
   }
 
-  public interface KeyboardEventOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface KeyboardEventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.message.KeyboardEvent)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required int32 keyCode = 1;
     /**
      * <code>required int32 keyCode = 1;</code>
      */
@@ -10214,8 +11072,9 @@ public final class Data {
    * Protobuf type {@code common.message.KeyboardEvent}
    */
   public static final class KeyboardEvent extends
-      com.google.protobuf.GeneratedMessage
-      implements KeyboardEventOrBuilder {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:common.message.KeyboardEvent)
+      KeyboardEventOrBuilder {
     // Use KeyboardEvent.newBuilder() to construct.
     private KeyboardEvent(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
@@ -10306,7 +11165,6 @@ public final class Data {
     }
 
     private int bitField0_;
-    // required int32 keyCode = 1;
     public static final int KEYCODE_FIELD_NUMBER = 1;
     private int keyCode_;
     /**
@@ -10328,7 +11186,8 @@ public final class Data {
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasKeyCode()) {
         memoizedIsInitialized = 0;
@@ -10439,8 +11298,9 @@ public final class Data {
      * Protobuf type {@code common.message.KeyboardEvent}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements common.message.Data.KeyboardEventOrBuilder {
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.message.KeyboardEvent)
+        common.message.Data.KeyboardEventOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return common.message.Data.internal_static_common_message_KeyboardEvent_descriptor;
@@ -10557,7 +11417,6 @@ public final class Data {
       }
       private int bitField0_;
 
-      // required int32 keyCode = 1;
       private int keyCode_ ;
       /**
        * <code>required int32 keyCode = 1;</code>
@@ -10601,72 +11460,82 @@ public final class Data {
     // @@protoc_insertion_point(class_scope:common.message.KeyboardEvent)
   }
 
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_message_DataPacket_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_common_message_DataPacket_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_message_Command_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_common_message_Command_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_message_Video_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_common_message_Video_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_message_Video_Rectangle_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_common_message_Video_Rectangle_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_message_Video_Point_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_common_message_Video_Point_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_message_Video_MoveRectangle_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_common_message_Video_MoveRectangle_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_message_Audio_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_common_message_Audio_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_common_message_Info_descriptor;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_message_DeviceInfo_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_common_message_Info_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+      internal_static_common_message_DeviceInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_message_Resolution_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_common_message_Resolution_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_common_message_Request_descriptor;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_message_FileRequest_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_common_message_Request_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_common_message_RequestFeedback_descriptor;
+      internal_static_common_message_FileRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_message_FileInfo_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_common_message_RequestFeedback_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_common_message_SharedFile_descriptor;
+      internal_static_common_message_FileInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_message_FileBlock_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_common_message_SharedFile_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+      internal_static_common_message_FileBlock_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_message_CloudStorageTokenRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_common_message_CloudStorageTokenRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_message_CloudStorageToken_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_common_message_CloudStorageToken_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_message_SharedMessage_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_common_message_SharedMessage_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_message_KeyboardEvent_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -10680,157 +11549,173 @@ public final class Data {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\ndata.proto\022\016common.message\"\245\005\n\nDataPac" +
-      "ket\022A\n\016dataPacketType\030\001 \002(\0162).common.mes" +
-      "sage.DataPacket.DataPacketType\022\"\n\004info\030\002" +
-      " \001(\0132\024.common.message.Info\022$\n\005video\030\003 \001(" +
-      "\0132\025.common.message.Video\022$\n\005audio\030\004 \001(\0132" +
-      "\025.common.message.Audio\022(\n\007command\030\005 \001(\0132" +
-      "\027.common.message.Command\022(\n\007request\030\006 \001(" +
-      "\0132\027.common.message.Request\0228\n\017requestFee" +
-      "dback\030\007 \001(\0132\037.common.message.RequestFeed" +
-      "back\0224\n\rsharedMessage\030\010 \001(\0132\035.common.mes",
-      "sage.SharedMessage\022.\n\nsharedFile\030\t \001(\0132\032" +
-      ".common.message.SharedFile\0224\n\rkeyboardEv" +
-      "ent\030\n \001(\0132\035.common.message.KeyboardEvent" +
-      "\022\021\n\ttimeStamp\030\013 \001(\014\"\246\001\n\016DataPacketType\022\010" +
-      "\n\004Info\020\001\022\t\n\005Video\020\002\022\t\n\005Audio\020\003\022\013\n\007Comman" +
-      "d\020\004\022\013\n\007Request\020\005\022\023\n\017RequestFeedback\020\006\022\021\n" +
-      "\rSharedMessage\020\007\022\016\n\nSharedFile\020\010\022\017\n\013Find" +
-      "MyPhone\020\t\022\021\n\rKeyboardEvent\020\n\"\213\003\n\007Command" +
-      "\0228\n\013commandType\030\001 \002(\0162#.common.message.C" +
-      "ommand.CommandType\022\t\n\001x\030\002 \001(\002\022\t\n\001y\030\003 \001(\002",
-      "\"\257\002\n\013CommandType\022\014\n\010Minimize\020\001\022\017\n\013ShowDe" +
-      "sktop\020\002\022\017\n\013ShutDownApp\020\003\022\r\n\tLeftClick\020\004\022" +
-      "\016\n\nRightClick\020\005\022\n\n\006Scroll\020\006\022\020\n\014SelectWin" +
-      "dow\020\007\022\031\n\025StopAudioTransmission\020\010\022\031\n\025Stop" +
-      "VideoTransmission\020\t\022!\n\035StopAudioAndVideo" +
-      "Transmission\020\n\022\032\n\026StartAudioTransmission" +
-      "\020\013\022\032\n\026StartVideoTransmission\020\014\022\"\n\036StartA" +
-      "udioAndVideoTransmission\020\r\"\366\002\n\005Video\0223\n\n" +
-      "dirtyRects\030\001 \003(\0132\037.common.message.Video." +
-      "Rectangle\0226\n\tmoveRects\030\002 \003(\0132#.common.me",
-      "ssage.Video.MoveRectangle\022\r\n\005frame\030\003 \001(\014" +
-      "\032O\n\tRectangle\022\t\n\001x\030\001 \002(\005\022\t\n\001y\030\002 \002(\005\022\r\n\005w" +
-      "idth\030\003 \002(\005\022\016\n\006height\030\004 \002(\005\022\r\n\005image\030\005 \001(" +
-      "\014\032\035\n\005Point\022\t\n\001x\030\001 \002(\005\022\t\n\001y\030\002 \002(\005\032\200\001\n\rMov" +
-      "eRectangle\022=\n\024destinationRectangle\030\001 \002(\013" +
-      "2\037.common.message.Video.Rectangle\0220\n\013sou" +
-      "rcePoint\030\002 \002(\0132\033.common.message.Video.Po" +
-      "int\"\026\n\005Audio\022\r\n\005sound\030\001 \001(\014\"\264\001\n\004Info\022/\n\010" +
-      "infoType\030\001 \002(\0162\035.common.message.Info.Inf" +
-      "oType\022\022\n\ndeviceName\030\002 \001(\014\022\r\n\005width\030\003 \001(\005",
-      "\022\016\n\006height\030\004 \001(\005\022\025\n\rportAvailable\030\005 \001(\005\"" +
-      "1\n\010InfoType\022\t\n\005Login\020\001\022\n\n\006Logout\020\002\022\016\n\nNo" +
-      "rmalInfo\020\003\"+\n\nResolution\022\r\n\005width\030\001 \001(\005\022" +
-      "\016\n\006height\030\002 \001(\005\"\361\001\n\007Request\0228\n\013requestTy" +
-      "pe\030\001 \002(\0162#.common.message.Request.Reques" +
-      "tType\022\020\n\010filePath\030\002 \002(\014\"\231\001\n\013RequestType\022" +
-      "\t\n\005Movie\020\001\022\t\n\005Music\020\002\022\010\n\004File\020\003\022\017\n\013Remov" +
-      "eMovie\020\004\022\017\n\013RemoveMusic\020\005\022\016\n\nRemoveFile\020" +
-      "\006\022\014\n\010SaveFile\020\007\022\r\n\tSaveMusic\020\010\022\r\n\tSaveMo" +
-      "vie\020\t\022\014\n\010SendFile\020\n\"#\n\017RequestFeedback\022\020",
-      "\n\010filePath\030\001 \002(\014\"C\n\nSharedFile\022\020\n\010fileNa" +
-      "me\030\001 \001(\014\022\022\n\nfileLength\030\002 \002(\003\022\017\n\007content\030" +
-      "\003 \002(\014\" \n\rSharedMessage\022\017\n\007content\030\001 \002(\014\"" +
-      " \n\rKeyboardEvent\022\017\n\007keyCode\030\001 \002(\005"
+      "\n\ndata.proto\022\016common.message\"\356\006\n\nDataPac" +
+      "ket\022\025\n\runixTimeStamp\030\001 \002(\004\022A\n\016dataPacket" +
+      "Type\030\002 \002(\0162).common.message.DataPacket.D" +
+      "ataPacketType\022.\n\ndeviceInfo\030\003 \001(\0132\032.comm" +
+      "on.message.DeviceInfo\022$\n\005video\030\004 \001(\0132\025.c" +
+      "ommon.message.Video\022$\n\005audio\030\005 \001(\0132\025.com" +
+      "mon.message.Audio\022(\n\007command\030\006 \001(\0132\027.com" +
+      "mon.message.Command\0220\n\013fileRequest\030\007 \001(\013" +
+      "2\033.common.message.FileRequest\022*\n\010fileInf" +
+      "o\030\010 \001(\0132\030.common.message.FileInfo\022,\n\tfil",
+      "eBlock\030\t \001(\0132\031.common.message.FileBlock\022" +
+      "4\n\rsharedMessage\030\n \001(\0132\035.common.message." +
+      "SharedMessage\0224\n\rkeyboardEvent\030\013 \001(\0132\035.c" +
+      "ommon.message.KeyboardEvent\022J\n\030cloudStor" +
+      "ageTokenRequest\030\014 \001(\0132(.common.message.C" +
+      "loudStorageTokenRequest\022<\n\021cloudStorageT" +
+      "oken\030\r \001(\0132!.common.message.CloudStorage" +
+      "Token\"\335\001\n\016DataPacketType\022\016\n\nDeviceInfo\020\001" +
+      "\022\t\n\005Video\020\002\022\t\n\005Audio\020\003\022\013\n\007Command\020\004\022\017\n\013F" +
+      "ileRequest\020\005\022\014\n\010FileInfo\020\006\022\r\n\tFileBlock\020",
+      "\007\022\021\n\rSharedMessage\020\010\022\021\n\rKeyboardEvent\020\t\022" +
+      "\034\n\030CloudStorageTokenRequest\020\n\022\025\n\021CloudSt" +
+      "orageToken\020\013\022\017\n\013Unspecified\020\014\"\213\003\n\007Comman" +
+      "d\0228\n\013commandType\030\001 \002(\0162#.common.message." +
+      "Command.CommandType\022\t\n\001x\030\002 \001(\002\022\t\n\001y\030\003 \001(" +
+      "\002\"\257\002\n\013CommandType\022\014\n\010Minimize\020\001\022\017\n\013ShowD" +
+      "esktop\020\002\022\017\n\013ShutDownApp\020\003\022\r\n\tLeftClick\020\004" +
+      "\022\016\n\nRightClick\020\005\022\n\n\006Scroll\020\006\022\020\n\014SelectWi" +
+      "ndow\020\007\022\031\n\025StopAudioTransmission\020\010\022\031\n\025Sto" +
+      "pVideoTransmission\020\t\022!\n\035StopAudioAndVide",
+      "oTransmission\020\n\022\032\n\026StartAudioTransmissio" +
+      "n\020\013\022\032\n\026StartVideoTransmission\020\014\022\"\n\036Start" +
+      "AudioAndVideoTransmission\020\r\"\366\002\n\005Video\0223\n" +
+      "\ndirtyRects\030\001 \003(\0132\037.common.message.Video" +
+      ".Rectangle\0226\n\tmoveRects\030\002 \003(\0132#.common.m" +
+      "essage.Video.MoveRectangle\022\r\n\005frame\030\003 \001(" +
+      "\014\032O\n\tRectangle\022\t\n\001x\030\001 \002(\005\022\t\n\001y\030\002 \002(\005\022\r\n\005" +
+      "width\030\003 \002(\005\022\016\n\006height\030\004 \002(\005\022\r\n\005image\030\005 \001" +
+      "(\014\032\035\n\005Point\022\t\n\001x\030\001 \002(\005\022\t\n\001y\030\002 \002(\005\032\200\001\n\rMo" +
+      "veRectangle\022=\n\024destinationRectangle\030\001 \002(",
+      "\0132\037.common.message.Video.Rectangle\0220\n\013so" +
+      "urcePoint\030\002 \002(\0132\033.common.message.Video.P" +
+      "oint\"\026\n\005Audio\022\r\n\005sound\030\001 \001(\014\"g\n\nDeviceIn" +
+      "fo\022\022\n\ndeviceName\030\001 \001(\014\022.\n\nresolution\030\002 \001" +
+      "(\0132\032.common.message.Resolution\022\025\n\rportAv" +
+      "ailable\030\003 \001(\005\"+\n\nResolution\022\r\n\005width\030\001 \001" +
+      "(\005\022\016\n\006height\030\002 \001(\005\"\272\001\n\013FileRequest\022D\n\017fi" +
+      "leRequestType\030\001 \002(\0162+.common.message.Fil" +
+      "eRequest.FileRequestType\022\020\n\010filePath\030\002 \002" +
+      "(\014\"S\n\017FileRequestType\022\024\n\020OpenFileRemotel",
+      "y\020\001\022\016\n\nDeleteFile\020\002\022\014\n\010SaveFile\020\003\022\014\n\010Sen" +
+      "dFile\020\004\"@\n\010FileInfo\022\020\n\010filePath\030\001 \002(\014\022\020\n" +
+      "\010fileSize\030\002 \002(\004\022\020\n\010fileIcon\030\003 \001(\014\"\034\n\tFil" +
+      "eBlock\022\017\n\007content\030\001 \002(\014\"1\n\030CloudStorageT" +
+      "okenRequest\022\025\n\007expires\030\001 \001(\005:\0043600\"\"\n\021Cl" +
+      "oudStorageToken\022\r\n\005token\030\001 \002(\014\" \n\rShared" +
+      "Message\022\017\n\007content\030\001 \002(\014\" \n\rKeyboardEven" +
+      "t\022\017\n\007keyCode\030\001 \002(\005"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-        public com.google.protobuf.ExtensionRegistry assignDescriptors(
-            com.google.protobuf.Descriptors.FileDescriptor root) {
-          descriptor = root;
-          internal_static_common_message_DataPacket_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-          internal_static_common_message_DataPacket_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_common_message_DataPacket_descriptor,
-              new java.lang.String[] { "DataPacketType", "Info", "Video", "Audio", "Command", "Request", "RequestFeedback", "SharedMessage", "SharedFile", "KeyboardEvent", "TimeStamp", });
-          internal_static_common_message_Command_descriptor =
-            getDescriptor().getMessageTypes().get(1);
-          internal_static_common_message_Command_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_common_message_Command_descriptor,
-              new java.lang.String[] { "CommandType", "X", "Y", });
-          internal_static_common_message_Video_descriptor =
-            getDescriptor().getMessageTypes().get(2);
-          internal_static_common_message_Video_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_common_message_Video_descriptor,
-              new java.lang.String[] { "DirtyRects", "MoveRects", "Frame", });
-          internal_static_common_message_Video_Rectangle_descriptor =
-            internal_static_common_message_Video_descriptor.getNestedTypes().get(0);
-          internal_static_common_message_Video_Rectangle_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_common_message_Video_Rectangle_descriptor,
-              new java.lang.String[] { "X", "Y", "Width", "Height", "Image", });
-          internal_static_common_message_Video_Point_descriptor =
-            internal_static_common_message_Video_descriptor.getNestedTypes().get(1);
-          internal_static_common_message_Video_Point_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_common_message_Video_Point_descriptor,
-              new java.lang.String[] { "X", "Y", });
-          internal_static_common_message_Video_MoveRectangle_descriptor =
-            internal_static_common_message_Video_descriptor.getNestedTypes().get(2);
-          internal_static_common_message_Video_MoveRectangle_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_common_message_Video_MoveRectangle_descriptor,
-              new java.lang.String[] { "DestinationRectangle", "SourcePoint", });
-          internal_static_common_message_Audio_descriptor =
-            getDescriptor().getMessageTypes().get(3);
-          internal_static_common_message_Audio_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_common_message_Audio_descriptor,
-              new java.lang.String[] { "Sound", });
-          internal_static_common_message_Info_descriptor =
-            getDescriptor().getMessageTypes().get(4);
-          internal_static_common_message_Info_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_common_message_Info_descriptor,
-              new java.lang.String[] { "InfoType", "DeviceName", "Width", "Height", "PortAvailable", });
-          internal_static_common_message_Resolution_descriptor =
-            getDescriptor().getMessageTypes().get(5);
-          internal_static_common_message_Resolution_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_common_message_Resolution_descriptor,
-              new java.lang.String[] { "Width", "Height", });
-          internal_static_common_message_Request_descriptor =
-            getDescriptor().getMessageTypes().get(6);
-          internal_static_common_message_Request_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_common_message_Request_descriptor,
-              new java.lang.String[] { "RequestType", "FilePath", });
-          internal_static_common_message_RequestFeedback_descriptor =
-            getDescriptor().getMessageTypes().get(7);
-          internal_static_common_message_RequestFeedback_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_common_message_RequestFeedback_descriptor,
-              new java.lang.String[] { "FilePath", });
-          internal_static_common_message_SharedFile_descriptor =
-            getDescriptor().getMessageTypes().get(8);
-          internal_static_common_message_SharedFile_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_common_message_SharedFile_descriptor,
-              new java.lang.String[] { "FileName", "FileLength", "Content", });
-          internal_static_common_message_SharedMessage_descriptor =
-            getDescriptor().getMessageTypes().get(9);
-          internal_static_common_message_SharedMessage_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_common_message_SharedMessage_descriptor,
-              new java.lang.String[] { "Content", });
-          internal_static_common_message_KeyboardEvent_descriptor =
-            getDescriptor().getMessageTypes().get(10);
-          internal_static_common_message_KeyboardEvent_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_common_message_KeyboardEvent_descriptor,
-              new java.lang.String[] { "KeyCode", });
-          return null;
-        }
-      };
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
+    internal_static_common_message_DataPacket_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_common_message_DataPacket_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_DataPacket_descriptor,
+        new java.lang.String[] { "UnixTimeStamp", "DataPacketType", "DeviceInfo", "Video", "Audio", "Command", "FileRequest", "FileInfo", "FileBlock", "SharedMessage", "KeyboardEvent", "CloudStorageTokenRequest", "CloudStorageToken", });
+    internal_static_common_message_Command_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_common_message_Command_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_Command_descriptor,
+        new java.lang.String[] { "CommandType", "X", "Y", });
+    internal_static_common_message_Video_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_common_message_Video_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_Video_descriptor,
+        new java.lang.String[] { "DirtyRects", "MoveRects", "Frame", });
+    internal_static_common_message_Video_Rectangle_descriptor =
+      internal_static_common_message_Video_descriptor.getNestedTypes().get(0);
+    internal_static_common_message_Video_Rectangle_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_Video_Rectangle_descriptor,
+        new java.lang.String[] { "X", "Y", "Width", "Height", "Image", });
+    internal_static_common_message_Video_Point_descriptor =
+      internal_static_common_message_Video_descriptor.getNestedTypes().get(1);
+    internal_static_common_message_Video_Point_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_Video_Point_descriptor,
+        new java.lang.String[] { "X", "Y", });
+    internal_static_common_message_Video_MoveRectangle_descriptor =
+      internal_static_common_message_Video_descriptor.getNestedTypes().get(2);
+    internal_static_common_message_Video_MoveRectangle_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_Video_MoveRectangle_descriptor,
+        new java.lang.String[] { "DestinationRectangle", "SourcePoint", });
+    internal_static_common_message_Audio_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_common_message_Audio_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_Audio_descriptor,
+        new java.lang.String[] { "Sound", });
+    internal_static_common_message_DeviceInfo_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_common_message_DeviceInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_DeviceInfo_descriptor,
+        new java.lang.String[] { "DeviceName", "Resolution", "PortAvailable", });
+    internal_static_common_message_Resolution_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_common_message_Resolution_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_Resolution_descriptor,
+        new java.lang.String[] { "Width", "Height", });
+    internal_static_common_message_FileRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_common_message_FileRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_FileRequest_descriptor,
+        new java.lang.String[] { "FileRequestType", "FilePath", });
+    internal_static_common_message_FileInfo_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_common_message_FileInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_FileInfo_descriptor,
+        new java.lang.String[] { "FilePath", "FileSize", "FileIcon", });
+    internal_static_common_message_FileBlock_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_common_message_FileBlock_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_FileBlock_descriptor,
+        new java.lang.String[] { "Content", });
+    internal_static_common_message_CloudStorageTokenRequest_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_common_message_CloudStorageTokenRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_CloudStorageTokenRequest_descriptor,
+        new java.lang.String[] { "Expires", });
+    internal_static_common_message_CloudStorageToken_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_common_message_CloudStorageToken_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_CloudStorageToken_descriptor,
+        new java.lang.String[] { "Token", });
+    internal_static_common_message_SharedMessage_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_common_message_SharedMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_SharedMessage_descriptor,
+        new java.lang.String[] { "Content", });
+    internal_static_common_message_KeyboardEvent_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_common_message_KeyboardEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_message_KeyboardEvent_descriptor,
+        new java.lang.String[] { "KeyCode", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
