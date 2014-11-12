@@ -38,7 +38,6 @@ public class ListeningThread extends Thread {
         return instance;
     }
 
-
     public void setHandler(Handler handler) {
         this.handler = handler;
     }

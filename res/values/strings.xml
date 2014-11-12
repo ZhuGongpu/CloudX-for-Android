@@ -2,10 +2,10 @@
 <resources>
     <string name="app_name">CloudX</string>
 
-    <!--<string name="GameMode">游戏模式</string>-->
+    <!--<string path="GameMode">游戏模式</string>-->
     <string name="exit">退出</string>
     <string name="RemoteDesktop">远程控制</string>
-    <string name="ShareFile">文件管理</string>
+    <string name="FileExplorer">文件管理</string>
     <string name="SendMessage">发送消息</string>
     <string name="PleaseInputMessage">请输入信息</string>
     <string name="Send">发送</string>

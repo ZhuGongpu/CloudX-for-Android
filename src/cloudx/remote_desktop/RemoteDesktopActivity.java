@@ -390,7 +390,7 @@ public class RemoteDesktopActivity extends Activity {
 
 
         ResideMenuItem fileManager = new ResideMenuItem(this);
-        fileManager.setTitle(R.string.ShareFile);
+        fileManager.setTitle(R.string.FileExplorer);
         fileManager.setIcon(R.drawable.share);
         fileManager.setOnClickListener(new View.OnClickListener() {
             @Override

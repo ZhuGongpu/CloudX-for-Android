@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--text size-->
+    <dimen name="title_text_size">35sp</dimen>
+    <dimen name="large_text_size">25sp</dimen>
+    <dimen name="medium_text_size">19sp</dimen>
+    <dimen name="small_text_size">18sp</dimen>
+
+    <!--margin-->
+    <dimen name="default_margin">2dp</dimen>
+    <dimen name="medium_margin">4dp</dimen>
+</resources>

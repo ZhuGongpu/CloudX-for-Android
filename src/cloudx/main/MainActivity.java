@@ -175,7 +175,7 @@ public class MainActivity extends Activity {
         resideMenu.addMenuItem(remoteControll);
 
         //文件共享
-        final ResideMenuItem fileManagerItem = new ResideMenuItem(this, R.drawable.share, R.string.ShareFile);
+        final ResideMenuItem fileManagerItem = new ResideMenuItem(this, R.drawable.share, R.string.FileExplorer);
         fileManagerItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

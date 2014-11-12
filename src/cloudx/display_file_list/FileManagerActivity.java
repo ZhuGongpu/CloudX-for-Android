@@ -29,8 +29,8 @@ import com.google.protobuf.ByteString;
 import common.message.Data;
 import data.information.FileInfo;
 import data.information.GlobalSettingsAndInformation;
-import model.network.ListeningThread;
 import model.network.AudioInputThread;
+import model.network.ListeningThread;
 import utils.OpenFileUtils;
 
 import java.io.IOException;
@@ -44,11 +44,8 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
         SlideView.OnSlideListener {
 
     private static final String TAG = "FileManagerActivity";
-    private static final int MovieMode = 1;
-    private static final int MusicMode = 2;
-    private static final int FileMode = 0;
+
     private CircleProgressBar circleProgressBar = null;
-    private int currentMode = 0;
     private ListViewCompat listView = null;
     private List<MessageItem> messageItemArrayList = new ArrayList<MessageItem>();
     private SlideView lastSlideViewWithStatusOn = null;
@@ -103,9 +100,15 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
                 Bundle bundle = msg.getData();
 
                 MessageItem messageItem = new MessageItem();
-                //todo set iconResource
-                //messageItem.iconResource = bundle.get("iconResource");
-                messageItem.name = bundle != null ? bundle.getString("fileName") : null;
+                //todo set icon
+                //TODO
+                //TODO
+                //TODO
+                //TODO
+                //TODO
+                //TODO
+                //messageItem.icon = bundle.get("icon");
+                messageItem.path = bundle != null ? bundle.getString("filePath") : null;
                 Log.e(TAG, "TODO add item");
                 addItem(messageItem);
             }
@@ -113,15 +116,11 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
     };
     private SlideAdapter slideAdapter = null;
 
-    private ImageButton fileModeButton = null;
-    private ImageButton musicModeButton = null;
-    private ImageButton movieModeButton = null;
-
-    private ImageButton addFileButton = null;
-    private TextView tittle = null;
+    private ImageButton addFileButton = null;//TODO 从本地文件管理器选择需要上传的文件
 
     private Socket socket = null;
-    private Thread inputThread = new Thread() {
+    //获取文件列表
+    private Thread inputThread = new Thread() {//TODO 后期需要转移到MainInputThread
         private InputStream inputStream = null;
 
         @Override
@@ -139,6 +138,9 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
                             Message message = handler.obtainMessage();
 
                             String filePath = new String(requestFeedback.getFilePath().toByteArray());
+                            String fileSize = "";//todo get size
+
+                            //TODO get icon
 
                             Log.e(TAG, "receive a feed back : " + filePath);
 
@@ -147,9 +149,11 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
                                 message.arg1 = -1;// 所有record都已加载
                                 Log.e(TAG, "All the records loaded");
                             } else {
-                                Bundle bundle = new Bundle(2);
-                                //todo get iconResource
-                                bundle.putString("fileName", filePath);
+                                Bundle bundle = new Bundle();
+                                //todo get icon
+
+
+                                bundle.putString("filePath", filePath);
                                 message.setData(bundle);
                             }
 
@@ -174,8 +178,6 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
                         e1.printStackTrace();
                     }
             }
-
-
         }
 
         @Override
@@ -187,7 +189,6 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
-
             if (socket != null)
                 try {
                     socket.close();
@@ -199,90 +200,25 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
     private AudioInputThread audioInputThread = null;
 
     private LoadItemsTask fileItemsLoader = null;
-    private LoadItemsTask musicItemsLoader = null;
-    private LoadItemsTask movieItemsLoader = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.display_file_list_layout);
+        setContentView(R.layout.file_explorer_layout);
 
         circleProgressBar = (CircleProgressBar) findViewById(R.id.file_progress_indicator);
 
         ListeningThread.getInstance().setHandler(handler);
 
         initView();
-        setCurrentMode(FileMode);
-//        new AsyncTask<Void, Void, Void>() {
-//            @Override
-//            protected Void doInBackground(Void... params) {
-//                try {
-//
-//                    socket = new Socket(GlobalSettingsAndInformation.ServerIP,
-//                            GlobalSettingsAndInformation.ServerPort);
-//
-//                    inputThread.start();
-//
-//                    Log.e(TAG, "MainInputThread start");
-//
-//                    sendInfo(GlobalSettingsAndInformation.deviceName,
-//                            FileManagerActivity.this.getResources().getDisplayMetrics().widthPixels,
-//                            FileManagerActivity.this.getResources().getDisplayMetrics().heightPixels);
-//
-//                    sendCommand(Data.Command.CommandType.StopAudioAndVideoTransmission);
-//
-//                    Log.e(TAG, "stop audio and video transmission");
-//
-//                    Data.Request.RequestType requestType = null;
-//
-//                    if (currentMode == MovieMode)
-//                        requestType = Data.Request.RequestType.Movie;
-//                    else if (currentMode == MusicMode)
-//                        requestType = Data.Request.RequestType.Music;
-//                    else
-//                        requestType = Data.Request.RequestType.File;
-//
-//                    //请求所有视频列表
-//                    sendRequest(requestType, "*");
-//
-//                    Log.e(TAG, "request of all file sent");
-//
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                    GlobalSettingsAndInformation.ServerIP = null;
-//                }
-//                return null;
-//            }
-//
-//        }.execute();
 
+        loadFileAsync();
     }
 
-    private void setCurrentMode(int currentMode) {
-        this.currentMode = currentMode;
-
-
-        switch (currentMode) {
-            case FileMode:
-                tittle.setText(R.string.FileMode);
-                loadFileAsync();
-                break;
-            case MovieMode:
-                tittle.setText(R.string.MovieMode);
-                loadMovieAsync();
-                break;
-            case MusicMode:
-                tittle.setText(R.string.MusicMode);
-                loadMusicAsync();
-                break;
-            default:
-                break;
-        }
-    }
-
+    /**
+     * 向服务器请求文件列表
+     */
     private void loadFileAsync() {
-
-        Log.e(TAG, "FileMode");
 
         if (fileItemsLoader == null) {
 
@@ -291,74 +227,10 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
             messageItemArrayList.clear();
 
             fileItemsLoader = new LoadItemsTask();
-
-            if (musicItemsLoader != null) {
-                musicItemsLoader.cancel(true);
-                musicItemsLoader = null;
-            }
-            if (movieItemsLoader != null) {
-                movieItemsLoader.cancel(true);
-                movieItemsLoader = null;
-            }
-
-            if (fileItemsLoader.getStatus() == AsyncTask.Status.PENDING) {
-                fileItemsLoader.execute();
-            }
-
         }
-    }
 
-    private void loadMusicAsync() {
-
-        Log.e(TAG, "MusicMode");
-
-        if (musicItemsLoader == null) {
-
-            progressBar.setVisibility(View.VISIBLE);
-            //todo temp
-            messageItemArrayList.clear();
-
-            musicItemsLoader = new LoadItemsTask();
-
-            if (fileItemsLoader != null) {
-                fileItemsLoader.cancel(true);
-                fileItemsLoader = null;
-            }
-            if (movieItemsLoader != null) {
-                movieItemsLoader.cancel(true);
-                movieItemsLoader = null;
-            }
-
-            if (musicItemsLoader.getStatus() == AsyncTask.Status.PENDING) {
-                musicItemsLoader.execute();
-            }
-        }
-    }
-
-    private void loadMovieAsync() {
-
-        Log.e(TAG, "MovieMode");
-
-        if (movieItemsLoader == null) {
-
-            progressBar.setVisibility(View.VISIBLE);
-            //todo temp
-            messageItemArrayList.clear();
-
-            movieItemsLoader = new LoadItemsTask();
-
-            if (fileItemsLoader != null) {
-                fileItemsLoader.cancel(true);
-                fileItemsLoader = null;
-            }
-            if (musicItemsLoader != null) {
-                musicItemsLoader.cancel(true);
-                musicItemsLoader = null;
-            }
-
-            if (movieItemsLoader.getStatus() == AsyncTask.Status.PENDING) {
-                movieItemsLoader.execute();
-            }
+        if (fileItemsLoader.getStatus() == AsyncTask.Status.PENDING) {
+            fileItemsLoader.execute();
         }
     }
 
@@ -388,40 +260,8 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
     }
 
     private void initView() {
-        fileModeButton = (ImageButton) findViewById(R.id.fileListButton);
-        fileModeButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setCurrentMode(FileMode);
-                fileModeButton.setImageResource(R.drawable.file_mode_selected);
-                movieModeButton.setImageResource(R.drawable.movie_mode_normal);
-                musicModeButton.setImageResource(R.drawable.music_mode_normal);
-            }
-        });
-        movieModeButton = (ImageButton) findViewById(R.id.movieListButton);
-        movieModeButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setCurrentMode(MovieMode);
-                movieModeButton.setImageResource(R.drawable.movie_mode_selected);
-                fileModeButton.setImageResource(R.drawable.file_mode_normal);
-                musicModeButton.setImageResource(R.drawable.music_mode_normal);
-            }
-        });
-        musicModeButton = (ImageButton) findViewById(R.id.musicListButton);
-        musicModeButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setCurrentMode(MusicMode);
-                musicModeButton.setImageResource(R.drawable.music_mode_selected);
-                fileModeButton.setImageResource(R.drawable.file_mode_normal);
-                movieModeButton.setImageResource(R.drawable.movie_mode_normal);
-            }
-        });
 
         addFileButton = (ImageButton) findViewById(R.id.addFileButton);
-
-        tittle = (TextView) findViewById(R.id.listTittle);
 
         listView = (ListViewCompat) findViewById(R.id.fileNameList);
         slideAdapter = new SlideAdapter();
@@ -456,59 +296,72 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
 
         slideAdapter.notifyDataSetChanged();
         listView.invalidateViews();
-        Log.e(TAG, "add item " + item.name);
+        Log.e(TAG, "add item " + item.path);
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
                             long id) {
         Log.e(TAG, "onItemClick position = " + position);
-        //todo
+        //TODO
 
         String fileName = (view.findViewById(R.id.file_name)).getContentDescription().toString();
 
-        if (currentMode == MovieMode) {
+//        if (currentMode == MovieMode) {
+//
+//            try {
+//               movieMode(fileName);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//
+//        } else if (currentMode == MusicMode) {
+//
+//            try {
+//                musicMode(fileName);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        } else if (currentMode == FileMode) {
+//            //todo add save as
+//
+//            try {
+//               fileMode(fileName);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+    }
 
-            try {
-                sendRequest(Data.Request.RequestType.Movie, fileName);
+    private void movieMode(String filePath) throws IOException {
+        sendRequest(Data.Request.RequestType.Movie, filePath);
 
-                Intent intent = new Intent(this, RemoteDesktopActivity.class);
-                intent.putExtra("mode", "movie");
-                startActivity(intent);
+        Intent intent = new Intent(this, RemoteDesktopActivity.class);
+        intent.putExtra("mode", "movie");
+        startActivity(intent);
 
-                cleanUp();
-                finish();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        cleanUp();
+        finish();
+    }
 
-        } else if (currentMode == MusicMode) {
+    private void musicMode(String filePath) throws IOException {
+        sendRequest(Data.Request.RequestType.Music, filePath);
+        if (audioInputThread != null)
+            audioInputThread.interrupt();
+        audioInputThread = new AudioInputThread();
+        audioInputThread.start();
+    }
 
-            try {
-                sendRequest(Data.Request.RequestType.Music, fileName);
-                if (audioInputThread != null)
-                    audioInputThread.interrupt();
-                audioInputThread = new AudioInputThread();
-                audioInputThread.start();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else if (currentMode == FileMode) {
-            //todo add save as
 
-            try {
-                sendRequest(Data.Request.RequestType.File, fileName);
+    private void fileMode(String filePath) throws IOException {
+        sendRequest(Data.Request.RequestType.File, filePath);
 
-                Intent intent = new Intent(this, RemoteDesktopActivity.class);
+        Intent intent = new Intent(this, RemoteDesktopActivity.class);
 
-                startActivity(intent);
+        startActivity(intent);
 
-                cleanUp();
-                finish();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+        cleanUp();
+        finish();
     }
 
     @Override
@@ -516,7 +369,6 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
         if (lastSlideViewWithStatusOn != null && lastSlideViewWithStatusOn != view) {
             lastSlideViewWithStatusOn.shrink();
         }
-
         if (status == SLIDE_STATUS_ON) {
             lastSlideViewWithStatusOn = (SlideView) view;
         }
@@ -528,27 +380,31 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
             Log.e(TAG, "delete");
             lastSlideViewWithStatusOn.shrink();
             try {
-
                 if (v.getContentDescription() != null) {
-
-                    if (currentMode == MovieMode)
-                        sendRequest(Data.Request.RequestType.RemoveMovie, v.getContentDescription().toString());
-                    else if (currentMode == MusicMode)
-                        sendRequest(Data.Request.RequestType.RemoveMusic, v.getContentDescription().toString());
-                    else if (currentMode == FileMode) {
-                        sendRequest(Data.Request.RequestType.RemoveFile, v.getContentDescription().toString());
-                    }
+                   removeFile(v.getContentDescription().toString());
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else if (v.getId() == R.id.save) {
-            //todo save and open
+            //TODO save and promote to open
             Log.e(TAG, "save");
-
         }
+    }
 
+    /**
+     * 请求删除文件
+     * @param filePath
+     * @throws IOException
+     */
+    private void removeFile(String filePath) throws IOException {
+        sendRequest(Data.Request.RequestType.RemoveFile, filePath);
+    }
 
+    private void sendCommand(Data.Command.CommandType commandType) throws IOException {
+        Data.DataPacket.newBuilder().setDataPacketType(Data.DataPacket.DataPacketType.Command)
+                .setCommand(Data.Command.newBuilder().setCommandType(commandType)).build().writeDelimitedTo
+                (socket.getOutputStream());
     }
 
     private void cleanUp() throws IOException {
@@ -569,21 +425,19 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
             socket.close();
     }
 
-    private void sendCommand(Data.Command.CommandType commandType) throws IOException {
-        Data.DataPacket.newBuilder().setDataPacketType(Data.DataPacket.DataPacketType.Command)
-                .setCommand(Data.Command.newBuilder().setCommandType(commandType)).build().writeDelimitedTo
-                (socket.getOutputStream());
-    }
-
     private static class ViewHolder {
-        public ImageView icon;
-        public TextView fileNameTextView;
+        public ImageView fileIcon;
+        public TextView fileName;
+        public TextView filePath;
+        public TextView fileSize;
         public ViewGroup saveHolder;
         public ViewGroup deleteHolder;
 
         ViewHolder(View view) {
-            icon = (ImageView) view.findViewById(R.id.icon);
-            fileNameTextView = (TextView) view.findViewById(R.id.file_name);
+            fileIcon = (ImageView) view.findViewById(R.id.file_icon);
+            fileName = (TextView) view.findViewById(R.id.file_name);
+            filePath = (TextView) view.findViewById(R.id.file_path);
+            fileSize = (TextView) view.findViewById(R.id.file_size);
             saveHolder = (ViewGroup) view.findViewById(R.id.save);
             deleteHolder = (ViewGroup) view.findViewById(R.id.delete);
         }
@@ -600,35 +454,6 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
             }
         }
 
-//        @Override
-//        protected void onCancelled(Boolean aBoolean) {
-//            super.onCancelled(aBoolean);
-//            Log.e(TAG, "onCancelled");
-//            try {
-//                socket.close();
-//                socket = null;
-//
-//                inputThread.interrupt();
-//
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//        @Override
-//        protected void onCancelled() {
-//            super.onCancelled();
-//            Log.e(TAG, "onCancelled");
-//            try {
-//                socket.close();
-//                socket = null;
-//
-//                inputThread.interrupt();
-//
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
 
         @Override
         protected Boolean doInBackground(Void... params) {
@@ -652,14 +477,9 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
 
                 Log.e(TAG, "stop audio and video transmission");
 
-                Data.Request.RequestType requestType = null;
+                Data.Request.RequestType requestType;
 
-                if (currentMode == MovieMode)
-                    requestType = Data.Request.RequestType.Movie;
-                else if (currentMode == MusicMode)
-                    requestType = Data.Request.RequestType.Music;
-                else
-                    requestType = Data.Request.RequestType.File;
+                requestType = Data.Request.RequestType.File;
 
                 //请求所有列表
                 sendRequest(requestType, "*");
@@ -704,8 +524,7 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
             ViewHolder holder;
             SlideView slideView = (SlideView) convertView;
             if (slideView == null) {
-                View itemView = mInflater.inflate(R.layout.list_item, null);
-
+                View itemView = mInflater.inflate(R.layout.file_list_item, null);
                 slideView = new SlideView(FileManagerActivity.this);
                 slideView.setContentView(itemView);
 
@@ -717,33 +536,27 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
             }
             MessageItem item = messageItemArrayList.get(position);
 
-            if (currentMode == MusicMode)
-                item.iconResource = R.drawable.music_file_icon_3_48px;
-            else if (currentMode == MovieMode)
-                item.iconResource = R.drawable.movie;
-            else if (currentMode == FileMode) {
-                //todo set icon
-            }
+            //todo set fileIcon
+//                item.icon = R.drawable.movie;
 
             item.slideView = slideView;
             item.slideView.shrink();
 
+            String fileName = item.path.substring(item.path.lastIndexOf('/') + 1, item.path.length());
 
-            String fileName = item.name.substring(item.name.lastIndexOf('\\') + 1, item.name.length());
-
-
-            holder.icon.setImageResource(item.iconResource);
-            holder.fileNameTextView.setText(fileName);
-            holder.fileNameTextView.setContentDescription(item.name);
+            holder.fileIcon.setImageBitmap(item.icon);
+            holder.fileName.setText(fileName);
+            holder.fileName.setContentDescription(item.path);
+            holder.filePath.setText(item.path);
+            holder.filePath.setText(item.size);
 
             Log.e(TAG, "getView  " + fileName);
 
             holder.saveHolder.setOnClickListener(FileManagerActivity.this);
             holder.deleteHolder.setOnClickListener(FileManagerActivity.this);
 
-
-            holder.saveHolder.setContentDescription(item.name);
-            holder.deleteHolder.setContentDescription(item.name);
+            holder.saveHolder.setContentDescription(item.path);
+            holder.deleteHolder.setContentDescription(item.path);
             return slideView;
         }
 

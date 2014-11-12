@@ -17,11 +17,11 @@ import cloudx.main.R;
 public class ResideMenuItem extends LinearLayout {
 
     /**
-     * menu item  iconResource
+     * menu item  icon
      */
     private ImageView iv_icon;
     /**
-     * menu item  fileNameTextView
+     * menu item  fileName
      */
     private TextView tv_title;
 
@@ -54,7 +54,7 @@ public class ResideMenuItem extends LinearLayout {
     }
 
     /**
-     * set the iconResource color;
+     * set the icon color;
      *
      * @param icon
      */
@@ -63,7 +63,7 @@ public class ResideMenuItem extends LinearLayout {
     }
 
     /**
-     * set the fileNameTextView with resource
+     * set the fileName with resource
      * ;
      *
      * @param title
@@ -73,7 +73,7 @@ public class ResideMenuItem extends LinearLayout {
     }
 
     /**
-     * set the fileNameTextView with string;
+     * set the fileName with string;
      *
      * @param title
      */

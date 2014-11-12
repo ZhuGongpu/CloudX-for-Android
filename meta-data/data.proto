@@ -13,18 +13,18 @@ message DataPacket {
         FindMyPhone = 9;
         KeyboardEvent = 10;
     }
+    optional bytes unixTimeStamp = 1;
+    required DataPacketType dataPacketType = 2;
+    optional Info info = 3;
+    optional Video video = 4;
+    optional Audio audio = 5;
+    optional Command command = 6;
+    optional Request request = 7;
+    optional RequestFeedback requestFeedback = 8;
+    optional SharedMessage sharedMessage = 9;
+    optional SharedFile sharedFile = 10;
+    optional KeyboardEvent keyboardEvent = 11;
 
-    required DataPacketType dataPacketType = 1;
-    optional Info info = 2;
-    optional Video video = 3;
-    optional Audio audio = 4;
-    optional Command command = 5;
-    optional Request request = 6;
-    optional RequestFeedback requestFeedback = 7;
-    optional SharedMessage sharedMessage = 8;
-    optional SharedFile sharedFile = 9;
-    optional KeyboardEvent keyboardEvent = 10;
-    optional bytes timeStamp = 11;
 }
 
 message Command {
@@ -103,9 +103,7 @@ message Request {
         Movie = 1;
         Music = 2;
         File = 3;
-        //request to remove the movie
-        RemoveMovie = 4;
-        RemoveMusic = 5;
+        //request to remove file
         RemoveFile = 6;
         //request to save file into sdcard
         SaveFile = 7;
@@ -121,6 +119,8 @@ message Request {
 
 message RequestFeedback {
     required bytes filePath = 1;
+    required uint64 fileSize = 2;
+    optional bytes fileIcon = 3;
 }
 
 message SharedFile {
