@@ -49,6 +49,7 @@ message Command {
         StartAudioTransmission = 11;
         StartVideoTransmission = 12;
         StartAudioAndVideoTransmission = 13;
+        FindMyDevice = 14;
     }
 
     required CommandType commandType = 1;

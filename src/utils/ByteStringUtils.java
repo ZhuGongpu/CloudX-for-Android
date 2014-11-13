@@ -20,4 +20,16 @@ public class ByteStringUtils {
         inputStream.close();
         return bitmap;
     }
+
+    public static ByteString stringToByteString(String string) {
+        return ByteString.copyFromUtf8(string);
+    }
+
+    public static ByteString bytesToByteString(byte[] bytes) {
+        return ByteString.copyFrom(bytes);
+    }
+
+    public static byte[] byteStringToBytes(ByteString byteString) {
+        return byteString.toByteArray();
+    }
 }
