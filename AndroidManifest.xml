@@ -17,7 +17,8 @@
     <application
             android:icon="@drawable/cloud"
             android:label="@string/app_name"
-            android:configChanges="orientation|keyboardHidden">
+            android:configChanges="orientation|keyboardHidden"
+            android:name="cloudx.application.CloudXApplication">
         <activity
                 android:configChanges="orientation|keyboardHidden"
                 android:screenOrientation="sensorLandscape"

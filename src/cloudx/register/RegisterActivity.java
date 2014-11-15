@@ -1,10 +1,12 @@
 package cloudx.register;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import cloudx.application.CloudXApplication;
 import cloudx.main.R;
 import model.user.User;
 
@@ -76,6 +78,13 @@ public class RegisterActivity extends Activity {
 
                 String account = accountEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
+
+                //存储账号密码
+                SharedPreferences.Editor editor = getSharedPreferences(CloudXApplication.SharedPreferenceName, MODE_PRIVATE).edit();
+                editor.putString(CloudXApplication.SharedPreference_Key_Account, account);
+                editor.putString(CloudXApplication.SharedPreference_Key_Password, password);
+                editor.apply();
+
                 //注册
                 User.register(account, password);
 

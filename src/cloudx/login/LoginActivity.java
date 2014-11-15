@@ -2,10 +2,13 @@ package cloudx.login;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import cloudx.application.CloudXApplication;
+import cloudx.main.MainActivity;
 import cloudx.main.R;
 import cloudx.register.RegisterActivity;
 import model.user.User;
@@ -26,6 +29,19 @@ public class LoginActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //如果已经存储账号密码，则直接登录
+        SharedPreferences sharedPreferences = getSharedPreferences(CloudXApplication.SharedPreferenceName, MODE_PRIVATE);
+        String account = sharedPreferences.getString(CloudXApplication.SharedPreference_Key_Account, null);
+        String password = sharedPreferences.getString(CloudXApplication.SharedPreference_Key_Password, null);
+        if (account != null && password != null) {
+            User.login(account, password);
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+            return;
+        }
+
+
         setContentView(R.layout.login_layout);
         initViews();
     }
@@ -64,6 +80,13 @@ public class LoginActivity extends Activity {
                 //TODO 登录
                 String account = accountEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
+
+                //存储账号密码
+                SharedPreferences.Editor editor = getSharedPreferences(CloudXApplication.SharedPreferenceName, MODE_PRIVATE).edit();
+                editor.putString(CloudXApplication.SharedPreference_Key_Account, account);
+                editor.putString(CloudXApplication.SharedPreference_Key_Password, password);
+                editor.apply();
+
                 User.login(account, password);
 
             }
