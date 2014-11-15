@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+    <LinearLayout
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp">
+
+
+        <ImageView
+                android:src="@drawable/logo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <EditText
+
+                    android:id="@+id/account"
+                    android:hint="@string/account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <EditText
+                    android:id="@+id/password"
+                    android:hint="@string/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <Button
+                    android:padding="5dp"
+                    android:id="@+id/login"
+                    android:text="@string/login"
+                    android:textSize="@dimen/large_text_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/whitesmoke"
+                    android:background="@color/green"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+        <Button
+                android:id="@+id/forgot_password"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="@string/forgot_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        <Button
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:id="@+id/register"
+                android:text="@string/register"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+    </LinearLayout>
+</RelativeLayout>

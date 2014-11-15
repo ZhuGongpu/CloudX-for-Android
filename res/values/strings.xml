@@ -2,6 +2,19 @@
 <resources>
     <string name="app_name">CloudX</string>
 
+    <!--登陆注册-->
+    <string name="login">登录</string>
+    <string name="account">请输入账号</string>
+    <string name="password">请输入密码(不少于6位)</string>
+    <string name="confirm_password">请重新输入密码</string>
+    <string name="register">注册</string>
+    <string name="forgot_password">忘记密码</string>
+
+    <string name="account_cannot_be_empty">账号不能为空</string>
+    <string name="password_cannot_be_empty">密码不能为空</string>
+    <string name="password_too_short">密码不能少于6位</string>
+    <string name="passwords_donot_match">密码不一致</string>
+
     <!--<string path="GameMode">游戏模式</string>-->
     <string name="exit">退出</string>
     <string name="RemoteDesktop">远程控制</string>

@@ -46,5 +46,16 @@
                 android:name="cloudx.receive_file.ReceivingFileActivity"
                 android:theme="@android:style/Theme.NoTitleBar"
                 />
+        <activity
+                android:name="cloudx.login.LoginActivity"
+                android:label="LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="cloudx.register.RegisterActivity"
+                android:label="RegisterActivity"/>
     </application>
 </manifest>
