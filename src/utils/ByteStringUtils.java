@@ -32,4 +32,9 @@ public class ByteStringUtils {
     public static byte[] byteStringToBytes(ByteString byteString) {
         return byteString.toByteArray();
     }
+
+    public static String byteStringToString(ByteString byteString)
+    {
+        return new String(byteString.toByteArray());
+    }
 }

@@ -9,8 +9,8 @@ import android.widget.Toast;
 import cloudx.main.R;
 import cloudx.view.CircleProgressBar.CircleProgressBar;
 import data.information.FileInfo;
-import data.information.GlobalSettingsAndInformation;
-import model.network.ListeningThread;
+import data.information.Constants;
+import cloudx.network.ListeningThread;
 
 /**
  * Created by Gongpu on 2014/4/22.
@@ -24,7 +24,7 @@ public class ReceivingFileActivity extends Activity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             Log.e(TAG, "get a message");
-            if (msg.arg1 == GlobalSettingsAndInformation.MessageType_FileInfo) {
+            if (msg.arg1 == Constants.MessageType_FileInfo) {
 
                 Log.e(TAG, "File in transmission");
 

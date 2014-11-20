@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:gravity="center_vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/bottom_bar_color"
+              android:id="@+id/main_bottom_bar">
+
+    <LinearLayout
+            android:id="@+id/bottom_bar_devices"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/small_padding"
+            android:layout_marginTop="@dimen/small_padding"
+            android:onClick="setBottomBarSelected">
+
+        <ImageView
+                android:src="@drawable/bottom_bar_device_list_icon"
+                style="@style/wrap_content_layout"/>
+
+        <TextView
+                android:text="@string/Devices"
+                android:layout_margin="@dimen/small_padding"
+                style="@style/bottom_bar_text"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/bottom_bar_files"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/small_padding"
+            android:layout_marginTop="@dimen/small_padding"
+            android:onClick="setBottomBarSelected">
+
+        <ImageView
+                android:src="@drawable/bottom_bar_file_list_icon"
+                style="@style/wrap_content_layout"/>
+
+        <TextView
+                android:text="@string/Files"
+                android:layout_margin="@dimen/small_padding"
+                style="@style/bottom_bar_text"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/bottom_bar_settings"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="@dimen/small_padding"
+            android:layout_marginTop="@dimen/small_padding"
+            android:onClick="setBottomBarSelected">
+
+        <ImageView
+                android:src="@drawable/bottom_bar_settings_icon"
+                style="@style/wrap_content_layout"/>
+
+        <TextView
+                android:text="@string/Settings"
+                android:layout_margin="@dimen/small_padding"
+                style="@style/bottom_bar_text"/>
+    </LinearLayout>
+
+</LinearLayout>

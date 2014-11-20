@@ -14,16 +14,16 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.*;
 import cloudx.display_file_list.FileManagerActivity;
-import cloudx.remote_desktop.RemoteDesktopActivity;
-import cloudx.view.findMyDevice.FindMyDeviceAlertDialog;
+import cloudx.views.RemoteDesktopActivity;
+import cloudx.views.widgets.FindMyDeviceAlertDialog;
 import cloudx.view.menu.ResideMenu;
 import cloudx.view.menu.ResideMenuItem;
 import cloudx.view.messagebox.MessageBox;
 import cloudx.view.messagebox.MessageSender;
 import com.google.protobuf.ByteString;
 import common.message.Data;
-import data.information.GlobalSettingsAndInformation;
-import model.network.ListeningThread;
+import data.information.Constants;
+import cloudx.network.ListeningThread;
 
 import java.io.IOException;
 import java.lang.Process;
@@ -56,12 +56,12 @@ public class MainActivity extends Activity {
         @Override
         public void handleMessage(Message msg) {
 //TODO marked at 2014/11/6
-            if (msg.arg1 == GlobalSettingsAndInformation.MessageType_FindMyDevice) {
+            if (msg.arg1 == Constants.MessageType_FindMyDevice) {
 //find my device
                 new FindMyDeviceAlertDialog(MainActivity.this);
-            } else if (msg.arg1 == GlobalSettingsAndInformation.MessageType_FileInfo) {
+            } else if (msg.arg1 == Constants.MessageType_FileInfo) {
 
-            } else if (msg.arg1 == GlobalSettingsAndInformation.MessageType_Message) {
+            } else if (msg.arg1 == Constants.MessageType_Message) {
 
             }
 
@@ -93,8 +93,8 @@ public class MainActivity extends Activity {
 //        Log.e(TAG, Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RINGTONES).getAbsolutePath());
 
 
-        GlobalSettingsAndInformation.deviceName = Build.BRAND + " " + Build.MODEL;
-        GlobalSettingsAndInformation.localIP = getStringIP();
+//        Constants.deviceName = Build.BRAND + " " + Build.MODEL;
+        Constants.localIP = getStringIP();
 
         //start the listening thread
         if (ListeningThread.getInstance().getState() != Thread.State.RUNNABLE)
@@ -163,7 +163,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 selectedMode = RemoteControllMode;
-                if (GlobalSettingsAndInformation.ServerIP == null) {
+                if (Constants.ServerIP == null) {
                     if (!popupWindow.isShowing())
                         showPopupWindow(remoteControll);
                 } else {
@@ -180,7 +180,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 selectedMode = FileManagerMode;
-                if (GlobalSettingsAndInformation.ServerIP == null) {
+                if (Constants.ServerIP == null) {
                     if (!popupWindow.isShowing())
                         showPopupWindow(fileManagerItem);
                 } else {
@@ -197,7 +197,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 selectedMode = SendMessageMode;
-                if (GlobalSettingsAndInformation.ServerIP == null) {
+                if (Constants.ServerIP == null) {
                     if (!popupWindow.isShowing())
                         showPopupWindow(fileManagerItem);
                 } else {
@@ -301,7 +301,7 @@ public class MainActivity extends Activity {
                     String ip = ipEditText.getText().toString();
 
                     if (isIllegalIP(ip)) {
-                        GlobalSettingsAndInformation.ServerIP = ip;
+                        Constants.ServerIP = ip;
 
                         if (wiFiScanner1 != null)
                             wiFiScanner1.cancel(true);
@@ -326,7 +326,7 @@ public class MainActivity extends Activity {
                 String ip = ipEditText.getText().toString();
 
                 if (isIllegalIP(ip)) {
-                    GlobalSettingsAndInformation.ServerIP = ip;
+                    Constants.ServerIP = ip;
 
                     if (wiFiScanner1 != null)
                         wiFiScanner1.cancel(true);
@@ -353,7 +353,7 @@ public class MainActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.e(TAG, ((TextView) view.findViewById(R.id.ipTextView)).getText() + " clicked");
 
-                GlobalSettingsAndInformation.ServerIP = ((TextView) view.findViewById(R.id.ipTextView)).getText().toString();
+                Constants.ServerIP = ((TextView) view.findViewById(R.id.ipTextView)).getText().toString();
                 if (wiFiScanner1 != null)
                     wiFiScanner1.cancel(true);
                 if (wiFiScanner2 != null)
@@ -406,8 +406,8 @@ public class MainActivity extends Activity {
                             protected Void doInBackground(Void... params) {
                                 if (socket == null) {
                                     try {
-                                        socket = new Socket(GlobalSettingsAndInformation.ServerIP,
-                                                GlobalSettingsAndInformation.ServerPort);
+                                        socket = new Socket(Constants.ServerIP,
+                                                Constants.ServerPort);
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -416,7 +416,7 @@ public class MainActivity extends Activity {
                                 if (!socket.isClosed())
                                     try {
 
-                                        sendInfo(GlobalSettingsAndInformation.deviceName, Data.Info.InfoType.NormalInfo,
+                                        sendInfo(Constants.deviceName, Data.Info.InfoType.NormalInfo,
                                                 MainActivity.this.getResources().getDisplayMetrics().widthPixels,
                                                 MainActivity.this.getResources().getDisplayMetrics().heightPixels);
 
@@ -469,7 +469,7 @@ public class MainActivity extends Activity {
         //close the file input thread
         ListeningThread.getInstance().interrupt();
         isFirstLoad = true;
-        GlobalSettingsAndInformation.ServerIP = null;
+        Constants.ServerIP = null;
 
         cleanUpAndFinish();
         Log.e(TAG, "EXIT MAIN ACTIVITY");

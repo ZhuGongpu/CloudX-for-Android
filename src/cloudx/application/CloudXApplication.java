@@ -1,8 +1,11 @@
 package cloudx.application;
 
 import android.app.Application;
+import common.message.Data;
+import utils.ByteStringUtils;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.Socket;
 
 /**
@@ -10,9 +13,11 @@ import java.net.Socket;
  */
 public class CloudXApplication extends Application {
 
-    public static String SharedPreferenceName = "CloudX";
-    public static String SharedPreference_Key_Account = "Account";
-    public static String SharedPreference_Key_Password = "Password";
+    //shared preferences
+    public static final String SharedPreferenceName = "CloudX";
+    public static final String SharedPreference_Key_Account = "Account";
+    public static final String SharedPreference_Key_Password = "Password";
+    public static String CloudStorageToken = null;
     private NetworkThread networkThread = null;
 
     @Override
@@ -65,10 +70,48 @@ public class CloudXApplication extends Application {
             try {
                 this.socket = new Socket(severIP, severPort);
 
-                //TODO 接收数据
+                InputStream inputStream = socket.getInputStream();
+
+                while (!this.isInterrupted() && inputStream != null) {
+                    Data.DataPacket dataPacket = Data.DataPacket.parseDelimitedFrom(inputStream);
+
+                    //TODO handle data input
+                    if (dataPacket != null && dataPacket.getDataPacketType() != null)
+                        switch (dataPacket.getDataPacketType()) {
+                            case CloudStorageToken:
+                                //保存token
+                                CloudXApplication.CloudStorageToken = ByteStringUtils.byteStringToString(dataPacket.getSharedMessage().getContent());
+                                break;
+                            case DeviceInfo:
+                                //TODO 保存 device info
+                                break;
+                            case FileRequest:
+                                //TODO 传输文件
+                                break;
+                            case SharedMessage:
+                                //TODO 弹出提示
+                                break;
+                            case Command:
+                                //TODO 产生相应的响应（包括find my device）
+                                break;
+                            default:
+                                break;
+                        }
+                }
+
+                if (inputStream != null)
+                    inputStream.close();
 
             } catch (IOException e) {
                 e.printStackTrace();
+            } finally {
+
+                try {
+                    if (socket != null)
+                        socket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

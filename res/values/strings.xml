@@ -15,6 +15,15 @@
     <string name="password_too_short">密码不能少于6位</string>
     <string name="passwords_donot_match">密码不一致</string>
 
+
+    <!--tab bar-->
+    <string name="Devices">设备</string>
+    <string name="Files">文件</string>
+    <string name="Settings">设置</string>
+
+    <!--Context Menu-->
+    <string name="Delete">删除</string>
+
     <!--<string path="GameMode">游戏模式</string>-->
     <string name="exit">退出</string>
     <string name="RemoteDesktop">远程控制</string>
@@ -35,6 +44,8 @@
     <string name="MovieMode">电影</string>
     <string name="MusicMode">音乐</string>
 
+    <!--Network Status-->
+    <string name="Connected">已连接</string>
     <string name="ConnectionFailed">连接失败,请检查网络连接</string>
 
     <string name="WinddowSelected">已选择窗口</string>

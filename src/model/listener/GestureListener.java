@@ -2,7 +2,6 @@ package model.listener;
 
 import android.graphics.Matrix;
 import android.graphics.PointF;
-import android.os.Handler;
 import android.os.Message;
 import android.util.FloatMath;
 import android.util.Log;
@@ -11,7 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import common.message.Data;
 import common.message.LocalCommand;
-import data.information.GlobalSettingsAndInformation;
+import data.information.Constants;
 
 /**
  * Created by Me on 14-2-19.
@@ -33,15 +32,15 @@ public class GestureListener implements View.OnTouchListener {
 
     private boolean isLongClickFlag = false;//在判定longClick过程中用来做标记,
     private boolean isLongClick = false;//最终判定是否为longClick
-    /**
-     * 用于和UI之间的通讯
-     */
-    private Handler handler = null;
+
     private OnLongClickGestureListener onLongClickGestureListener = null;
     private CommandSender commandSender = null;
 
-    public GestureListener(Handler handler) {
-        this.handler = handler;
+    private int peerScreen_Width, peerScreen_Height;
+
+    public GestureListener(int peerScreen_Width, int peerScreen_Height) {
+        this.peerScreen_Height = peerScreen_Height;
+        this.peerScreen_Width = peerScreen_Width;
     }
 
     private static float getDistance(PointF p1, PointF p2) {
@@ -204,17 +203,17 @@ public class GestureListener implements View.OnTouchListener {
     }
 
     protected void slideLeftHandler() {
-        Message message = handler.obtainMessage();
-        message.arg1 = LocalCommand.Hide_OptionMenu;
-        message.sendToTarget();
+//        Message message = handler.obtainMessage();
+//        message.arg1 = LocalCommand.Hide_OptionMenu;
+//        message.sendToTarget();
 
         Log.d(TAG, "Swipe LEFT");
     }
 
     protected void slideRightHandler() {
-        Message message = handler.obtainMessage();
-        message.arg1 = LocalCommand.Show_OptionMenu;
-        message.sendToTarget();
+//        Message message = handler.obtainMessage();
+//        message.arg1 = LocalCommand.Show_OptionMenu;
+//        message.sendToTarget();
 
         Log.d(TAG, "Swipe RIGHT");
     }
@@ -258,8 +257,8 @@ public class GestureListener implements View.OnTouchListener {
             int height = view.getDrawable().getBounds().height();
 
 
-            float x = coordinate[0] / width * GlobalSettingsAndInformation.ServerResolutionWidth;
-            float y = coordinate[1] / height * GlobalSettingsAndInformation.ServerResolutionHeight;
+            float x = coordinate[0] / width * peerScreen_Width;
+            float y = coordinate[1] / height * peerScreen_Height;
 
             commandSender.sendCommand(Data.Command.CommandType.LeftClick, x, y);
 
@@ -281,8 +280,8 @@ public class GestureListener implements View.OnTouchListener {
             int height = view.getDrawable().getBounds().height();
 
 
-            float x = coordinate[0] / width * GlobalSettingsAndInformation.ServerResolutionWidth;
-            float y = coordinate[1] / height * GlobalSettingsAndInformation.ServerResolutionHeight;
+            float x = coordinate[0] / width * peerScreen_Width;
+            float y = coordinate[1] / height * peerScreen_Height;
 
             commandSender.sendCommand(Data.Command.CommandType.RightClick, x, y);
 

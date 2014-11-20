@@ -18,9 +18,9 @@ import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
 import cloudx.main.MainActivity;
 import cloudx.main.R;
-import cloudx.remote_desktop.RemoteDesktopActivity;
+import cloudx.views.RemoteDesktopActivity;
 import cloudx.view.CircleProgressBar.CircleProgressBar;
-import cloudx.view.findMyDevice.FindMyDeviceAlertDialog;
+import cloudx.views.widgets.FindMyDeviceAlertDialog;
 import cloudx.view.listview.ListViewCompat;
 import cloudx.view.listview.MessageItem;
 import cloudx.view.listview.SlideView;
@@ -28,9 +28,9 @@ import cloudx.view.messagebox.MessageBox;
 import com.google.protobuf.ByteString;
 import common.message.Data;
 import data.information.FileInfo;
-import data.information.GlobalSettingsAndInformation;
-import model.network.AudioInputThread;
-import model.network.ListeningThread;
+import data.information.Constants;
+import cloudx.network.AudioInputThread;
+import cloudx.network.ListeningThread;
 import utils.OpenFileUtils;
 
 import java.io.IOException;
@@ -57,11 +57,11 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
             super.handleMessage(msg);
             Log.e(TAG, "handle message");
 
-            if (msg.arg1 == GlobalSettingsAndInformation.MessageType_FindMyDevice) {
+            if (msg.arg1 == Constants.MessageType_FindMyDevice) {
                 new FindMyDeviceAlertDialog(FileManagerActivity.this);
-            } else if (msg.arg1 == GlobalSettingsAndInformation.MessageType_Message) {
+            } else if (msg.arg1 == Constants.MessageType_Message) {
                 new MessageBox(FileManagerActivity.this, (String) msg.obj).show();
-            } else if (msg.arg1 == GlobalSettingsAndInformation.MessageType_FileInfo) {
+            } else if (msg.arg1 == Constants.MessageType_FileInfo) {
                 //todo
 
                 if (!circleProgressBar.isShown()) {
@@ -458,9 +458,9 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
         @Override
         protected Boolean doInBackground(Void... params) {
             try {
-                if (socket == null && GlobalSettingsAndInformation.ServerIP != null)
-                    socket = new Socket(GlobalSettingsAndInformation.ServerIP,
-                            GlobalSettingsAndInformation.ServerPort);
+                if (socket == null && Constants.ServerIP != null)
+                    socket = new Socket(Constants.ServerIP,
+                            Constants.ServerPort);
 
                 Log.e(TAG, "Connected");
 
@@ -469,7 +469,7 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
 
                 Log.e(TAG, "MainInputThread start");
 
-                sendInfo(GlobalSettingsAndInformation.deviceName,
+                sendInfo(Constants.deviceName,
                         FileManagerActivity.this.getResources().getDisplayMetrics().widthPixels,
                         FileManagerActivity.this.getResources().getDisplayMetrics().heightPixels);
 
@@ -488,7 +488,7 @@ public class FileManagerActivity extends Activity implements OnItemClickListener
 
             } catch (IOException e) {
                 e.printStackTrace();
-                GlobalSettingsAndInformation.ServerIP = null;
+                Constants.ServerIP = null;
                 return false;
             }
             return true;

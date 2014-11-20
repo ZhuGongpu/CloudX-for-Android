@@ -1,4 +1,4 @@
-package model.network;
+package cloudx.network;
 
 import android.os.Environment;
 import android.os.Handler;
@@ -6,7 +6,7 @@ import android.os.Message;
 import android.util.Log;
 import common.message.Data;
 import data.information.FileInfo;
-import data.information.GlobalSettingsAndInformation;
+import data.information.Constants;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -152,7 +152,7 @@ public class ListeningThread extends Thread {
                                 fileInfo.filePath = filePath;
 
                                 Message message = handler.obtainMessage();
-                                message.arg1 = GlobalSettingsAndInformation.MessageType_FileInfo;
+                                message.arg1 = Constants.MessageType_FileInfo;
                                 message.obj = fileInfo;
 
                                 Log.e(TAG, "Message send to target");
@@ -171,12 +171,12 @@ public class ListeningThread extends Thread {
                                 handler != null) {
                             // find my phone
                             Message message = handler.obtainMessage();
-                            message.arg1 = GlobalSettingsAndInformation.MessageType_FindMyDevice;
+                            message.arg1 = Constants.MessageType_FindMyDevice;
                             message.sendToTarget();
                         } else if (dataPacket.hasSharedMessage() && handler != null) {
                             //send to main
                             Message message = handler.obtainMessage();
-                            message.arg1 = GlobalSettingsAndInformation.MessageType_Message;
+                            message.arg1 = Constants.MessageType_Message;
                             message.obj = new String(dataPacket.getSharedMessage().getContent().toByteArray());
                             message.sendToTarget();
                         }

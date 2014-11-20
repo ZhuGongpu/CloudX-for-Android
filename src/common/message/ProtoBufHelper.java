@@ -1,6 +1,7 @@
 package common.message;
 
 import com.google.protobuf.ByteString;
+import utils.ByteStringUtils;
 import utils.TimeUtils;
 
 import java.io.IOException;
@@ -311,8 +312,20 @@ public class ProtoBufHelper {
      * @param resolution
      * @return
      */
-    public static Data.DeviceInfo.Builder genDeviceinfo(ByteString deviceName, int portAvailable, Data.Resolution resolution) {
+    public static Data.DeviceInfo.Builder genDeviceInfo(ByteString deviceName, int portAvailable, Data.Resolution.Builder resolution) {
         return Data.DeviceInfo.newBuilder().setDeviceName(deviceName).setPortAvailable(portAvailable).setResolution(resolution);
+    }
+
+    /**
+     * 生成完整的deviceInfo builder
+     *
+     * @param deviceName
+     * @param portAvailable
+     * @param resolution
+     * @return
+     */
+    public static Data.DeviceInfo.Builder genDeviceInfo(String deviceName, int portAvailable, Data.Resolution.Builder resolution) {
+        return genDeviceInfo(ByteStringUtils.stringToByteString(deviceName), portAvailable, resolution);
     }
 
 

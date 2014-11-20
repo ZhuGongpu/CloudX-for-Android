@@ -1,4 +1,4 @@
-package model.network;
+package cloudx.network;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import common.message.Data;
-import data.information.GlobalSettingsAndInformation;
+import data.information.Constants;
 import utils.BitmapUtils;
 import utils.ByteStringUtils;
 
@@ -20,7 +20,7 @@ import java.util.List;
  * 用于处理PC发来的Video、Info数据
  * Created by Gongpu on 2014/3/30.
  */
-public class MainInputThread extends Thread {
+public class VideoInputThread extends Thread {
     private static final String TAG = "MainInputThread";
     public Handler handler = null;
     Bitmap bitmap = null;
@@ -28,7 +28,7 @@ public class MainInputThread extends Thread {
     private Socket socket = null;
     private InputStream inputStream = null;
 
-    public MainInputThread(Socket socket, Handler handler) {
+    public VideoInputThread(Socket socket, Handler handler) {
         this.handler = handler;
         this.socket = socket;
     }
@@ -37,7 +37,6 @@ public class MainInputThread extends Thread {
     public void run() {
 
         try {
-            //socket = new Socket(GlobalSettingsAndInformation.ServerIP, GlobalSettingsAndInformation.ServerPort);
             inputStream = socket.getInputStream();
             while (running && inputStream != null) {
                 Data.DataPacket dataPacket = Data.DataPacket.parseDelimitedFrom(inputStream);
@@ -47,7 +46,6 @@ public class MainInputThread extends Thread {
                     if (dataPacket.hasVideo() && this.handler != null) {
 
                         //根据新的proto重写
-
                         Log.e(TAG, "video get");
 
                         //先解析是否包含完整的frame
@@ -57,7 +55,7 @@ public class MainInputThread extends Thread {
                             bitmap = ByteStringUtils.ByteStringToBitmap(dataPacket.getVideo().getFrame());
 
                             Message message = this.handler.obtainMessage();
-                            message.arg1 = GlobalSettingsAndInformation.MessageType_Bitmap;
+                            message.arg1 = Constants.MessageType_Bitmap;
                             message.obj = bitmap;
                             message.sendToTarget();
 
@@ -117,17 +115,12 @@ public class MainInputThread extends Thread {
                             }
 
                             Message message = this.handler.obtainMessage();
-                            message.arg1 = GlobalSettingsAndInformation.MessageType_Bitmap;
+                            message.arg1 = Constants.MessageType_Bitmap;
                             message.obj = bitmap;
                             message.sendToTarget();
                             System.gc();
 
                         }
-                    } else if (dataPacket.hasInfo() && handler != null) {
-                        Log.e(TAG, "receive info");
-                        GlobalSettingsAndInformation.ServerResolutionWidth = dataPacket.getInfo().getWidth();
-                        GlobalSettingsAndInformation.ServerResolutionHeight = dataPacket.getInfo().getHeight();
-                        GlobalSettingsAndInformation.ServerPortAvailable = dataPacket.getInfo().getPortAvailable();
                     }
                 }
             }
