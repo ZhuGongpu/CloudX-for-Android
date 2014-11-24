@@ -44,4 +44,11 @@
         <item name="android:textColor">@drawable/bottom_bar_text</item>
     </style>
 
+    <!--List View-->
+    <style name="basic_list_view_style" parent="match_parent_layout">
+        <item name="android:cacheColorHint">#00000000</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:divider">@null</item>
+        <item name="android:dividerHeight">@dimen/list_view_divider_height</item>
+    </style>
 </resources>

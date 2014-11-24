@@ -6,7 +6,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:padding="@dimen/small_padding"
-                android:background="@color/white"
+                android:background="@drawable/round_corner"
         >
 
     <ImageView
