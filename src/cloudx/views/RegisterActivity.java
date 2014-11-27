@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import cloudx.application.CloudXApplication;
 
 import cloudx.model.User;
+import data.information.Constants;
 
 /**
  * Created by zhugongpu on 14/11/15.
@@ -80,9 +80,9 @@ public class RegisterActivity extends Activity {
                 String password = passwordEditText.getText().toString();
 
                 //存储账号密码
-                SharedPreferences.Editor editor = getSharedPreferences(CloudXApplication.SharedPreferenceName, MODE_PRIVATE).edit();
-                editor.putString(CloudXApplication.SharedPreference_Key_Account, account);
-                editor.putString(CloudXApplication.SharedPreference_Key_Password, password);
+                SharedPreferences.Editor editor = getSharedPreferences(Constants.SharedPreferenceName, MODE_PRIVATE).edit();
+                editor.putString(Constants.SharedPreference_Key_Account, account);
+                editor.putString(Constants.SharedPreference_Key_Password, password);
                 editor.apply();
 
                 //注册

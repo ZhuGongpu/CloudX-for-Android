@@ -11,6 +11,11 @@ public class Constants {
     public static final int MessageType_FileInfo = 30;
     public static final int MessageType_FindMyDevice = 40;
 
+    //shared preferences keys
+    public static final String SharedPreferenceName = "CloudX";
+    public static final String SharedPreference_Key_Account = "Account";
+    public static final String SharedPreference_Key_Password = "Password";
+
     /**
      * 调用RemoteDesktopActivity时，需要传入以下参数
      */
@@ -20,13 +25,6 @@ public class Constants {
     public static final String ParaName_Resolution_Height = "Resolution_Height";
 
 
-
-    //    public static String ServerIP = null;
-//    public static int ServerPort = 50323;
     public static String deviceName = Build.BRAND + " " + Build.MODEL;
     public static int portAvailable = 50323;
-//    public static String localIP = null;
-//    public static int ServerPortAvailable = 50324;
-//    public static int ServerResolutionWidth = 1366;
-//    public static int ServerResolutionHeight = 768;
 }

@@ -1,6 +1,7 @@
 package cloudx.model;
 
-import cloudx.main.R;
+
+import cloudx.views.R;
 
 /**
  * Created by zhugongpu on 14/11/20.

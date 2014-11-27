@@ -45,11 +45,11 @@
                     android:padding="5dp"
                     android:id="@+id/login"
                     android:text="@string/login"
-                    android:textSize="@dimen/large_text_size"
+                    android:textSize="@dimen/headline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:textColor="@color/whitesmoke"
+                    android:textColor="@color/white"
                     android:background="@color/green"/>
         </LinearLayout>
 

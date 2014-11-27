@@ -1,70 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-    <?xml version="1.0" encoding="utf-8"?>
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/white">
-
-        <LinearLayout
-                android:layout_centerInParent="true"
                 android:orientation="vertical"
                 android:gravity="center"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+    <LinearLayout
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp">
+
+
+        <ImageView
+                android:src="@drawable/logo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp">
+                android:layout_margin="10dp">
 
+            <EditText
+                    android:id="@+id/account"
+                    android:hint="@string/account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-            <ImageView
-                    android:src="@drawable/logo"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"/>
+            <EditText
+                    android:id="@+id/password"
+                    android:hint="@string/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
+            <EditText
+                    android:id="@+id/confirm_password"
+                    android:hint="@string/confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
-            <LinearLayout
-                    android:orientation="vertical"
+            <Button
+                    android:padding="5dp"
+                    android:id="@+id/login"
+                    android:text="@string/register"
+                    android:textSize="@dimen/headline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp">
-
-                <EditText
-                        android:id="@+id/account"
-                        android:hint="@string/account"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-
-                <EditText
-                        android:id="@+id/password"
-                        android:hint="@string/password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-
-                <EditText
-                        android:id="@+id/confirm_password"
-                        android:hint="@string/confirm_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-
-                <Button
-                        android:padding="5dp"
-                        android:id="@+id/login"
-                        android:text="@string/register"
-                        android:textSize="@dimen/large_text_size"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:textColor="@color/whitesmoke"
-                        android:background="@color/green"/>
-            </LinearLayout>
-
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
+                    android:background="@color/green"/>
         </LinearLayout>
 
+    </LinearLayout>
 
-    </RelativeLayout>
+
 </RelativeLayout>
