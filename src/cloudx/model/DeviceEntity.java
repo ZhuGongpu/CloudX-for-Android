@@ -1,4 +1,4 @@
-package model;
+package cloudx.model;
 
 import common.message.Data;
 
@@ -14,7 +14,6 @@ public class DeviceEntity {
     public DeviceType deviceType;
     public Data.Resolution resolution;
     public int port;
-    public int portAvailable;
 
     public enum DeviceType {
         Desktop, MobilePhone, Tablet, Camera, AirConditioner, Socket
