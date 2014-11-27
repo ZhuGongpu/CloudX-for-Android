@@ -7,9 +7,9 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import common.message.Data;
-import data.information.Constants;
-import utils.BitmapUtils;
-import utils.ByteStringUtils;
+import cloudx.model.Constants;
+import cloudx.utils.BitmapUtils;
+import cloudx.utils.ByteStringUtils;
 
 import java.io.IOException;
 import java.io.InputStream;

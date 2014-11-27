@@ -24,8 +24,8 @@ import cloudx.network.AudioInputThread;
 import cloudx.network.VideoInputThread;
 import common.message.Data;
 import common.message.ProtoBufHelper;
-import data.information.Constants;
-import utils.KeyCodeConverter;
+import cloudx.model.Constants;
+import cloudx.utils.KeyCodeConverter;
 
 import java.io.IOException;
 import java.net.Socket;

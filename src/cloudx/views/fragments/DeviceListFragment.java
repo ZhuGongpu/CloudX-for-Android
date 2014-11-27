@@ -15,7 +15,7 @@ import cloudx.model.DeviceEntity;
 import cloudx.views.R;
 import cloudx.views.RemoteDesktopActivity;
 import com.squareup.picasso.Picasso;
-import data.information.Constants;
+import cloudx.model.Constants;
 
 import java.util.ArrayList;
 

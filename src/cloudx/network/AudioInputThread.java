@@ -2,7 +2,7 @@ package cloudx.network;
 
 import android.util.Log;
 import common.message.Data;
-import utils.AudioPlayer;
+import cloudx.utils.AudioPlayer;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

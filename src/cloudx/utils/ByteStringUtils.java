@@ -1,4 +1,4 @@
-package utils;
+package cloudx.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

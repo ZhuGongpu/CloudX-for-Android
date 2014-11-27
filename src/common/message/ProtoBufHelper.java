@@ -1,8 +1,8 @@
 package common.message;
 
 import com.google.protobuf.ByteString;
-import utils.ByteStringUtils;
-import utils.TimeUtils;
+import cloudx.utils.ByteStringUtils;
+import cloudx.utils.TimeUtils;
 
 import java.io.IOException;
 import java.io.OutputStream;

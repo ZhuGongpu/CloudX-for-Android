@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import cloudx.model.User;
-import data.information.Constants;
+import cloudx.model.Constants;
 
 /**
  * Created by zhugongpu on 14/11/15.

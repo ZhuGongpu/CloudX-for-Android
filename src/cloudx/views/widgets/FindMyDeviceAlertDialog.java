@@ -8,7 +8,7 @@ import android.media.RingtoneManager;
 import android.os.Vibrator;
 
 import cloudx.views.R;
-import utils.RingtoneUtils;
+import cloudx.utils.RingtoneUtils;
 
 /**
  * Created by Gongpu on 2014/4/24.

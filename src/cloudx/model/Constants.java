@@ -1,4 +1,4 @@
-package data.information;
+package cloudx.model;
 
 import android.os.Build;
 
