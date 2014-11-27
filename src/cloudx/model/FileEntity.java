@@ -1,4 +1,4 @@
-package model;
+package cloudx.model;
 
 import cloudx.main.R;
 
@@ -12,7 +12,7 @@ public class FileEntity {
 
     public FileType fileType;
 
-    int getFileIcon() {
+   public int getFileIcon() {
         switch (fileType) {
 
             case Doc:

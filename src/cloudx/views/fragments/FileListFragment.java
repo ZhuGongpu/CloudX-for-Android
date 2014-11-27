@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 
-import cloudx.main.R;
+import cloudx.model.FileEntity;
+import cloudx.views.R;
 import com.squareup.picasso.Picasso;
-import model.FileEntity;
 
 import java.util.ArrayList;
 
@@ -117,8 +117,11 @@ public class FileListFragment extends Fragment {
         //TODO undefined
     }
 
+    /**
+     * 向服务器请求文件列表
+     */
     private void loadData() {
-
+        //TODO dummy implementation
         for (int i = 0; i < 10; i++) {
             FileEntity file = new FileEntity();
             file.fileType = FileEntity.FileType.Others;
@@ -127,7 +130,9 @@ public class FileListFragment extends Fragment {
 
             this.data.add(file);
         }
-        this.adapter.notifyDataSetChanged();
+
+        if (this.adapter != null)
+            this.adapter.notifyDataSetChanged();
     }
 
     @Override
@@ -136,8 +141,6 @@ public class FileListFragment extends Fragment {
 
         menu.add(getText(R.string.Delete));
     }
-
-
 
 
 }

@@ -8,10 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import cloudx.application.CloudXApplication;
-import cloudx.main.MainActivity;
-import cloudx.main.R;
-import cloudx.views.RegisterActivity;
-import model.user.User;
+
+import cloudx.model.User;
 
 /**
  * Created by zhugongpu on 14/11/15.
@@ -40,7 +38,6 @@ public class LoginActivity extends Activity {
             finish();
             return;
         }
-
 
         setContentView(R.layout.login_layout);
         initViews();

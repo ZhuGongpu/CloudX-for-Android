@@ -2,7 +2,6 @@ package cloudx.application;
 
 import android.app.Application;
 import common.message.Data;
-import utils.ByteStringUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,13 +16,12 @@ public class CloudXApplication extends Application {
     public static final String SharedPreferenceName = "CloudX";
     public static final String SharedPreference_Key_Account = "Account";
     public static final String SharedPreference_Key_Password = "Password";
-    public static String CloudStorageToken = null;
+    //处理公共的网络数据(input)
     private NetworkThread networkThread = null;
 
     @Override
     public void onCreate() {
         super.onCreate();
-
     }
 
 
@@ -78,10 +76,11 @@ public class CloudXApplication extends Application {
                     //TODO handle data input
                     if (dataPacket != null && dataPacket.getDataPacketType() != null)
                         switch (dataPacket.getDataPacketType()) {
-                            case CloudStorageToken:
-                                //保存token
-                                CloudXApplication.CloudStorageToken = ByteStringUtils.byteStringToString(dataPacket.getSharedMessage().getContent());
-                                break;
+//不处理token
+//                            case CloudStorageToken:
+//                                //保存token
+//                                CloudStorageToken = ByteStringUtils.byteStringToString(dataPacket.getSharedMessage().getContent());
+//                                break;
                             case DeviceInfo:
                                 //TODO 保存 device info
                                 break;

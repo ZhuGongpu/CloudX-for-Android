@@ -16,7 +16,6 @@ public class Constants {
      */
     public static final String ParaName_PeerIP = "PeerIP";
     public static final String ParaName_PeerPort = "PeerPort";
-    public static final String ParaName_PeerPortAvailable = "PeerPortAvailable";
     public static final String ParaName_Resolution_Width = "Resolution_Width";
     public static final String ParaName_Resolution_Height = "Resolution_Height";
 

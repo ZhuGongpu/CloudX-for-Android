@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
-import cloudx.main.R;
 import cloudx.views.fragments.DeviceListFragment;
 import cloudx.views.fragments.FileListFragment;
 import cloudx.views.fragments.SettingsFragment;

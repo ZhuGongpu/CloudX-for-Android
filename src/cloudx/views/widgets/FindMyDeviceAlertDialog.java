@@ -6,7 +6,8 @@ import android.content.DialogInterface;
 import android.media.AudioManager;
 import android.media.RingtoneManager;
 import android.os.Vibrator;
-import cloudx.main.R;
+
+import cloudx.views.R;
 import utils.RingtoneUtils;
 
 /**

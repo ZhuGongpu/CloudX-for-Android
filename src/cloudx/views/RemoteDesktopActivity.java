@@ -16,16 +16,15 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
-import cloudx.main.R;
+
+import cloudx.listener.CommandSender;
+import cloudx.listener.GestureListener;
+import cloudx.listener.OnLongClickGestureListener;
 import cloudx.network.AudioInputThread;
-import cloudx.network.ListeningThread;
 import cloudx.network.VideoInputThread;
 import common.message.Data;
 import common.message.ProtoBufHelper;
 import data.information.Constants;
-import model.listener.CommandSender;
-import model.listener.GestureListener;
-import model.listener.OnLongClickGestureListener;
 import utils.KeyCodeConverter;
 
 import java.io.IOException;
@@ -44,7 +43,6 @@ public class RemoteDesktopActivity extends Activity {
      */
     private String peerIP = null;
     private int peerPort = 0;
-    private int peerPortAvailable = 0;
     private int resolution_width = 0;
     private int resolution_height = 0;
 
@@ -169,9 +167,8 @@ public class RemoteDesktopActivity extends Activity {
             peerPort = intent.getIntExtra(Constants.ParaName_PeerPort, 0);
             resolution_width = intent.getIntExtra(Constants.ParaName_Resolution_Width, 0);
             resolution_height = intent.getIntExtra(Constants.ParaName_Resolution_Height, 0);
-            peerPortAvailable = intent.getIntExtra(Constants.ParaName_PeerPortAvailable, 0);
         }
-        if (peerIP == null || peerPort <= 0 || resolution_height <= 0 || resolution_width <= 0 || peerPortAvailable <= 0)
+        if (peerIP == null || peerPort <= 0 || resolution_height <= 0 || resolution_width <= 0)
             finish();
 
         setContentView(R.layout.remote_desktop);
@@ -240,7 +237,7 @@ public class RemoteDesktopActivity extends Activity {
 
                     videoThread.start();
 
-                    audioThread = new AudioInputThread(peerIP, peerPortAvailable);
+                    audioThread = new AudioInputThread(peerIP, peerPort);
                     audioThread.start();
                 } else {
                     Log.e(TAG, "connection failed");
@@ -355,8 +352,6 @@ public class RemoteDesktopActivity extends Activity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-        ListeningThread.getInstance().setHandler(null);
 
         finish();
     }

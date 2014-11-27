@@ -10,11 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import cloudx.main.R;
+
+import cloudx.model.DeviceEntity;
+import cloudx.views.R;
 import cloudx.views.RemoteDesktopActivity;
 import com.squareup.picasso.Picasso;
 import data.information.Constants;
-import model.DeviceEntity;
 
 import java.util.ArrayList;
 
@@ -31,7 +32,7 @@ public class DeviceListFragment extends Fragment {
     private View fragmentView = null;
 
     private ListView deviceList = null;
-
+    //保存所有的设备信息
     private ArrayList<DeviceEntity> data = new ArrayList<DeviceEntity>();
     private BaseAdapter adapter = null;
 
@@ -52,7 +53,12 @@ public class DeviceListFragment extends Fragment {
 
     }
 
+    /**
+     * 向服务器请求设备列表
+     */
     private void loadData() {
+
+        //TODO dummy implementation
         for (int i = 0; i < 10; i++) {
             DeviceEntity entity = new DeviceEntity();
             entity.deviceName = "macbook pro";
@@ -61,6 +67,7 @@ public class DeviceListFragment extends Fragment {
 
             data.add(entity);
         }
+
 
         if (this.adapter != null)
             this.adapter.notifyDataSetChanged();
@@ -125,7 +132,7 @@ public class DeviceListFragment extends Fragment {
                         //传入参数
                         intent.putExtra(Constants.ParaName_PeerIP, dataItem.ipAddress);
                         intent.putExtra(Constants.ParaName_PeerPort, dataItem.port);
-                        intent.putExtra(Constants.ParaName_PeerPortAvailable, dataItem.portAvailable);
+
                         intent.putExtra(Constants.ParaName_Resolution_Width, dataItem.resolution.getWidth());
                         intent.putExtra(Constants.ParaName_Resolution_Height, dataItem.resolution.getHeight());
                         startActivity(intent);

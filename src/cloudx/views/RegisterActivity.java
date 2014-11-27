@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import cloudx.application.CloudXApplication;
-import cloudx.main.R;
-import model.user.User;
+
+import cloudx.model.User;
 
 /**
  * Created by zhugongpu on 14/11/15.

@@ -1,4 +1,4 @@
-package cloud_storage;
+package cloudx.cloud_storage;
 
 import android.content.Context;
 import android.util.Log;
