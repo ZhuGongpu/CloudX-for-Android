@@ -26,5 +26,5 @@ public class Constants {
 
 
     public static String deviceName = Build.BRAND + " " + Build.MODEL;
-    public static int portAvailable = 50323;
+
 }

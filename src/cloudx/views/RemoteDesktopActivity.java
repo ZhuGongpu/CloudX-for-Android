@@ -16,16 +16,15 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import cloudx.listener.CommandSender;
 import cloudx.listener.GestureListener;
 import cloudx.listener.OnLongClickGestureListener;
+import cloudx.model.Constants;
 import cloudx.network.AudioInputThread;
 import cloudx.network.VideoInputThread;
+import cloudx.utils.KeyCodeConverter;
 import common.message.Data;
 import common.message.ProtoBufHelper;
-import cloudx.model.Constants;
-import cloudx.utils.KeyCodeConverter;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -197,7 +196,6 @@ public class RemoteDesktopActivity extends Activity {
                     ProtoBufHelper.sendDeviceInfo(
                             ProtoBufHelper.genDeviceInfo(
                                     Constants.deviceName,
-                                    Constants.portAvailable,
                                     ProtoBufHelper.genResolution(
                                             RemoteDesktopActivity.this.getResources().getDisplayMetrics().widthPixels,
                                             RemoteDesktopActivity.this.getResources().getDisplayMetrics().heightPixels
@@ -209,7 +207,7 @@ public class RemoteDesktopActivity extends Activity {
                      */
                     ProtoBufHelper.sendCommand(
                             ProtoBufHelper.genCommandBuilder(
-                                    Data.Command.CommandType.StartAudioAndVideoTransmission
+                                    Data.Command.CommandType.StartVideoTransmission
                             ),
                             socket.getOutputStream());
 

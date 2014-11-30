@@ -1,8 +1,8 @@
 package common.message;
 
-import com.google.protobuf.ByteString;
 import cloudx.utils.ByteStringUtils;
 import cloudx.utils.TimeUtils;
+import com.google.protobuf.ByteString;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -308,24 +308,22 @@ public class ProtoBufHelper {
      * 生成完整的deviceInfo builder
      *
      * @param deviceName
-     * @param portAvailable
      * @param resolution
      * @return
      */
-    public static Data.DeviceInfo.Builder genDeviceInfo(ByteString deviceName, int portAvailable, Data.Resolution.Builder resolution) {
-        return Data.DeviceInfo.newBuilder().setDeviceName(deviceName).setPortAvailable(portAvailable).setResolution(resolution);
+    public static Data.DeviceInfo.Builder genDeviceInfo(ByteString deviceName, Data.Resolution.Builder resolution) {
+        return Data.DeviceInfo.newBuilder().setDeviceName(deviceName).setResolution(resolution);
     }
 
     /**
      * 生成完整的deviceInfo builder
      *
      * @param deviceName
-     * @param portAvailable
      * @param resolution
      * @return
      */
-    public static Data.DeviceInfo.Builder genDeviceInfo(String deviceName, int portAvailable, Data.Resolution.Builder resolution) {
-        return genDeviceInfo(ByteStringUtils.stringToByteString(deviceName), portAvailable, resolution);
+    public static Data.DeviceInfo.Builder genDeviceInfo(String deviceName, Data.Resolution.Builder resolution) {
+        return genDeviceInfo(ByteStringUtils.stringToByteString(deviceName), resolution);
     }
 
 

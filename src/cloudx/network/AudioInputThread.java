@@ -1,8 +1,9 @@
 package cloudx.network;
 
 import android.util.Log;
-import common.message.Data;
 import cloudx.utils.AudioPlayer;
+import common.message.Data;
+import common.message.ProtoBufHelper;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -36,6 +37,10 @@ public class AudioInputThread extends Thread {
             Log.e(TAG, peerIP);
 
             socket = new Socket(peerIP, peerPort);
+
+            ProtoBufHelper.sendCommand(
+                    ProtoBufHelper.genCommandBuilder(Data.Command.CommandType.StartAudioTransmission),
+                    socket.getOutputStream());
 
             Log.e(TAG, "Audio Socket Connected");
 
