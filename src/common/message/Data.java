@@ -3052,13 +3052,9 @@ public final class Data {
        */
       StartVideoTransmission(11, 12),
       /**
-       * <code>StartAudioAndVideoTransmission = 13;</code>
+       * <code>FindMyDevice = 13;</code>
        */
-      StartAudioAndVideoTransmission(12, 13),
-      /**
-       * <code>FindMyDevice = 14;</code>
-       */
-      FindMyDevice(13, 14),
+      FindMyDevice(12, 13),
       ;
 
       /**
@@ -3110,13 +3106,9 @@ public final class Data {
        */
       public static final int StartVideoTransmission_VALUE = 12;
       /**
-       * <code>StartAudioAndVideoTransmission = 13;</code>
+       * <code>FindMyDevice = 13;</code>
        */
-      public static final int StartAudioAndVideoTransmission_VALUE = 13;
-      /**
-       * <code>FindMyDevice = 14;</code>
-       */
-      public static final int FindMyDevice_VALUE = 14;
+      public static final int FindMyDevice_VALUE = 13;
 
 
       public final int getNumber() { return value; }
@@ -3135,8 +3127,7 @@ public final class Data {
           case 10: return StopAudioAndVideoTransmission;
           case 11: return StartAudioTransmission;
           case 12: return StartVideoTransmission;
-          case 13: return StartAudioAndVideoTransmission;
-          case 14: return FindMyDevice;
+          case 13: return FindMyDevice;
           default: return null;
         }
       }
@@ -7148,15 +7139,6 @@ public final class Data {
      * <code>optional .common.message.Resolution resolution = 2;</code>
      */
     common.message.Data.ResolutionOrBuilder getResolutionOrBuilder();
-
-    /**
-     * <code>optional int32 portAvailable = 3;</code>
-     */
-    boolean hasPortAvailable();
-    /**
-     * <code>optional int32 portAvailable = 3;</code>
-     */
-    int getPortAvailable();
   }
   /**
    * Protobuf type {@code common.message.DeviceInfo}
@@ -7226,11 +7208,6 @@ public final class Data {
                 resolution_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000002;
-              break;
-            }
-            case 24: {
-              bitField0_ |= 0x00000004;
-              portAvailable_ = input.readInt32();
               break;
             }
           }
@@ -7309,25 +7286,9 @@ public final class Data {
       return resolution_;
     }
 
-    public static final int PORTAVAILABLE_FIELD_NUMBER = 3;
-    private int portAvailable_;
-    /**
-     * <code>optional int32 portAvailable = 3;</code>
-     */
-    public boolean hasPortAvailable() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    /**
-     * <code>optional int32 portAvailable = 3;</code>
-     */
-    public int getPortAvailable() {
-      return portAvailable_;
-    }
-
     private void initFields() {
       deviceName_ = com.google.protobuf.ByteString.EMPTY;
       resolution_ = common.message.Data.Resolution.getDefaultInstance();
-      portAvailable_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -7348,9 +7309,6 @@ public final class Data {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(2, resolution_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeInt32(3, portAvailable_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7367,10 +7325,6 @@ public final class Data {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, resolution_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, portAvailable_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -7498,8 +7452,6 @@ public final class Data {
           resolutionBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
-        portAvailable_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -7540,10 +7492,6 @@ public final class Data {
         } else {
           result.resolution_ = resolutionBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.portAvailable_ = portAvailable_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -7565,9 +7513,6 @@ public final class Data {
         }
         if (other.hasResolution()) {
           mergeResolution(other.getResolution());
-        }
-        if (other.hasPortAvailable()) {
-          setPortAvailable(other.getPortAvailable());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -7745,38 +7690,6 @@ public final class Data {
           resolution_ = null;
         }
         return resolutionBuilder_;
-      }
-
-      private int portAvailable_ ;
-      /**
-       * <code>optional int32 portAvailable = 3;</code>
-       */
-      public boolean hasPortAvailable() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional int32 portAvailable = 3;</code>
-       */
-      public int getPortAvailable() {
-        return portAvailable_;
-      }
-      /**
-       * <code>optional int32 portAvailable = 3;</code>
-       */
-      public Builder setPortAvailable(int value) {
-        bitField0_ |= 0x00000004;
-        portAvailable_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 portAvailable = 3;</code>
-       */
-      public Builder clearPortAvailable() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        portAvailable_ = 0;
-        onChanged();
-        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:common.message.DeviceInfo)
@@ -11580,42 +11493,41 @@ public final class Data {
       "ileRequest\020\005\022\014\n\010FileInfo\020\006\022\r\n\tFileBlock\020",
       "\007\022\021\n\rSharedMessage\020\010\022\021\n\rKeyboardEvent\020\t\022" +
       "\034\n\030CloudStorageTokenRequest\020\n\022\025\n\021CloudSt" +
-      "orageToken\020\013\022\017\n\013Unspecified\020\014\"\235\003\n\007Comman" +
+      "orageToken\020\013\022\017\n\013Unspecified\020\014\"\371\002\n\007Comman" +
       "d\0228\n\013commandType\030\001 \002(\0162#.common.message." +
       "Command.CommandType\022\t\n\001x\030\002 \001(\002\022\t\n\001y\030\003 \001(" +
-      "\002\"\301\002\n\013CommandType\022\014\n\010Minimize\020\001\022\017\n\013ShowD" +
+      "\002\"\235\002\n\013CommandType\022\014\n\010Minimize\020\001\022\017\n\013ShowD" +
       "esktop\020\002\022\017\n\013ShutDownApp\020\003\022\r\n\tLeftClick\020\004" +
       "\022\016\n\nRightClick\020\005\022\n\n\006Scroll\020\006\022\020\n\014SelectWi" +
       "ndow\020\007\022\031\n\025StopAudioTransmission\020\010\022\031\n\025Sto" +
       "pVideoTransmission\020\t\022!\n\035StopAudioAndVide",
       "oTransmission\020\n\022\032\n\026StartAudioTransmissio" +
-      "n\020\013\022\032\n\026StartVideoTransmission\020\014\022\"\n\036Start" +
-      "AudioAndVideoTransmission\020\r\022\020\n\014FindMyDev" +
-      "ice\020\016\"\366\002\n\005Video\0223\n\ndirtyRects\030\001 \003(\0132\037.co" +
-      "mmon.message.Video.Rectangle\0226\n\tmoveRect" +
-      "s\030\002 \003(\0132#.common.message.Video.MoveRecta" +
-      "ngle\022\r\n\005frame\030\003 \001(\014\032O\n\tRectangle\022\t\n\001x\030\001 " +
-      "\002(\005\022\t\n\001y\030\002 \002(\005\022\r\n\005width\030\003 \002(\005\022\016\n\006height\030" +
-      "\004 \002(\005\022\r\n\005image\030\005 \001(\014\032\035\n\005Point\022\t\n\001x\030\001 \002(\005" +
-      "\022\t\n\001y\030\002 \002(\005\032\200\001\n\rMoveRectangle\022=\n\024destina",
-      "tionRectangle\030\001 \002(\0132\037.common.message.Vid" +
-      "eo.Rectangle\0220\n\013sourcePoint\030\002 \002(\0132\033.comm" +
-      "on.message.Video.Point\"\026\n\005Audio\022\r\n\005sound" +
-      "\030\001 \001(\014\"g\n\nDeviceInfo\022\022\n\ndeviceName\030\001 \001(\014" +
-      "\022.\n\nresolution\030\002 \001(\0132\032.common.message.Re" +
-      "solution\022\025\n\rportAvailable\030\003 \001(\005\"+\n\nResol" +
-      "ution\022\r\n\005width\030\001 \001(\005\022\016\n\006height\030\002 \001(\005\"\272\001\n" +
-      "\013FileRequest\022D\n\017fileRequestType\030\001 \002(\0162+." +
-      "common.message.FileRequest.FileRequestTy" +
-      "pe\022\020\n\010filePath\030\002 \002(\014\"S\n\017FileRequestType\022",
-      "\024\n\020OpenFileRemotely\020\001\022\016\n\nDeleteFile\020\002\022\014\n" +
-      "\010SaveFile\020\003\022\014\n\010SendFile\020\004\"@\n\010FileInfo\022\020\n" +
-      "\010filePath\030\001 \002(\014\022\020\n\010fileSize\030\002 \002(\004\022\020\n\010fil" +
-      "eIcon\030\003 \001(\014\"\034\n\tFileBlock\022\017\n\007content\030\001 \002(" +
-      "\014\"1\n\030CloudStorageTokenRequest\022\025\n\007expires" +
-      "\030\001 \001(\005:\0043600\"\"\n\021CloudStorageToken\022\r\n\005tok" +
-      "en\030\001 \002(\014\" \n\rSharedMessage\022\017\n\007content\030\001 \002" +
-      "(\014\" \n\rKeyboardEvent\022\017\n\007keyCode\030\001 \002(\005"
+      "n\020\013\022\032\n\026StartVideoTransmission\020\014\022\020\n\014FindM" +
+      "yDevice\020\r\"\366\002\n\005Video\0223\n\ndirtyRects\030\001 \003(\0132" +
+      "\037.common.message.Video.Rectangle\0226\n\tmove" +
+      "Rects\030\002 \003(\0132#.common.message.Video.MoveR" +
+      "ectangle\022\r\n\005frame\030\003 \001(\014\032O\n\tRectangle\022\t\n\001" +
+      "x\030\001 \002(\005\022\t\n\001y\030\002 \002(\005\022\r\n\005width\030\003 \002(\005\022\016\n\006hei" +
+      "ght\030\004 \002(\005\022\r\n\005image\030\005 \001(\014\032\035\n\005Point\022\t\n\001x\030\001" +
+      " \002(\005\022\t\n\001y\030\002 \002(\005\032\200\001\n\rMoveRectangle\022=\n\024des" +
+      "tinationRectangle\030\001 \002(\0132\037.common.message",
+      ".Video.Rectangle\0220\n\013sourcePoint\030\002 \002(\0132\033." +
+      "common.message.Video.Point\"\026\n\005Audio\022\r\n\005s" +
+      "ound\030\001 \001(\014\"P\n\nDeviceInfo\022\022\n\ndeviceName\030\001" +
+      " \001(\014\022.\n\nresolution\030\002 \001(\0132\032.common.messag" +
+      "e.Resolution\"+\n\nResolution\022\r\n\005width\030\001 \001(" +
+      "\005\022\016\n\006height\030\002 \001(\005\"\272\001\n\013FileRequest\022D\n\017fil" +
+      "eRequestType\030\001 \002(\0162+.common.message.File" +
+      "Request.FileRequestType\022\020\n\010filePath\030\002 \002(" +
+      "\014\"S\n\017FileRequestType\022\024\n\020OpenFileRemotely" +
+      "\020\001\022\016\n\nDeleteFile\020\002\022\014\n\010SaveFile\020\003\022\014\n\010Send",
+      "File\020\004\"@\n\010FileInfo\022\020\n\010filePath\030\001 \002(\014\022\020\n\010" +
+      "fileSize\030\002 \002(\004\022\020\n\010fileIcon\030\003 \001(\014\"\034\n\tFile" +
+      "Block\022\017\n\007content\030\001 \002(\014\"1\n\030CloudStorageTo" +
+      "kenRequest\022\025\n\007expires\030\001 \001(\005:\0043600\"\"\n\021Clo" +
+      "udStorageToken\022\r\n\005token\030\001 \002(\014\" \n\rSharedM" +
+      "essage\022\017\n\007content\030\001 \002(\014\" \n\rKeyboardEvent" +
+      "\022\017\n\007keyCode\030\001 \002(\005"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -11676,7 +11588,7 @@ public final class Data {
     internal_static_common_message_DeviceInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_message_DeviceInfo_descriptor,
-        new java.lang.String[] { "DeviceName", "Resolution", "PortAvailable", });
+        new java.lang.String[] { "DeviceName", "Resolution", });
     internal_static_common_message_Resolution_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_common_message_Resolution_fieldAccessorTable = new

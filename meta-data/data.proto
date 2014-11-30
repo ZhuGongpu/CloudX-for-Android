@@ -48,8 +48,7 @@ message Command {
         StopAudioAndVideoTransmission = 10;
         StartAudioTransmission = 11;
         StartVideoTransmission = 12;
-        StartAudioAndVideoTransmission = 13;
-        FindMyDevice = 14;
+        FindMyDevice = 13;
     }
 
     required CommandType commandType = 1;
@@ -89,7 +88,6 @@ message Audio {
 message DeviceInfo {
     optional bytes deviceName = 1;
     optional Resolution resolution = 2;
-    optional int32 portAvailable = 3;
 }
 
 message Resolution {
