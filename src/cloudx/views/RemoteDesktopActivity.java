@@ -159,14 +159,22 @@ public class RemoteDesktopActivity extends Activity {
         /**
          * 获取peer信息
          */
-        Intent intent = getIntent();
-        if (intent == null) finish();
-        else {
-            peerIP = intent.getStringExtra(Constants.ParaName_PeerIP);
-            peerPort = intent.getIntExtra(Constants.ParaName_PeerPort, 0);
-            resolution_width = intent.getIntExtra(Constants.ParaName_Resolution_Width, 0);
-            resolution_height = intent.getIntExtra(Constants.ParaName_Resolution_Height, 0);
-        }
+
+
+//        Intent intent = getIntent();
+//        if (intent == null) finish();
+//        else {
+//            peerIP = intent.getStringExtra(Constants.ParaName_PeerIP);
+//            peerPort = intent.getIntExtra(Constants.ParaName_PeerPort, 0);
+//            resolution_width = intent.getIntExtra(Constants.ParaName_Resolution_Width, 0);
+//            resolution_height = intent.getIntExtra(Constants.ParaName_Resolution_Height, 0);
+//        }
+//TODO 仅用于测试  实际使用时需要将上述代码取消注释
+        peerIP = "192.168.1.133";
+        peerPort = 50323;
+        resolution_width = 1366;
+        resolution_height = 768;
+
         if (peerIP == null || peerPort <= 0 || resolution_height <= 0 || resolution_width <= 0)
             finish();
 
